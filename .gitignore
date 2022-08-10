@@ -13,8 +13,8 @@
 # misc
 .DS_Store
 
-# Created by https://www.toptal.com/developers/gitignore/api/react,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=react,node
+# Created by https://www.toptal.com/developers/gitignore/api/react,node,sass
+# Edit at https://www.toptal.com/developers/gitignore?templates=react,node,sass
 
 ### Node ###
 # Logs
@@ -88,6 +88,9 @@ web_modules/
 # Output of 'npm pack'
 *.tgz
 
+# Google account json file
+serviceaccount.json
+
 # Yarn Integrity file
 .yarn-integrity
 
@@ -97,7 +100,6 @@ web_modules/
 .env.test.local
 .env.production.local
 .env.local
-serviceaccount.json
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -170,4 +172,10 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/react,node
+### Sass ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# End of https://www.toptal.com/developers/gitignore/api/react,node,sass
