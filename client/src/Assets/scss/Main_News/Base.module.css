@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+input, textarea, select {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+html, body {
+  height: 100%;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.body_main_news {
+  margin-top: 0;
+  font-family: "Patua One", serif;
+  font-size: 15px;
+  color: #212529; }
+
+.wrapper {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  position: relative; }
+
+/*# sourceMappingURL=Base.module.css.map */

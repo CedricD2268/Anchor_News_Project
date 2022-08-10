@@ -1,0 +1,602 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap");
+input, textarea, select {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  position: relative; }
+
+.headerA {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  position: relative; }
+
+.headerATop {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  position: absolute; }
+  @media screen and (max-width: 1000px) {
+    .headerATop {
+      position: relative !important; } }
+
+.menuButton {
+  margin-top: 2px;
+  margin-bottom: auto; }
+  .menuButton button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #F7F9F7;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 50%;
+    transition-duration: 0.30s;
+    padding: 7.5px; }
+    .menuButton button:focus {
+      outline: none; }
+    .menuButton button:hover {
+      cursor: pointer;
+      background: #e8eee8;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .menuButton button:active {
+      background: #dae3da; }
+
+.HeaderSearch {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; }
+
+.HomeLogoImg {
+  display: flex;
+  width: 100%;
+  margin-top: -5px;
+  justify-content: center; }
+  .HomeLogoImg div {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background: #273A40;
+    border-radius: 50%; }
+
+.NavbarButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: -25px;
+  width: 100%;
+  gap: 10px;
+  padding: 2px;
+  height: 70px; }
+  .NavbarButtons span {
+    pointer-events: none; }
+  .NavbarButtons svg {
+    pointer-events: none; }
+  .NavbarButtons a {
+    text-decoration: none;
+    width: 100%; }
+
+.SearchInputButtonBox {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%; }
+
+.BackToTop {
+  margin-left: auto;
+  height: 60px; }
+  .BackToTop button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #212529;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    color: white;
+    flex-direction: row;
+    white-space: nowrap;
+    font-size: 16.5px;
+    height: 35px;
+    padding: 10px 28px;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    gap: 7px; }
+    .BackToTop button:focus {
+      outline: none; }
+    .BackToTop button:hover {
+      cursor: pointer;
+      background: #16181b;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .BackToTop button:active {
+      background: #0a0c0d; }
+    @media screen and (max-width: 530px) {
+      .BackToTop button {
+        padding: 10px 15px;
+        font-size: 15.7px; } }
+
+.HeaderSearchButton {
+  margin-bottom: auto;
+  margin-top: 1px; }
+  .HeaderSearchButton button {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #273A40;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 50%;
+    transition-duration: 0.30s;
+    border: 2px solid #adb5bd;
+    height: 37px;
+    padding: 7px; }
+    .HeaderSearchButton button:focus {
+      outline: none; }
+    .HeaderSearchButton button:hover {
+      cursor: pointer;
+      background: #141d20;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .HeaderSearchButton button:active {
+      background: #0a0f10; }
+
+.SearchInputButton {
+  display: flex;
+  flex-direction: row;
+  height: 35px; }
+  .SearchInputButton input {
+    width: 100%;
+    border: 1px solid lightgrey;
+    outline: none;
+    padding-left: 9px;
+    border-radius: 4px 0 0 4px;
+    transition-duration: 0.30s;
+    font-size: 15.5px;
+    font-family: "Patua One", serif;
+    border-right: none !important;
+    width: 100%;
+    transition-duration: 0.0s; }
+    .SearchInputButton input:focus {
+      border-color: none; }
+    .SearchInputButton input::-ms-reveal, .SearchInputButton input::-ms-clear {
+      display: none; }
+  .SearchInputButton .ClearButton {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: white;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    max-height: 100%;
+    color: black;
+    border: 1px solid lightgrey;
+    border-left: none;
+    border-right: none;
+    transition-duration: 0.0s;
+    padding: 0;
+    margin-right: -5px; }
+    .SearchInputButton .ClearButton:focus {
+      outline: none; }
+    .SearchInputButton .ClearButton:hover {
+      cursor: pointer;
+      background: white;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SearchInputButton .ClearButton:active {
+      background: white; }
+    .SearchInputButton .ClearButton span {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5px; }
+  .SearchInputButton .SearchButton {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: white;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0 4px 4px 0;
+    transition-duration: 0.30s;
+    max-height: 100%;
+    color: black;
+    border: 1px solid lightgrey;
+    border-left: none;
+    padding-left: -5px;
+    transition-duration: 0.0s;
+    max-width: 40px; }
+    .SearchInputButton .SearchButton:focus {
+      outline: none; }
+    .SearchInputButton .SearchButton:hover {
+      cursor: pointer;
+      background: white;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SearchInputButton .SearchButton:active {
+      background: white; }
+
+.SearchBoxList {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  -webkit-transition-duration: 0.30s;
+  /* Safari */
+  transition-duration: 0.30s;
+  overflow: hidden;
+  border-top: none;
+  margin-top: -3px; }
+  .SearchBoxList a {
+    text-decoration: none;
+    width: 100%; }
+  .SearchBoxList button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: left;
+    background: white;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    height: 38px;
+    color: #073b4c;
+    font-size: 15.5px;
+    width: 100%; }
+    .SearchBoxList button:focus {
+      outline: none; }
+    .SearchBoxList button:hover {
+      cursor: pointer;
+      background: #f2f2f2;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SearchBoxList button:active {
+      background: #e6e6e6; }
+    .SearchBoxList button span {
+      width: 60%;
+      display: block;
+      overflow: hidden;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+
+.headerABottom {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 55px;
+  margin-left: 45px; }
+
+.HeaderB {
+  flex: 1;
+  display: flex;
+  justify-content: center; }
+  @media screen and (max-width: 1000px) {
+    .HeaderB svg:nth-child(1) {
+      display: none; } }
+  @media screen and (min-width: 1001px) {
+    .HeaderB svg:nth-child(2) {
+      display: none; } }
+
+.HeaderC {
+  height: 100%;
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px; }
+
+.LoginInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 38px; }
+
+.SubscribeButton button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: white;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  border: 1px solid black;
+  color: #212529;
+  padding: 5px 13px;
+  font-size: 13.3px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+  white-space: nowrap; }
+  .SubscribeButton button:focus {
+    outline: none; }
+  .SubscribeButton button:hover {
+    cursor: pointer;
+    background: #f2f2f2;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .SubscribeButton button:active {
+    background: #e6e6e6; }
+  .SubscribeButton button:hover {
+    background: #273a40;
+    color: white; }
+  .SubscribeButton button:active {
+    background: #10181a;
+    color: white; }
+
+.SubscribeButtonWin button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #e9c46a;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 4px;
+  transition-duration: 0.30s;
+  padding: 5px 13px;
+  font-size: 13.3px; }
+  .SubscribeButtonWin button:focus {
+    outline: none; }
+  .SubscribeButtonWin button:hover {
+    cursor: pointer;
+    background: #e6bb54;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .SubscribeButtonWin button:active {
+    background: #e2b23e; }
+
+@media screen and (max-width: 1150px) {
+  /* mobile CSS: hide .desktop div */
+  .SubscribeDatePrice {
+    display: none; }
+
+  .SubscribeButton button {
+    font-size: 14px;
+    padding: 5px 25px; } }
+.TrueLogin {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 14px; }
+  .TrueLogin a {
+    text-decoration: none; }
+  .TrueLogin span {
+    pointer-events: none; }
+  .TrueLogin svg {
+    pointer-events: none; }
+  .TrueLogin img {
+    pointer-events: none; }
+  .TrueLogin p {
+    width: 143px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: right; }
+  .TrueLogin button {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5px;
+    align-items: center;
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    padding-bottom: 0; }
+    .TrueLogin button:focus {
+      outline: none; }
+    .TrueLogin button:hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .TrueLogin button:active {
+      background: rgba(0, 0, 0, 0); }
+    .TrueLogin button img {
+      border-radius: 50%;
+      box-shadow: 0 0 0 2.5px #cad2c5;
+      margin-top: -8px; }
+      @media screen and (max-width: 1000px) {
+        .TrueLogin button img {
+          margin-top: -11px;
+          width: 35px; } }
+      @media screen and (max-width: 530px) {
+        .TrueLogin button img {
+          width: 33px;
+          margin-top: -7.4px; } }
+      @media screen and (max-width: 340px) {
+        .TrueLogin button img {
+          width: 29px;
+          margin-top: -7.4px; } }
+    .TrueLogin button svg {
+      margin-top: -8px; }
+      @media screen and (max-width: 600px) {
+        .TrueLogin button svg {
+          display: none; } }
+
+.FalseLogin {
+  margin-left: auto; }
+  .FalseLogin button:nth-child(1) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #273A40;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 4px;
+    transition-duration: 0.30s;
+    padding: 5px 16px;
+    color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+    @media screen and (max-width: 1000px) {
+      .FalseLogin button:nth-child(1) {
+        display: none; } }
+    .FalseLogin button:nth-child(1):focus {
+      outline: none; }
+    .FalseLogin button:nth-child(1):hover {
+      cursor: pointer;
+      background: #1d2c30;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .FalseLogin button:nth-child(1):active {
+      background: #0a0f10; }
+  .FalseLogin button:nth-child(2) {
+    background-color: red;
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: white;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    padding: 5px 10px 12px 10px;
+    color: black; }
+    @media screen and (min-width: 1000px) {
+      .FalseLogin button:nth-child(2) {
+        display: none; } }
+    .FalseLogin button:nth-child(2):focus {
+      outline: none; }
+    .FalseLogin button:nth-child(2):hover {
+      cursor: pointer;
+      background: white;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .FalseLogin button:nth-child(2):active {
+      background: white; }
+    @media screen and (max-width: 530px) {
+      .FalseLogin button:nth-child(2) {
+        margin-top: -3px; } }
+
+.Weather {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center; }
+  .Weather .WeatherBox {
+    display: flex;
+    flex-direction: row;
+    gap: 5px; }
+
+.WeatherValue {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  white-space: nowrap;
+  font-size: 15.5px;
+  margin-top: -4px; }
+
+.WeatherInfo {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  white-space: nowrap; }
+
+.Hr {
+  border: 0;
+  height: 1px;
+  background-color: #002329;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; }
+  @media screen and (max-width: 846px) {
+    .Hr {
+      height: 1.5px; } }
+
+@media screen and (min-width: 1000px) {
+  /* mobile CSS: hide .desktop div */
+  .MobileX {
+    display: none; } }
+@media screen and (max-width: 1000px) {
+  /* mobile CSS: hide .desktop div */
+  .DesktopX {
+    display: none; } }
+@media screen and (max-width: 1000px) {
+  .BodySideTwoX {
+    overflow: hidden; } }
+
+/*# sourceMappingURL=Header.module.css.map */

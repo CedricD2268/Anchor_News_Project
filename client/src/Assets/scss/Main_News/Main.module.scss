@@ -1,0 +1,1019 @@
+@import '../Variable';
+
+.NavbarButtons {
+  padding: 10px 7px;
+  background: rgba(250, 237, 205, 0.95);
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.16);
+  position: fixed;
+  height: auto;
+  overflow: hidden;
+  z-index: 2;
+  margin-left: -10px;
+}
+
+.HeaderButtonsTopics {
+  button {
+    margin: 0 auto;
+    @include ButtonMd(#f8f9fa, 6px, 5, 10);
+    border: 1px solid $color_uni_one;
+    color: $color_uni_eleven;
+    svg {
+      fill: $color_uni_eleven;
+    }
+    &:hover{
+      background-color: lighten($color_uni_one,4);
+      border-color: lighten($color_uni_one,4);
+      color: #e9ecef;
+      svg {
+        fill: #e9ecef;
+      }
+    }
+  }
+}
+
+
+
+.ToggleButton {
+  background-color: $color_uni_one !important;
+  color: white !important;
+  svg {
+    fill: white !important;
+  }
+}
+
+
+.HeaderButtonsBack, .HeaderButtonsForward {
+  height: 37px;
+  button{
+    @include ButtonMd(transparent, 50%, 5, 10);
+    svg{
+        height: 23px!important;
+        width: 23px!important;
+      }
+  }
+}
+
+//-----------------------------------------------------------
+
+.HeadlineOne {
+  display: grid;
+  grid-template-columns:  1fr 1fr  1fr  1fr;
+  grid-gap: 20px;
+  gap: 20px;
+  @media screen and (max-width: $RenderResizeOne) {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  padding: 20px;
+  width: 100%;
+  min-height: 450px;
+  @media screen and (max-width: 1085px) {
+    min-height: 200px !important;
+  }
+  overflow-x: scroll !important;
+  overflow-y: hidden;
+  //white-space: nowrap;
+  /* width */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: $color_uni_three transparent;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+     width: 18px;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    //border-radius: 5px;
+    //background-color: $color_uni_ten;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: 20px;
+    background-clip: content-box;
+    background-color: $color_uni_three;
+  }
+}
+
+.HeadlineOneCard {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  @media screen and (max-width: $RenderResizeOne) {
+    width: 210px;
+  }
+  border: none;
+  border-radius: 8px;
+  box-shadow: $shadow_two;
+  overflow: hidden;
+  &:hover {
+    .HeadlineOneCardImage {
+      img {
+        transition: all 0.5s ease 0s;
+        filter: grayscale(80%);
+      }
+    }
+    .HeadlineOneCardDesc{
+      span{
+        color: #B7CCD3;
+      }
+    }
+  }
+}
+
+
+.HeadlineOneCardHeader {
+  display: grid;
+  margin-top: -2px;
+  //margin-bottom: -2px;
+}
+
+.HeadlineOneCardImage, .HeadlineOneCardDesc {
+  position: relative;
+  grid-column: 1/2;
+  grid-row: 1/2;
+
+}
+
+.HeadlineOneCardImage {
+
+  background: lightgray;
+  //aspect-ratio: 0.67 / 1;
+  img {
+    margin-bottom: -2.5px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transition: all 0.5s ease 0s;
+  }
+}
+
+.HeadlineOneCardDesc {
+  margin-top: auto;
+  bottom: 0;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 18px 10px;
+  color: white;
+  span {
+    font-size: 19px;
+  }
+}
+
+.HeadlineOneFooter {
+  margin-top: -4px;
+  height: auto;
+  font-size: 20px;
+  padding: 4px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: -2px;
+  div{
+    svg{
+      padding-top: 4px;
+    }
+  }
+
+}
+
+//----------------------------------------------------------------------
+
+.HeadlineTwoBox {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.HeadlineTwoHeaderOne {
+  //background-color: $color_uni_three;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(to right, $color_uni_two 0%, #f1faee 100%);
+  color: #f1faee;
+  border-radius: 8px;
+  padding: 10px;
+  span{
+    font-size: 22px;
+  }
+  svg{
+    fill: #f1faee;
+  }
+}
+
+
+.HeadlineTwoHeader {
+  height: auto;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+
+.HeadlineTwo {
+  display: grid;
+  grid-gap: 20px;
+  height: auto;
+  min-height: 200px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  //@media screen and (max-width: 850px) {
+  //  padding: 15px !important;
+  //}
+  @media screen and (max-width: 990px) {
+    padding: 35px !important;
+    grid-template-columns: 2fr 2fr !important;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 10px !important;
+  }
+  width: 100%;
+  padding: 20px ;
+  border-radius: 8px;
+  background-color: $color_uni_two;
+  margin: 0 auto;
+}
+
+.HeadlineTwoCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    .HeadlineTwoCardImage {
+      img {
+        transition: all 0.5s ease 0s;
+        filter: grayscale(50%);
+      }
+    }
+
+    .HeadlineTwoCardDesc {
+      span {
+        color: #B7CCD3;
+        //text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+.HeadlineTwoCardType {
+  //margin-top: 2px;
+  padding: 7px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  //height: auto;
+  height: 44px;
+  background-color: white;
+  color: white;
+  //font-size: 18px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  @media screen and (max-width: $RenderResizeTwo) {
+    font-size: 16px;
+  }
+  img{
+    width: 34px;
+    border-radius: 50%;
+    //border: 1px solid $color_uni_one;
+  }
+}
+
+.HeadlineTwoCardImage {
+  aspect-ratio: 2.20 / 1;
+  background: darken($color_uni_two, 3) ;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    object-fit: contain;
+    //border-bottom-left-radius: 6px;
+    //border-bottom-right-radius: 6px;
+    transition: all 0.5s ease 0s;
+  }
+}
+
+.HeadlineTwoCardFooter {
+  margin-top: 4px;
+  width: 100%;
+}
+
+.HeadlineTwoCardDesc {
+  width: 100%;
+  height: auto;
+  color: white;
+}
+
+//-------------------------------------------------------------
+
+
+.HeadlineThree {
+  display: grid;
+  grid-gap: 20px;
+  height: auto;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  @media screen and (max-width: 630px) {
+    padding: 10px !important;
+    grid-template-columns: 1fr !important;
+  }
+  @media screen and (max-width: 960px) {
+    padding: 25px;
+    grid-template-columns: 2fr 2fr;
+  }
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: $color_uni_two;
+  margin: 0 auto;
+}
+
+.HeadlineThreeCardDescTwo {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-size: 13.5px;
+  white-space: nowrap;
+  color: $color_uni_seven;
+}
+
+
+//-------------------------------------------------------------
+
+.TopicsName {
+  //background-color: $color_uni_eleven;
+  background: -webkit-linear-gradient(70deg, $color_uni_eleven 40%, $color_uni_two 40%);
+  background: -o-linear-gradient(70deg, $color_uni_eleven 40%, $color_uni_two 40%);
+  background: -moz-linear-gradient(70deg,$color_uni_eleven 40%, $color_uni_two 40%);
+  background: linear-gradient(70deg, $color_uni_eleven 40%, $color_uni_two 40%);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  color: white;
+
+  span {
+    font-size: 24.5px;
+    font-family: $font_uni_six;
+  }
+
+}
+
+//------------------------------------------------------------------
+
+.HeadlineFour {
+  display: grid;
+  grid-gap: 20px;
+  height: auto;
+  grid-template-columns: repeat(auto-fill, minmax(232px, max-content)) !important;
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 8px;
+  background-color: $color_uni_two;
+  margin: 0 auto;
+  .HeadlineTwoCard {
+    min-width: 240px;
+    @media screen and (min-width: 600px) {
+      max-width: 350px;
+    }
+  }
+}
+
+.HeadlineFourSkeleton{
+  display: grid;
+  grid-gap: 20px;
+  height: auto;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+  width: 100% ;
+  padding: 20px 20px;
+  border-radius: 4px;
+  background-color: $color_uni_two;
+  margin: 0 auto;
+}
+
+
+.HeadlineFollowButton {
+  @include ButtonMd($color_uni_two, 6px, 7, 10);
+  padding: 10px 25px;
+  font-size: 14px;
+  color: white;
+}
+
+.HeadlineEditButton {
+  @include ButtonMd($color_uni_two, 6px, 7, 10);
+  gap: 4px;
+  padding: 10px 25px;
+  font-size: 14px;
+  color: white;
+}
+
+.HeadlineRemoveButton {
+  @include ButtonMd($color_uni_nine, 6px, 7, 10);
+  gap: 4px;
+  padding: 10px 25px;
+  font-size: 14px;
+  color: white;
+}
+
+
+
+.FollowingInfo {
+  width: 100%;
+  background-color: $color_uni_eleven;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  color: white;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  img {
+    width: 45px;
+    border-radius: 50%;
+    border: 2px solid $color_uni_ten;
+  }
+
+}
+
+//---------------------------------------------------------------------------
+
+.SearchInput {
+  span {
+    pointer-events: none;
+  }
+
+  svg {
+    pointer-events: none;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.SortSearch {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: absolute;
+  margin-top: 50px;
+}
+
+.SortSearchB{
+  margin-left: auto;
+}
+
+.InputStyle {
+  //background-color: red;
+  input {
+    max-width: 100% !important;
+    min-height: 40px !important;
+    font-size: 17px !important;
+    border-top: 2px solid $color_uni_two;
+    border-left: 2px solid $color_uni_two;
+    border-bottom: 2px solid $color_uni_two;
+    box-shadow: none !important;
+  }
+
+  button {
+    border-top: 2px solid $color_uni_two !important;
+    border-right: 2px solid $color_uni_two !important;
+    border-bottom: 2px solid $color_uni_two !important;
+    min-height: 40px !important;
+
+    //margin-left: -1px;
+  }
+}
+
+
+.SortSearchA {
+  display: flex;
+  flex-direction: column;
+  //position: relative;
+  .SortSearchDropdown {
+    @include ButtonMd($color_uni_three, 3px, 5, 10);
+    padding: 10px 15px;
+    color: white;
+    font-size: 15px;
+    //margin-bottom: -12px;
+  }
+
+  ul {
+    display: none;
+    width: 100%;
+    position: absolute;
+    box-shadow: $shadow_two;
+    margin-top: 40px;
+    background-color: #1d2c30;
+    border-radius: 3px;
+
+    button {
+      @include listButtonMd2;
+    }
+
+    li {
+      margin-left: -40px;
+    }
+  }
+}
+
+
+.SortSearchB {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  //position: relative;
+  .SortSearchDropdown {
+    @include ButtonMd($color_uni_two, 3px, 5, 10);
+    padding: 10px 15px;
+    color: white;
+    font-size: 15px;
+    //margin-bottom: -12px;
+  }
+}
+
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  display: block !important;
+}
+
+//-------------------------------------------------------------------
+
+.Article {
+  padding: 0 10px 0 10px;
+  svg {
+    pointer-events: none;
+  }
+}
+
+.ArticleHeadTopic {
+  //margin-top: -5px;
+  p{
+    white-space: nowrap;
+  }
+  span:nth-child(1) {
+    font-size: 26px;
+    font-family: $font_uni_six;
+    color: #2f3e46;
+    font-weight: bold;
+  }
+  span:nth-child(2) {
+    font-size: 19px;
+    font-family: $font_uni_three;
+    color: $color_uni_nine;
+  }
+}
+
+.ArticleHeadTitle {
+  //margin-top: -10px;
+
+  span {
+    font-family: $font_uni_six;
+
+    font-size: 31px;
+  }
+}
+
+
+.ArticleHeadShareSaved {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  button {
+    @include ButtonMd($color_uni_eleven, 50%, 7, 10);
+    align-items: center;
+    padding: 8px;
+  }
+}
+
+.ArticleHeadListen {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+
+  span {
+    display: flex;
+    background:$color_uni_three;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  span {
+    color: #6c757d;
+    font-size: 16.5px;
+  }
+}
+
+.ArticleMainImage {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    color: slategrey;
+  }
+}
+
+.ArticleMainImageOne {
+  width: 100%;
+  max-height: 400px;
+  img {
+    box-shadow: $shadow_two;
+    margin-right: auto;
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: -4px;
+    object-fit: contain;
+  }
+}
+
+.ArticleMainPublisher {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  @media screen and (max-width: $RenderResizeTwo) {
+    flex-direction: column;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+
+    img {
+      width: 38px;
+      border-radius: 50%;
+    }
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+  svg {
+    color: $color_uni_eleven;
+    width: 20px;
+    height: 20px;
+  }
+
+  div:nth-child(2) {
+    span {
+      font-size: 16px;
+      font-family: $font_uni_two;
+    }
+  }
+}
+
+.ArticleMainP {
+  max-width: 880px;
+  font-size: 19px;
+  font-family: $font_uni_six;
+}
+
+.ArticleMainPA {
+  margin-bottom: -15px;
+
+}
+
+.ArticleMainFooter {
+
+}
+
+.ArticleMainFooterLike {
+  width: 100%;
+  padding: 15px;
+  button {
+    @include ButtonMd(transparent, 0px, 0, 0);
+    margin-left: auto;
+  }
+  div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    span{
+      color: $color_uni_one;
+      font-family: $font_uni_one;
+      font-size: 20px;
+    }
+  }
+
+}
+  //margin: 20px;
+
+.ArticleMainFooterA {
+  display: flex;
+  flex-direction: column;
+  //background-color: red;
+  //margin-top: -20px;
+}
+
+.ArticleMainFooterAHeader {
+  //background-color: blue;
+  margin-bottom: -5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  span {
+    font-size: 18px;
+    color: $color_uni_two;
+  }
+
+  svg {
+    color: $color_uni_two;
+
+  }
+
+}
+
+.ArticleMainFooterASort {
+  font-family: $font_uni_one;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: -5px;
+}
+
+.ArticleMainFooterASortA {
+  margin-left: auto;
+}
+
+.ArticleMainFooterB {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  textarea {
+    height: 55px;
+    color: white;
+    border: 2px solid rgba(38, 70, 83, 0.7);
+    overflow: auto;
+    resize: none;
+    border-radius: 4px;
+    background-color: rgba(38, 70, 83, 0.7);
+    font-family: $font_uni_one;
+    font-size: 17px;
+    outline: none;
+    padding: 15px;
+    max-height: 300px;
+    &:focus {
+      border: 2.3px solid $color_uni_eleven;
+      //border-color: $color_uni_eleven;
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::placeholder {
+      color: antiquewhite;
+    }
+  }
+
+  button {
+    @include ButtonMd($color_uni_eleven, 4px, 3, 7);
+    color: white;
+    font-size: 15.7px;
+    max-width: 150px;
+    padding: 10px 15px;
+    &:disabled{
+      color: gray;
+      cursor: auto;
+    }
+  }
+}
+
+.ArticleMainFooterBCancel {
+  background: $color_uni_nine !important;
+  &:hover{
+    background: darken($color_uni_nine, 5) !important;
+  }
+  &:active {
+    background: darken($color_uni_nine, 10) !important;
+  }
+}
+
+.ArticleMainFooterC {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: $font_uni_one;
+}
+
+.ArticleMainFooterCA {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+
+  img {
+    width: 38px;
+    border-radius: 50%;
+  }
+
+}
+
+.ArticleMainFooterCB {
+  margin-top: -17px;
+  padding-left: 42px;
+}
+
+.ArticleMainFooterCC {
+  margin-top: 2px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+
+  button {
+    @include ButtonMd(white, 4px, 4, 7);
+    font-size: 16px;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1px;
+    button {
+      @include ButtonMd(transparent, 0px, 2, 5);
+    }
+    span {
+      margin-top: 4.5px;
+      //margin-bottom: 1px;
+      font-family: $font_uni_six;
+      color: #2b4043;
+      font-size: 15px;
+    }
+  }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+
+.ShareBox{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  min-width: 300px;
+  max-width: 400px;
+  background: $color_uni_five;
+  border-radius: 8px;
+  box-shadow: $shadow_four;
+}
+
+.ShareTitleClose{
+  display: flex;
+  flex-direction: row;
+  span{
+    font-size: 24px;
+  }
+  button{
+    margin-left: auto;
+    @include ButtonMd($color_uni_five, 50%, 5, 10);
+  }
+}
+
+.ShareCopy{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: 100%;
+  span{
+    display: block;
+    background: white;
+    width: 100%;
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  button {
+    @include ButtonMd($color_uni_one, 4px, 7, 14);
+    height: 40px;
+    padding: 10px;
+  }
+}
+
+.ShareButtons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+
+.SupportBox{
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  background: $color_uni_five;
+  width: 320px;
+  border-radius: 8px;
+  box-shadow: $shadow_four;
+  div{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    input{
+      @include InputMd($color_uni_one, 4px);
+      width: 100%;
+      height: 38px;
+      box-shadow: $shadow_two;
+    }
+  }
+}
+
+.SupportCloseTitle{
+  flex-direction: row !important;
+  span{
+    font-size: 28px;
+  }
+  button{
+    margin-left: auto;
+    @include ButtonMd($color_uni_five, 50%, 5, 10);
+  }
+}
+
+.SupportSubmit {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  button {
+    @include ButtonMd($color_uni_one, 4px, 5, 10);
+    font-size: 17px;
+    margin: 0 auto;
+    padding: 10px;
+    width: 70%;
+    color: white;
+
+  }
+}
+
+.SupportMessageBox{
+  textarea {
+    padding: 5px;
+    resize: none;
+    font-size: 15px;
+    width: 100% !important;
+    height: 170px !important;
+    border-radius: 4px;
+    font-family: $font_uni_one;
+    box-shadow: $shadow_two;
+  }
+}
+
+
+
+.CommentViewRepliesButton{
+  button{
+    @include ButtonMd(#f8f9fa, 4px, 5, 10);
+    padding: 8px;
+    font-size: 15px;
+    margin-left: 20px;
+    svg {
+      -webkit-transition-duration: 0.20s; /* Safari */
+      transition-duration: 0.20s;
+    }
+  }
+}

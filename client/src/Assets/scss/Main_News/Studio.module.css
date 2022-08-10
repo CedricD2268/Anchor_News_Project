@@ -1,0 +1,1337 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap");
+input, textarea, select {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+.TestReset {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: red; }
+
+.HeaderSidebar {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  margin-top: -8px; }
+  .HeaderSidebar a {
+    text-decoration: none; }
+
+.Sidebar {
+  max-width: 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: -10px;
+  background-color: #002329; }
+
+.SidebarHomeCreate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px; }
+  .SidebarHomeCreate button:nth-child(1) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #CAD2C5;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 50%;
+    transition-duration: 0.30s;
+    max-height: 100px !important;
+    max-width: 100px !important;
+    padding: 20px;
+    margin-top: 8px; }
+    .SidebarHomeCreate button:nth-child(1):focus {
+      outline: none; }
+    .SidebarHomeCreate button:nth-child(1):hover {
+      cursor: pointer;
+      background: #cad2c5;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SidebarHomeCreate button:nth-child(1):active {
+      background: #cad2c5; }
+  .SidebarHomeCreate button:nth-child(2) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #faedcd;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 4px;
+    transition-duration: 0.30s;
+    color: black;
+    gap: 5px;
+    font-size: 16.5px;
+    width: 95%;
+    padding: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+    margin-top: 8px; }
+    .SidebarHomeCreate button:nth-child(2):focus {
+      outline: none; }
+    .SidebarHomeCreate button:nth-child(2):hover {
+      cursor: pointer;
+      background: #f8e5b6;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SidebarHomeCreate button:nth-child(2):active {
+      background: #f5dc9f; }
+  .SidebarHomeCreate button:nth-child(3) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #f2cc8f;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 4px;
+    transition-duration: 0.30s;
+    color: black;
+    gap: 5px;
+    font-size: 16.5px;
+    width: 95%;
+    padding: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+    .SidebarHomeCreate button:nth-child(3):focus {
+      outline: none; }
+    .SidebarHomeCreate button:nth-child(3):hover {
+      cursor: pointer;
+      background: #efc278;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SidebarHomeCreate button:nth-child(3):active {
+      background: #edb761; }
+
+.SidebarListButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 5px; }
+  .SidebarListButtons button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #cad2c5;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 4px;
+    transition-duration: 0.30s;
+    width: 200px;
+    font-size: 17px;
+    padding: 15px;
+    color: #343a40;
+    gap: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+    border-top: none; }
+    .SidebarListButtons button:focus {
+      outline: none; }
+    .SidebarListButtons button:hover {
+      cursor: pointer;
+      background: #cad2c5;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SidebarListButtons button:active {
+      background: #cad2c5; }
+    .SidebarListButtons button svg {
+      margin-right: auto; }
+    .SidebarListButtons button span {
+      width: 60px;
+      margin-right: 55px;
+      padding-right: 60px; }
+    .SidebarListButtons button:hover {
+      background-color: #354f52;
+      color: white; }
+    .SidebarListButtons button:active {
+      background-color: #2b4043;
+      color: white; }
+
+.SidebarListColorClick {
+  background-color: #2b4043 !important;
+  color: white !important; }
+
+.HeaderContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: -7px; }
+
+.Header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+
+.HeaderOne {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  gap: 15px;
+  align-items: center;
+  background: #002329;
+  color: white; }
+
+.HeaderTwo {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0 10px 10px;
+  border: none;
+  width: 100%;
+  height: 70px; }
+  .HeaderTwo .HeaderTwoFollowers {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    padding: 10px 25px;
+    background: #2f3e46;
+    margin-left: auto; }
+    .HeaderTwo .HeaderTwoFollowers span {
+      white-space: nowrap;
+      font-size: 18px;
+      color: #f1faee; }
+
+.Content {
+  height: calc(100vh - 156.5px);
+  padding-right: 10px;
+  overflow: hidden;
+  overflow-y: scroll; }
+
+.HeaderWelcome {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 24px; }
+
+.HeaderLogoName {
+  margin-top: -18px; }
+
+.HeaderInput {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 15px; }
+  .HeaderInput button {
+    min-height: 53px !important;
+    border-color: lightslategrey !important; }
+  .HeaderInput input {
+    font-size: 19px !important;
+    font-family: "Lora", serif;
+    height: 53px;
+    border-color: lightslategrey !important;
+    max-width: 100%;
+    min-width: 450px;
+    border-radius: 2px; }
+    .HeaderInput input ::-ms-input-placeholder {
+      color: #84a98c; }
+    .HeaderInput input ::placeholder {
+      color: #84a98c;
+      opacity: 1; }
+
+.HeaderImg {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; }
+  .HeaderImg div {
+    font-size: 17px !important; }
+
+.HeaderHr {
+  width: 100%;
+  height: 1px;
+  border: none;
+  color: #000;
+  background-color: #000;
+  text-align: right;
+  margin: 0 0 0 auto; }
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 270px;
+  min-width: 250px;
+  border: 1px solid lightslategrey;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer; }
+
+.CardImage {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid lightslategrey;
+  background-color: whitesmoke; }
+  .CardImage img {
+    width: 100%;
+    max-width: 280px;
+    max-height: 130px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+
+.CardFooter {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  font-family: "Patua One", serif;
+  color: #343a40;
+  padding: 5px 5px;
+  align-items: center; }
+
+.CardFooterOne {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; }
+  .CardFooterOne span {
+    white-space: nowrap;
+    font-size: 13.4px;
+    color: lightslategrey; }
+  .CardFooterOne div {
+    width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: center; }
+    .CardFooterOne div span {
+      padding-bottom: 10px;
+      color: #212529;
+      font-size: 15.5px;
+      white-space: nowrap; }
+    .CardFooterOne div svg {
+      margin-bottom: -1.5px;
+      padding-right: 2px; }
+
+.CardFooterTwo {
+  margin-left: auto; }
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; }
+
+.HomeRecent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px; }
+
+.HomeRecentTitle {
+  padding: 2px;
+  font-size: 22px;
+  font-family: "Patua One", serif;
+  color: #84a59d;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px; }
+
+.HomeRecentCard {
+  display: grid;
+  grid-gap: 15px;
+  height: auto;
+  grid-template-columns: repeat(auto-fill, minmax(259px, max-content));
+  transition: .2s;
+  transition-duration: .2s;
+  transition-delay: .2s; }
+
+.HomeHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .HomeHeader .HomeDropButton {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px; }
+
+.Folder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  gap: 10px;
+  border: 1.5px solid lightslategrey;
+  border-radius: 2.5px;
+  padding: 10px;
+  color: #343a40; }
+  .Folder span {
+    font-family: "Patua One", serif; }
+  .Folder svg {
+    height: 25px;
+    width: 25px; }
+
+.ImgBox {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+  background-color: #d8e2dc;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+
+.ImageCrop {
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  justify-content: center;
+  overflow: hidden; }
+
+.ImageSlider {
+  display: flex;
+  justify-content: center; }
+  .ImageSlider input[type='range'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+    .ImageSlider input[type='range']:focus {
+      outline: none; }
+    .ImageSlider input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none; }
+    .ImageSlider input[type='range']::-moz-range-thumb {
+      border: none; }
+  .ImageSlider input {
+    transition: none;
+    width: 280px;
+    height: 20px;
+    padding: 10px;
+    background: #d8e2dc;
+    border-radius: 10px; }
+    .ImageSlider input::-webkit-slider-runnable-track {
+      display: flex;
+      align-items: center;
+      height: 10px;
+      border-radius: 10px;
+      box-shadow: inset -2px -2px 8px white, inset 2px 2px 8px rgba(0, 0, 0, 0.5); }
+    .ImageSlider input::-webkit-slider-thumb {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      background-color: #d8e2dc;
+      border-radius: 50%;
+      box-shadow: -1px -1px 2px white, 1px 1px 2px rgba(0, 0, 0, 0.4); }
+      @media screen and (min-width: 530px) {
+        .ImageSlider input::-webkit-slider-thumb {
+          top: -50%; } }
+      @media screen and (max-width: 530px) {
+        .ImageSlider input::-webkit-slider-thumb {
+          width: 22px;
+          height: 22px; } }
+    .ImageSlider input::-moz-range-track {
+      display: flex;
+      align-items: center;
+      height: 10px;
+      border-radius: 10px;
+      box-shadow: inset -2px -2px 8px white, inset 2px 2px 8px rgba(0, 0, 0, 0.5); }
+    .ImageSlider input::-moz-range-thumb {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      background-color: #d8e2dc;
+      border-radius: 50%;
+      box-shadow: -1px -1px 2px white, 1px 1px 2px rgba(0, 0, 0, 0.4); }
+      @media screen and (min-width: 530px) {
+        .ImageSlider input::-moz-range-thumb {
+          top: -50%; } }
+      @media screen and (max-width: 530px) {
+        .ImageSlider input::-moz-range-thumb {
+          width: 22px;
+          height: 22px; } }
+
+.Editor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; }
+
+.CkEditor {
+  font-family: "Lora", serif;
+  width: 100%;
+  margin-top: -10px; }
+  .CkEditor .CkEditorHeader {
+    display: flex;
+    flex-direction: row; }
+    .CkEditor .CkEditorHeader div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px; }
+    .CkEditor .CkEditorHeader div:nth-child(2) {
+      margin-left: auto; }
+
+.ArticleImagePreview {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  min-height: 400px;
+  width: 100%;
+  background-color: #273a40;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8); }
+
+.ArticleImagePreviewBox {
+  margin-bottom: auto;
+  overflow: hidden;
+  border: 2px dashed white;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; }
+  .ArticleImagePreviewBox div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center; }
+    .ArticleImagePreviewBox div label {
+      height: 100%;
+      max-height: 45px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      justify-content: center;
+      background: white;
+      border: none;
+      outline: none;
+      font-family: "Patua One", serif;
+      border-radius: 4px;
+      transition-duration: 0.30s;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+      color: black;
+      font-size: 17px;
+      padding: 10px 25px; }
+      .ArticleImagePreviewBox div label:focus {
+        outline: none; }
+      .ArticleImagePreviewBox div label:hover {
+        cursor: pointer;
+        background: #f2f2f2;
+        -webkit-transition-duration: 0.30s;
+        /* Safari */
+        transition-duration: 0.30s; }
+      .ArticleImagePreviewBox div label:active {
+        background: #e6e6e6; }
+      .ArticleImagePreviewBox div label input {
+        display: none; }
+  .ArticleImagePreviewBox img {
+    border-radius: 2px;
+    width: 100%;
+    object-fit: contain; }
+
+.PreviewBoxDummy {
+  width: 900px;
+  height: 50px; }
+  @media screen and (max-width: 967px) {
+    .PreviewBoxDummy {
+      width: 800px;
+      height: 40px; } }
+  @media screen and (max-width: 877px) {
+    .PreviewBoxDummy {
+      width: 700px;
+      height: 30px; } }
+  @media screen and (max-width: 767px) {
+    .PreviewBoxDummy {
+      width: 600px;
+      height: 20px; } }
+  @media screen and (max-width: 667px) {
+    .PreviewBoxDummy {
+      width: 500px;
+      height: 10px; } }
+
+.ArticleImagePreviewButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-bottom: auto; }
+  .ArticleImagePreviewButtons button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: red;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 1.5px;
+    transition-duration: 0.30s;
+    color: white;
+    padding: 10px 25px; }
+    .ArticleImagePreviewButtons button:focus {
+      outline: none; }
+    .ArticleImagePreviewButtons button:hover {
+      cursor: pointer;
+      background: #e60000;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .ArticleImagePreviewButtons button:active {
+      background: #cc0000; }
+
+.ArticleImagesBox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; }
+  @media screen and (max-width: 840px) {
+    .ArticleImagesBox {
+      flex-direction: column;
+      align-items: center; } }
+
+.EditorBody {
+  margin-top: -9px; }
+
+.EditorHeader {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 3px;
+  height: 52px;
+  background-color: #354f52;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8); }
+
+.EditorHeaderName {
+  color: white;
+  font-size: 20px; }
+  .EditorHeaderName span:nth-child(1) {
+    font-size: 28px; }
+  .EditorHeaderName span:nth-child(2) {
+    font-size: 11.5px;
+    color: #adb5bd; }
+
+.ArticleHeaderNameColor {
+  display: flex;
+  flex-direction: row;
+  height: 39px;
+  padding: 10px;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+  .ArticleHeaderNameColor span {
+    font-size: 18.5px; }
+
+.EditorHeaderButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  gap: 10px; }
+  .EditorHeaderButtons img {
+    width: 35px;
+    border-radius: 50%; }
+  .EditorHeaderButtons button:nth-child(1) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #212529;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 3px;
+    transition-duration: 0.30s;
+    color: white;
+    font-size: 17px;
+    font-family: "Frank Ruhl Libre", serif;
+    padding: 7px 30px; }
+    .EditorHeaderButtons button:nth-child(1):focus {
+      outline: none; }
+    .EditorHeaderButtons button:nth-child(1):hover {
+      cursor: pointer;
+      background: #16181b;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .EditorHeaderButtons button:nth-child(1):active {
+      background: #0a0c0d; }
+  .EditorHeaderButtons button:nth-child(2) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s; }
+    .EditorHeaderButtons button:nth-child(2):focus {
+      outline: none; }
+    .EditorHeaderButtons button:nth-child(2):hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .EditorHeaderButtons button:nth-child(2):active {
+      background: rgba(0, 0, 0, 0); }
+
+.ArticleHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; }
+
+.EditorHeaderNavbar {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  margin-left: auto; }
+
+.HomeStudioButton {
+  display: flex; }
+  .HomeStudioButton button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #52796f;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 5px;
+    transition-duration: 0.30s;
+    color: white;
+    padding: 6px 15px;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    font-size: 15px; }
+    .HomeStudioButton button:focus {
+      outline: none; }
+    .HomeStudioButton button:hover {
+      cursor: pointer;
+      background: #486a61;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .HomeStudioButton button:active {
+      background: #3d5b53; }
+
+.ArticleName {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; }
+  .ArticleName input {
+    width: 100%;
+    border: 1px solid lightgrey;
+    outline: none;
+    padding-left: 9px;
+    border-radius: 2px;
+    transition-duration: 0.30s;
+    font-size: 15.5px;
+    font-family: "Patua One", serif;
+    font-size: 17px;
+    color: #343a40;
+    height: 45px; }
+    .ArticleName input:focus {
+      border-color: black; }
+    .ArticleName input::-ms-reveal, .ArticleName input::-ms-clear {
+      display: none; }
+    .ArticleName input::placeholder {
+      color: #6c757d;
+      opacity: 1;
+      /* Firefox */ }
+    .ArticleName input :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #6c757d; }
+    .ArticleName input ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #6c757d; }
+  .ArticleName .ArticleNameLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px; }
+
+.ArticlePublishButton {
+  width: 100%; }
+  .ArticlePublishButton button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #4c5c68;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 2px;
+    transition-duration: 0.30s;
+    color: white;
+    width: 100%;
+    font-size: 19px;
+    padding: 10px; }
+    .ArticlePublishButton button:focus {
+      outline: none; }
+    .ArticlePublishButton button:hover {
+      cursor: pointer;
+      background: #39454d;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .ArticlePublishButton button:active {
+      background: #2c353c; }
+
+.EditorSubmitOverlay {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .EditorSubmitOverlay span {
+    color: white;
+    font-size: 40px; }
+
+.Cropper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #002329;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 650px; }
+  .Cropper div {
+    border-radius: 5px; }
+    .Cropper div img {
+      max-height: 500px; }
+
+.CropperButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%; }
+  .CropperButtons button:nth-child(1) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #354f52;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 4px;
+    transition-duration: 0.30s;
+    padding: 10px; }
+    .CropperButtons button:nth-child(1):focus {
+      outline: none; }
+    .CropperButtons button:nth-child(1):hover {
+      cursor: pointer;
+      background: #293d3f;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .CropperButtons button:nth-child(1):active {
+      background: #1d2b2d; }
+  .CropperButtons button:nth-child(2) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #9b2226;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 4px;
+    transition-duration: 0.30s;
+    padding: 10px; }
+    .CropperButtons button:nth-child(2):focus {
+      outline: none; }
+    .CropperButtons button:nth-child(2):hover {
+      cursor: pointer;
+      background: #821c20;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .CropperButtons button:nth-child(2):active {
+      background: #69171a; }
+  .CropperButtons button {
+    color: white;
+    font-size: 19px; }
+
+.CreateArticle {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #273A40;
+  height: 200px;
+  width: 450px;
+  border-radius: 8px;
+  padding: 0 8px 8px 8px; }
+  .CreateArticle .CreateArticleCloseButton {
+    margin-left: auto;
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 2px;
+    transition-duration: 0.30s;
+    color: white;
+    padding: 0;
+    width: 40px; }
+    .CreateArticle .CreateArticleCloseButton:focus {
+      outline: none; }
+    .CreateArticle .CreateArticleCloseButton:hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .CreateArticle .CreateArticleCloseButton:active {
+      background: rgba(0, 0, 0, 0); }
+  .CreateArticle .CreateArticleBoxOne {
+    width: 50%;
+    margin: -40px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Lora", serif;
+    color: white; }
+  .CreateArticle .CreateArticleBoxTwo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center; }
+  .CreateArticle .CreateArticleCreateButton {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #52796f;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    color: white;
+    height: 40px; }
+    .CreateArticle .CreateArticleCreateButton:focus {
+      outline: none; }
+    .CreateArticle .CreateArticleCreateButton:hover {
+      cursor: pointer;
+      background: #46675e;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .CreateArticle .CreateArticleCreateButton:active {
+      background: #39554e; }
+    .CreateArticle .CreateArticleCreateButton:disabled, .CreateArticle .CreateArticleCreateButton[disabled] {
+      background-color: #354f52;
+      color: #666666;
+      cursor: auto; }
+
+.CreateFail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 16px;
+  background: darkgoldenrod;
+  padding: 5px; }
+
+.PublishNotice {
+  background-color: #cad2c5;
+  padding: 0 10px 0 10px;
+  border-radius: 2px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; }
+  .PublishNotice div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px; }
+  .PublishNotice p {
+    font-size: 17px;
+    margin-top: -10px; }
+
+.EditorPageBox {
+  border: 2px solid lightslategrey;
+  border-radius: 2px;
+  height: 430px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center; }
+  .EditorPageBox img {
+    display: flex;
+    object-fit: contain;
+    height: 240px;
+    width: 220px;
+    margin-bottom: auto; }
+  .EditorPageBox .ContextPageBox {
+    display: flex;
+    overflow: hidden;
+    margin-top: auto;
+    width: 100%;
+    flex-direction: column; }
+    .EditorPageBox .ContextPageBox span:nth-child(1) {
+      font-size: 25px; }
+    .EditorPageBox .ContextPageBox span:nth-child(2) {
+      display: block;
+      font-size: 18px;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical; }
+  .EditorPageBox .ClearPageBox {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: red;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 2px;
+    transition-duration: 0.30s;
+    color: white;
+    height: 35px;
+    width: 190px; }
+    .EditorPageBox .ClearPageBox:focus {
+      outline: none; }
+    .EditorPageBox .ClearPageBox:hover {
+      cursor: pointer;
+      background: #e60000;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .EditorPageBox .ClearPageBox:active {
+      background: #cc0000; }
+  .EditorPageBox .CreatePageBox {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #005f73;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 2px;
+    transition-duration: 0.30s;
+    color: white;
+    height: 35px;
+    width: 190px;
+    gap: 10px; }
+    .EditorPageBox .CreatePageBox:focus {
+      outline: none; }
+    .EditorPageBox .CreatePageBox:hover {
+      cursor: pointer;
+      background: #004a5a;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .EditorPageBox .CreatePageBox:active {
+      background: #003540; }
+
+.EditorPageHeaderOne {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(259px, max-content));
+  justify-content: center;
+  gap: 14px; }
+
+.PageBoxSelect {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  width: 420px;
+  background-color: #fefae0;
+  height: 210px; }
+
+.PageBoxSelectOption {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; }
+
+.PageBoxSelectSearch button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #84a98c;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 2px;
+  transition-duration: 0.30s;
+  color: white;
+  padding: 8px 20px;
+  font-size: 14px;
+  gap: 5px; }
+  .PageBoxSelectSearch button:focus {
+    outline: none; }
+  .PageBoxSelectSearch button:hover {
+    cursor: pointer;
+    background: #759f7e;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .PageBoxSelectSearch button:active {
+    background: #679370; }
+
+.PageBoxSelectClose {
+  display: flex;
+  margin-left: auto;
+  margin-right: 10px; }
+  .PageBoxSelectClose button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s; }
+    .PageBoxSelectClose button:focus {
+      outline: none; }
+    .PageBoxSelectClose button:hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .PageBoxSelectClose button:active {
+      background: rgba(0, 0, 0, 0); }
+
+.ChartBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: lightgoldenrodyellow;
+  border-radius: 8px;
+  padding: 15px;
+  color: black;
+  max-width: 570px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; }
+
+.ChartBoxTitle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px; }
+  .ChartBoxTitle span {
+    font-size: 28px; }
+
+.ChartBoxNotice {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+  .ChartBoxNotice span {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center; }
+    .ChartBoxNotice span svg {
+      fill: #403d39;
+      color: #403d39; }
+
+.ChartBoxInfo {
+  display: flex;
+  flex-direction: row; }
+
+.ChartBoxInfoOne {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-left: 30px; }
+  .ChartBoxInfoOne div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; }
+    .ChartBoxInfoOne div span {
+      display: flex;
+      align-items: center;
+      gap: 10px; }
+      .ChartBoxInfoOne div span svg {
+        fill: #403d39;
+        color: #403d39; }
+    .ChartBoxInfoOne div svg {
+      margin-left: auto; }
+
+.ChartBoxInfoTwo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: auto;
+  margin-right: 10px; }
+  .ChartBoxInfoTwo div {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 255px;
+    display: block;
+    overflow: hidden;
+    color: #242423; }
+    .ChartBoxInfoTwo div span {
+      color: #403d39; }
+
+.ChartBoxButton {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px; }
+  .ChartBoxButton button:nth-child(1) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: white;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 1px;
+    transition-duration: 0.30s; }
+    .ChartBoxButton button:nth-child(1):focus {
+      outline: none; }
+    .ChartBoxButton button:nth-child(1):hover {
+      cursor: pointer;
+      background: #f2f2f2;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .ChartBoxButton button:nth-child(1):active {
+      background: #e8e8e8; }
+  .ChartBoxButton button:nth-child(2) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #84a98c;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 1px;
+    transition-duration: 0.30s;
+    gap: 5px;
+    color: white;
+    margin-left: auto; }
+    .ChartBoxButton button:nth-child(2):focus {
+      outline: none; }
+    .ChartBoxButton button:nth-child(2):hover {
+      cursor: pointer;
+      background: #759f7e;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .ChartBoxButton button:nth-child(2):active {
+      background: #699673; }
+  .ChartBoxButton button {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+    border-radius: 6px !important;
+    padding: 8px 25px !important;
+    font-size: 15.8px; }
+
+.ChartBoxClose {
+  margin-bottom: -20px; }
+  .ChartBoxClose button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    margin-left: auto;
+    padding: 10px; }
+    .ChartBoxClose button:focus {
+      outline: none; }
+    .ChartBoxClose button:hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .ChartBoxClose button:active {
+      background: rgba(0, 0, 0, 0); }
+
+/*# sourceMappingURL=Studio.module.css.map */

@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap");
+input, textarea, select {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+.Footer {
+  bottom: 0;
+  height: 20%;
+  padding: 1rem;
+  background-color: #faedcd;
+  text-align: center;
+  color: black;
+  border-radius: 4px;
+  box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.11);
+  margin-top: 20px; }
+
+.FooterSectionA {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  margin-left: -10px; }
+  .FooterSectionA ul {
+    padding: 5px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; }
+    .FooterSectionA ul h3 {
+      font-family: "Lora", serif; }
+    .FooterSectionA ul li {
+      margin-right: auto; }
+
+.FooterSectionB {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; }
+
+.FooterIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center; }
+  .FooterIcons svg {
+    cursor: pointer; }
+    .FooterIcons svg :hover {
+      fill: #002329; }
+
+/*# sourceMappingURL=Footer.module.css.map */

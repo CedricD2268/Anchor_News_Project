@@ -1,0 +1,32 @@
+@import '../Variable';
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+////BASE////
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.body_main_news {
+  margin-top: 0;
+  font-family: "Patua One", serif;
+  font-size: 15px;
+  color: $color_uni_eight;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+////BASE-CLOSE////
+//////
+/////

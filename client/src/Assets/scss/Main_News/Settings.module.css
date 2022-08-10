@@ -1,0 +1,1310 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap");
+input, textarea, select {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+.Heading {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  background-color: #f1faee;
+  height: 50px;
+  border-radius: 4px;
+  margin-bottom: 7px; }
+
+.SettingPage {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  width: 100%; }
+  @media screen and (min-width: 790px) {
+    .SettingPage {
+      flex-direction: row; } }
+  @media screen and (max-width: 790px) {
+    .SettingPage {
+      flex-direction: column; } }
+  .SettingPage span {
+    pointer-events: none; }
+  .SettingPage svg {
+    pointer-events: none; }
+  .SettingPage a {
+    text-decoration: none; }
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-family: "Lora", serif; }
+  @media screen and (min-width: 1000px) {
+    .Header {
+      font-size: 37px;
+      margin: 5px 0 10px 0; }
+      .Header img {
+        width: 60px; } }
+  @media screen and (max-width: 1000px) {
+    .Header {
+      font-size: 30px;
+      margin: 5px 0 5px 0; }
+      .Header img {
+        width: 50px; } }
+
+@media screen and (min-width: 790px) {
+  .Sidebar {
+    display: flex;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    flex-direction: column;
+    border-radius: 8px;
+    margin-bottom: 9px;
+    gap: 15px;
+    background-color: #273A40;
+    width: 100%;
+    max-width: 240px;
+    padding: 10px; }
+    .Sidebar hr {
+      display: none; }
+    .Sidebar button {
+      height: 100%;
+      max-height: 45px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      justify-content: center;
+      background: #faedcd;
+      border: none;
+      outline: none;
+      font-family: "Patua One", serif;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      color: black;
+      padding: 10px 15px;
+      width: 100%;
+      height: 43px;
+      font-size: 17px; }
+      .Sidebar button:focus {
+        outline: none; }
+      .Sidebar button:hover {
+        cursor: pointer;
+        background: #f5dc9f;
+        -webkit-transition-duration: 0.30s;
+        /* Safari */
+        transition-duration: 0.30s; }
+      .Sidebar button:active {
+        background: #f3d487; }
+      .Sidebar button svg:nth-child(1) {
+        margin-right: auto;
+        height: 19.5px !important;
+        width: 19.5px !important; }
+      .Sidebar button svg:nth-child(3) {
+        margin-left: auto;
+        fill: transparent; } }
+@media screen and (max-width: 790px) {
+  .Sidebar {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 10px; }
+    .Sidebar div {
+      width: 100%;
+      max-width: 200px; }
+      .Sidebar div hr {
+        display: none; }
+    .Sidebar svg {
+      fill: white;
+      height: 18px !important;
+      width: 18px !important;
+      margin-right: auto; }
+    .Sidebar svg:nth-child(3) {
+      visibility: hidden; }
+    .Sidebar button {
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+      font-family: "Patua One", serif;
+      height: 100%;
+      max-height: 45px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      justify-content: center;
+      background: #273A40;
+      border: none;
+      outline: none;
+      font-family: "Patua One", serif;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      font-size: 15.5px;
+      color: white;
+      padding: 10px 15px;
+      width: 100%;
+      max-width: 200px;
+      height: 38px; }
+      .Sidebar button:focus {
+        outline: none; }
+      .Sidebar button:hover {
+        cursor: pointer;
+        background: #141d20;
+        -webkit-transition-duration: 0.30s;
+        /* Safari */
+        transition-duration: 0.30s; }
+      .Sidebar button:active {
+        background: #0a0f10; } }
+@media screen and (max-width: 790px) {
+  .ToggleSidebarButton button {
+    background-color: #a3b19a !important; }
+  .ToggleSidebarButton hr {
+    display: block !important;
+    border: none;
+    height: 2.4px;
+    background-color: #cad2c5;
+    border-radius: 20px;
+    margin-bottom: -8px; } }
+@media screen and (min-width: 790px) {
+  .ToggleSidebarButton button {
+    background-color: #f3d487 !important; }
+  .ToggleSidebarButton svg {
+    fill: black !important; } }
+
+.Main {
+  display: flex;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  flex-direction: column;
+  width: 100%;
+  padding: 13px;
+  background-color: #cad2c5;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition-duration: 0.10s; }
+  .Main hr {
+    width: 100%;
+    border-radius: 5px;
+    border-color: #e8e8e4;
+    height: .5px; }
+
+.MainPortfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%; }
+
+.MainPortfolioA {
+  gap: 15px;
+  align-items: center; }
+  @media screen and (max-width: 1000px) {
+    .MainPortfolioA img {
+      border-radius: 50%;
+      width: 55px; } }
+  @media screen and (min-width: 1000px) {
+    .MainPortfolioA img {
+      border-radius: 50%;
+      width: 70px; } }
+  @media screen and (max-width: 350px) {
+    .MainPortfolioA {
+      display: flex;
+      flex-direction: column; } }
+  @media screen and (min-width: 350px) {
+    .MainPortfolioA {
+      display: flex;
+      flex-direction: row; } }
+  .MainPortfolioA .MainPortfolioAtwo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%; }
+    .MainPortfolioA .MainPortfolioAtwo button {
+      height: 100%;
+      max-height: 45px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      justify-content: center;
+      background: white;
+      border: none;
+      outline: none;
+      font-family: "Patua One", serif;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      width: 100%;
+      max-width: 180px;
+      font-size: 16px;
+      color: black;
+      min-height: 40px;
+      padding: 10px 20px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+      .MainPortfolioA .MainPortfolioAtwo button:focus {
+        outline: none; }
+      .MainPortfolioA .MainPortfolioAtwo button:hover {
+        cursor: pointer;
+        background: #f2f2f2;
+        -webkit-transition-duration: 0.30s;
+        /* Safari */
+        transition-duration: 0.30s; }
+      .MainPortfolioA .MainPortfolioAtwo button:active {
+        background: #ebebeb; }
+      @media screen and (max-width: 530px) {
+        .MainPortfolioA .MainPortfolioAtwo button span:after {
+          content: 'Remove'; } }
+      @media screen and (min-width: 530px) {
+        .MainPortfolioA .MainPortfolioAtwo button span:after {
+          content: 'Remove Avatar'; } }
+    .MainPortfolioA .MainPortfolioAtwo label {
+      height: 100%;
+      max-height: 45px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      justify-content: center;
+      background: #002329;
+      border: none;
+      outline: none;
+      font-family: "Patua One", serif;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+      color: white;
+      font-size: 16px;
+      width: 100%;
+      min-height: 40px;
+      max-width: 175px;
+      padding: 10px 20px; }
+      .MainPortfolioA .MainPortfolioAtwo label:focus {
+        outline: none; }
+      .MainPortfolioA .MainPortfolioAtwo label:hover {
+        cursor: pointer;
+        background: #000d10;
+        -webkit-transition-duration: 0.30s;
+        /* Safari */
+        transition-duration: 0.30s; }
+      .MainPortfolioA .MainPortfolioAtwo label:active {
+        background: black; }
+      .MainPortfolioA .MainPortfolioAtwo label .MainPortfolioUpload {
+        display: none; }
+      @media screen and (max-width: 530px) {
+        .MainPortfolioA .MainPortfolioAtwo label span:after {
+          content: 'Upload'; } }
+      @media screen and (min-width: 530px) {
+        .MainPortfolioA .MainPortfolioAtwo label span:after {
+          content: 'Upload Avatar'; } }
+
+.toggleWrapper {
+  display: flex;
+  justify-content: right; }
+  @media screen and (max-width: 530px) {
+    .toggleWrapper {
+      margin-right: auto; } }
+  @media screen and (min-width: 530px) {
+    .toggleWrapper {
+      margin-left: auto; } }
+
+.toggle {
+  cursor: pointer;
+  align-items: center;
+  border-radius: 100px;
+  display: flex;
+  font-weight: 700;
+  margin-bottom: 16px; }
+  .toggle:last-of-type {
+    margin: 0; }
+
+.toggleInput {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  box-shadow: 0px 0px 0px 1.5px #354f52; }
+  .toggleInput:disabled + .toggleTrack {
+    cursor: not-allowed;
+    opacity: 0.7; }
+
+.toggleTrack {
+  background: #cad2c5;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  height: 33px !important;
+  margin-right: 12px !important;
+  position: relative;
+  width: 62.5px !important;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+  border: 2px solid #354f52; }
+
+.toggleIndicator {
+  align-items: center;
+  background: #354f52;
+  border-radius: 25px !important;
+  bottom: 2px;
+  display: flex;
+  height: 25px !important;
+  justify-content: center;
+  left: 2px;
+  position: absolute;
+  transition: transform 0.3s;
+  width: 25px !important; }
+
+.checkMark {
+  fill: #fff;
+  height: 21px !important;
+  width: 21px !important;
+  opacity: 0;
+  transition: opacity transform 0.3s ease-in-out !important; }
+
+.toggleInput:checked + .toggleTrack .toggleIndicator {
+  background: #354f52;
+  transform: translateX(29.5px) !important; }
+  .toggleInput:checked + .toggleTrack .toggleIndicator .checkMark {
+    opacity: 1;
+    transition: opacity transform 0.3s ease-in-out !important; }
+
+@media screen and (-ms-high-contrast: active) {
+  .toggleTrack {
+    border-radius: 0; } }
+.MainPortfolioB {
+  display: flex;
+  flex-direction: column; }
+
+.MainPortfolioBOne {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 10px; }
+  @media screen and (max-width: 530px) {
+    .MainPortfolioBOne {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); } }
+  .MainPortfolioBOne .MainPortfolioBOneA {
+    width: 100%;
+    max-width: 450px;
+    gap: 5px; }
+    .MainPortfolioBOne .MainPortfolioBOneA label {
+      font-size: 17px; }
+    .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput {
+      display: flex;
+      flex-direction: row;
+      border-radius: 3px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; }
+      .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput input {
+        width: 100%;
+        border: 1px solid lightgrey;
+        outline: none;
+        padding-left: 9px;
+        border-radius: 6px 0 0 6px;
+        transition-duration: 0.30s;
+        font-size: 15.5px;
+        font-family: "Patua One", serif;
+        height: 38px;
+        font-family: "Patua One", serif;
+        font-size: 16px;
+        border-right: none; }
+        .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput input:focus {
+          border-color: #001219; }
+        .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput input::-ms-reveal, .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput input::-ms-clear {
+          display: none; }
+        .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput input:focus {
+          border-color: darkgrey; }
+      .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput button {
+        margin-left: -1px;
+        height: 100%;
+        max-height: 45px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        justify-content: center;
+        background: white;
+        border: none;
+        outline: none;
+        font-family: "Patua One", serif;
+        border-radius: 0 6px 6px 0;
+        transition-duration: 0.30s;
+        color: white;
+        height: 38px;
+        padding: 5px;
+        border: 1px solid lightgrey;
+        border-left: none; }
+        .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput button:focus {
+          outline: none; }
+        .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput button:hover {
+          cursor: pointer;
+          background: #f2f2f2;
+          -webkit-transition-duration: 0.30s;
+          /* Safari */
+          transition-duration: 0.30s; }
+        .MainPortfolioBOne .MainPortfolioBOneA .MainPortfolioBOneAInput button:active {
+          background: #e6e6e6; }
+    .MainPortfolioBOne .MainPortfolioBOneA input:disabled {
+      width: 100%;
+      border: 1px solid lightgrey;
+      outline: none;
+      padding-left: 9px;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      font-size: 15.5px;
+      font-family: "Patua One", serif;
+      min-height: 37px !important;
+      -webkit-text-fill-color: #002329;
+      opacity: 0.9;
+      /* required on iOS */ }
+      .MainPortfolioBOne .MainPortfolioBOneA input:disabled:focus {
+        border-color: transparent; }
+      .MainPortfolioBOne .MainPortfolioBOneA input:disabled::-ms-reveal, .MainPortfolioBOne .MainPortfolioBOneA input:disabled::-ms-clear {
+        display: none; }
+
+.HeaderFlex {
+  height: 50px;
+  font-family: "Lora", serif;
+  padding-left: 10px;
+  background-color: #84a98c;
+  display: flex;
+  border-radius: 4px;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px; }
+  .HeaderFlex img {
+    width: 30px;
+    height: 30px; }
+
+.MainPortfolioC {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+  @media screen and (max-width: 530px) {
+    .MainPortfolioC div:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; } }
+  @media screen and (min-width: 530px) {
+    .MainPortfolioC div:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+      gap: 10px; }
+      .MainPortfolioC div:nth-child(2) button {
+        margin-left: auto; } }
+  .MainPortfolioC div:nth-child(2) span {
+    width: 100%;
+    max-width: 450px; }
+  .MainPortfolioC div:nth-child(2) button {
+    height: 40px;
+    font-size: 16px;
+    padding: 5px 20px;
+    width: 100%;
+    max-width: 200px; }
+
+.MainPortfolioCButtonOne {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #354f52;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+  .MainPortfolioCButtonOne:focus {
+    outline: none; }
+  .MainPortfolioCButtonOne:hover {
+    cursor: pointer;
+    background: #2b4043;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .MainPortfolioCButtonOne:active {
+    background: #213133; }
+
+.MainPortfolioCButtonTwo {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #273A40;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+  .MainPortfolioCButtonTwo:focus {
+    outline: none; }
+  .MainPortfolioCButtonTwo:hover {
+    cursor: pointer;
+    background: #1d2c30;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .MainPortfolioCButtonTwo:active {
+    background: #19262a; }
+
+.MainPortfolioCButtonThree {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #52796f;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  color: lightgray; }
+  .MainPortfolioCButtonThree:focus {
+    outline: none; }
+  .MainPortfolioCButtonThree:hover {
+    cursor: pointer;
+    background: #52796f;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .MainPortfolioCButtonThree:active {
+    background: #52796f; }
+  .MainPortfolioCButtonThree svg {
+    fill: lightgray; }
+  .MainPortfolioCButtonThree:hover {
+    cursor: default; }
+
+.MainPortfolioCTwo {
+  padding: 0; }
+
+.MainPortfolioCThree button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #faedcd;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  color: red;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+  .MainPortfolioCThree button:focus {
+    outline: none; }
+  .MainPortfolioCThree button:hover {
+    cursor: pointer;
+    background: #f8e5b6;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .MainPortfolioCThree button:active {
+    background: #f5dc9f; }
+
+.MainPortfolioF {
+  display: flex;
+  justify-content: center; }
+  .MainPortfolioF button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #023047;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    color: white;
+    font-size: 17px;
+    width: 100%;
+    max-width: 320px;
+    min-height: 45px;
+    padding: 15px 35px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+    .MainPortfolioF button:focus {
+      outline: none; }
+    .MainPortfolioF button:hover {
+      cursor: pointer;
+      background: #011f2e;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .MainPortfolioF button:active {
+      background: #010e15; }
+
+.CroppierOverlay {
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  width: 100%;
+  margin-left: -10px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); }
+  .CroppierOverlay .slick-list, .CroppierOverlay .slick-track {
+    touch-action: pan-y; }
+
+.Croppier {
+  width: 100%;
+  max-width: 290px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+  background-color: #d8e2dc;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+
+.ImageCrop {
+  margin: 0 auto;
+  display: flex;
+  width: 250px;
+  border-radius: 50px;
+  overflow: hidden; }
+
+.ImageSlider {
+  display: flex;
+  justify-content: center; }
+  .ImageSlider input[type='range'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+    .ImageSlider input[type='range']:focus {
+      outline: none; }
+    .ImageSlider input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none; }
+    .ImageSlider input[type='range']::-moz-range-thumb {
+      border: none; }
+  .ImageSlider input {
+    transition: none;
+    width: 280px;
+    height: 20px;
+    padding: 10px;
+    background: #d8e2dc;
+    border-radius: 10px; }
+    .ImageSlider input::-webkit-slider-runnable-track {
+      display: flex;
+      align-items: center;
+      height: 10px;
+      border-radius: 10px;
+      box-shadow: inset -2px -2px 8px white, inset 2px 2px 8px rgba(0, 0, 0, 0.5); }
+    .ImageSlider input::-webkit-slider-thumb {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      background-color: #d8e2dc;
+      border-radius: 50%;
+      box-shadow: -1px -1px 2px white, 1px 1px 2px rgba(0, 0, 0, 0.4); }
+      @media screen and (min-width: 530px) {
+        .ImageSlider input::-webkit-slider-thumb {
+          top: -50%; } }
+      @media screen and (max-width: 530px) {
+        .ImageSlider input::-webkit-slider-thumb {
+          width: 22px;
+          height: 22px; } }
+    .ImageSlider input::-moz-range-track {
+      display: flex;
+      align-items: center;
+      height: 10px;
+      border-radius: 10px;
+      box-shadow: inset -2px -2px 8px white, inset 2px 2px 8px rgba(0, 0, 0, 0.5); }
+    .ImageSlider input::-moz-range-thumb {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      background-color: #d8e2dc;
+      border-radius: 50%;
+      box-shadow: -1px -1px 2px white, 1px 1px 2px rgba(0, 0, 0, 0.4); }
+      @media screen and (min-width: 530px) {
+        .ImageSlider input::-moz-range-thumb {
+          top: -50%; } }
+      @media screen and (max-width: 530px) {
+        .ImageSlider input::-moz-range-thumb {
+          width: 22px;
+          height: 22px; } }
+
+.ImageCropSave {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; }
+  .ImageCropSave button:nth-child(1) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #354f52;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    color: #DEFAFF;
+    padding: 20px 25px; }
+    .ImageCropSave button:nth-child(1):focus {
+      outline: none; }
+    .ImageCropSave button:nth-child(1):hover {
+      cursor: pointer;
+      background: #2b4043;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .ImageCropSave button:nth-child(1):active {
+      background: #213133; }
+  .ImageCropSave button:nth-child(2) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #9b2226;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    color: white;
+    padding: 20px 25px; }
+    .ImageCropSave button:nth-child(2):focus {
+      outline: none; }
+    .ImageCropSave button:nth-child(2):hover {
+      cursor: pointer;
+      background: #861d21;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .ImageCropSave button:nth-child(2):active {
+      background: #71191c; }
+  .ImageCropSave button {
+    font-size: 16.5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12); }
+
+.Password {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; }
+
+.PasswordDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; }
+  .PasswordDiv label {
+    font-size: 16px; }
+
+.PasswordInputBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px; }
+  .PasswordInputBox input {
+    width: 100%;
+    border: 1px solid lightgrey;
+    outline: none;
+    padding-left: 9px;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    font-size: 15.5px;
+    font-family: "Patua One", serif;
+    min-height: 38px;
+    max-width: 600px; }
+    .PasswordInputBox input:focus {
+      border-color: #001219; }
+    .PasswordInputBox input::-ms-reveal, .PasswordInputBox input::-ms-clear {
+      display: none; }
+    .PasswordInputBox input::-ms-reveal, .PasswordInputBox input::-ms-clear {
+      display: block; }
+  .PasswordInputBox button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: white;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    min-height: 38px;
+    border: 1px solid lightgrey;
+    width: 38px; }
+    .PasswordInputBox button:focus {
+      outline: none; }
+    .PasswordInputBox button:hover {
+      cursor: pointer;
+      background: #f2f2f2;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .PasswordInputBox button:active {
+      background: #ebebeb; }
+
+.Billing {
+  display: flex;
+  flex-direction: column; }
+  .Billing div {
+    display: flex; }
+  .Billing .BillingA {
+    flex-direction: column;
+    flex-wrap: wrap; }
+    .Billing .BillingA .BillingCurrentCard {
+      flex-direction: row;
+      align-items: center;
+      gap: 5px; }
+      .Billing .BillingA .BillingCurrentCard div:nth-child(2) {
+        flex-direction: column;
+        gap: 0; }
+        .Billing .BillingA .BillingCurrentCard div:nth-child(2) span {
+          margin-right: auto; }
+  .Billing .BillingCardInfo {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; }
+  .Billing .BillingCardName {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; }
+    .Billing .BillingCardName input {
+      width: 100%;
+      border: 1px solid lightgrey;
+      outline: none;
+      padding-left: 9px;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      font-size: 15.5px;
+      font-family: "Patua One", serif;
+      min-height: 40px;
+      max-width: 400px; }
+      .Billing .BillingCardName input:focus {
+        border-color: #001219; }
+      .Billing .BillingCardName input::-ms-reveal, .Billing .BillingCardName input::-ms-clear {
+        display: none; }
+  .Billing .BillingCardNumber {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; }
+    .Billing .BillingCardNumber input {
+      width: 100%;
+      border: 1px solid lightgrey;
+      outline: none;
+      padding-left: 9px;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      font-size: 15.5px;
+      font-family: "Patua One", serif;
+      min-height: 40px;
+      max-width: 400px; }
+      .Billing .BillingCardNumber input:focus {
+        border-color: #001219; }
+      .Billing .BillingCardNumber input::-ms-reveal, .Billing .BillingCardNumber input::-ms-clear {
+        display: none; }
+  .Billing .BillingCardSecurities {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; }
+    .Billing .BillingCardSecurities div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px; }
+      .Billing .BillingCardSecurities div input {
+        width: 100%;
+        border: 1px solid lightgrey;
+        outline: none;
+        padding-left: 9px;
+        border-radius: 6px;
+        transition-duration: 0.30s;
+        font-size: 15.5px;
+        font-family: "Patua One", serif;
+        min-height: 40px;
+        max-width: 400px; }
+        .Billing .BillingCardSecurities div input:focus {
+          border-color: #001219; }
+        .Billing .BillingCardSecurities div input::-ms-reveal, .Billing .BillingCardSecurities div input::-ms-clear {
+          display: none; }
+      .Billing .BillingCardSecurities div input {
+        max-width: 100px; }
+  .Billing .BillingCardZip {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; }
+    .Billing .BillingCardZip input {
+      width: 100%;
+      border: 1px solid lightgrey;
+      outline: none;
+      padding-left: 9px;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      font-size: 15.5px;
+      font-family: "Patua One", serif;
+      min-height: 40px;
+      max-width: 400px; }
+      .Billing .BillingCardZip input:focus {
+        border-color: #001219; }
+      .Billing .BillingCardZip input::-ms-reveal, .Billing .BillingCardZip input::-ms-clear {
+        display: none; }
+    .Billing .BillingCardZip input {
+      max-width: 100px; }
+
+.Subscription {
+  display: flex;
+  gap: 10px;
+  flex-direction: column; }
+
+@media screen and (min-width: 530px) {
+  .SubscriptionA {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; } }
+@media screen and (max-width: 530px) {
+  .SubscriptionA {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; } }
+.SubscriptionAp {
+  color: white;
+  display: flex;
+  width: 100%;
+  max-width: 295px;
+  flex-direction: column;
+  border-radius: 8px;
+  background-color: #212529;
+  padding: 10px; }
+  .SubscriptionAp div {
+    display: flex;
+    flex-direction: column; }
+    .SubscriptionAp div span {
+      margin-top: 5px; }
+  .SubscriptionAp button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #e9c46a;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    font-size: 17.5px;
+    padding: 10px 20px; }
+    .SubscriptionAp button:focus {
+      outline: none; }
+    .SubscriptionAp button:hover {
+      cursor: pointer;
+      background: #e6bb54;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SubscriptionAp button:active {
+      background: #e2b23e; }
+
+.SubscriptionApList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px 7px;
+  margin-top: -5px; }
+  .SubscriptionApList div {
+    font-size: 16px;
+    display: block;
+    align-items: center; }
+    .SubscriptionApList div span {
+      padding-left: 10px; }
+    .SubscriptionApList div svg {
+      height: 20px;
+      width: 20px; }
+
+.Customize {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; }
+
+.CustomizeA div:nth-child(1) {
+  margin-bottom: 6px; }
+
+.CustomizeAp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #52796f;
+  min-height: 86px; }
+  .CustomizeAp ul {
+    padding: 8px;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-row-gap: 4px;
+    grid-column-gap: 8px;
+    justify-content: space-evenly;
+    align-items: center; }
+  .CustomizeAp button {
+    margin: auto;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    max-width: 180px;
+    min-height: 40px;
+    color: white;
+    font-size: 15px;
+    gap: 5px; }
+    .CustomizeAp button span {
+      pointer-events: none; }
+    .CustomizeAp button svg {
+      display: none;
+      pointer-events: none; }
+
+.CustomizeApa button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #f1faee;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  color: black; }
+  .CustomizeApa button:focus {
+    outline: none; }
+  .CustomizeApa button:hover {
+    cursor: pointer;
+    background: #e4f5de;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .CustomizeApa button:active {
+    background: #d7f1ce; }
+  .CustomizeApa button:hover {
+    cursor: pointer;
+    color: white;
+    background: #273A40;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+
+.CustomizeApb button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #f1faee;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  color: black; }
+  .CustomizeApb button:focus {
+    outline: none; }
+  .CustomizeApb button:hover {
+    cursor: pointer;
+    background: #e4f5de;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .CustomizeApb button:active {
+    background: #d7f1ce; }
+  .CustomizeApb button:disabled {
+    cursor: auto;
+    color: lightgrey;
+    background: #f1faee !important; }
+
+.CustomizeApc button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #f1faee;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  color: black; }
+  .CustomizeApc button:focus {
+    outline: none; }
+  .CustomizeApc button:hover {
+    cursor: pointer;
+    background: #e4f5de;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .CustomizeApc button:active {
+    background: #d7f1ce; }
+
+.CustomizeButtonOne {
+  background-color: #273A40 !important;
+  color: white !important; }
+
+.CustomizeButtonTwo {
+  color: white !important;
+  background-color: #273A40 !important; }
+  .CustomizeButtonTwo svg {
+    display: block !important; }
+
+.CustomizeWeather {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+
+.CustomizeWeatherForm {
+  display: flex;
+  flex-direction: row;
+  gap: 15px; }
+  .CustomizeWeatherForm input {
+    font-family: "Patua One", serif; }
+
+.CustomizeWeatherBoxInput {
+  width: 100%; }
+  .CustomizeWeatherBoxInput input {
+    width: 100%;
+    border: 1px solid lightgrey;
+    outline: none;
+    padding-left: 9px;
+    border-radius: 6px;
+    transition-duration: 0.30s;
+    font-size: 15.5px;
+    font-family: "Patua One", serif;
+    width: 100%;
+    max-width: 300px;
+    height: 37px; }
+    .CustomizeWeatherBoxInput input:focus {
+      border-color: #273A40; }
+    .CustomizeWeatherBoxInput input::-ms-reveal, .CustomizeWeatherBoxInput input::-ms-clear {
+      display: none; }
+
+.CustomizeWeatherBoxSaveButton button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: white;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 6px;
+  transition-duration: 0.30s;
+  height: 37px;
+  gap: 5px;
+  padding: 10px 25px; }
+  .CustomizeWeatherBoxSaveButton button:focus {
+    outline: none; }
+  .CustomizeWeatherBoxSaveButton button:hover {
+    cursor: pointer;
+    background: #f2f2f2;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .CustomizeWeatherBoxSaveButton button:active {
+    background: #e6e6e6; }
+
+.RemovePopUpOverlay {
+  position: fixed;
+  display: none;
+  z-index: 1;
+  width: 100%;
+  margin-left: -10px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.RemovePopUp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #84a98c;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: -100px;
+  padding: 10px; }
+  .RemovePopUp div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; }
+  .RemovePopUp div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px; }
+    .RemovePopUp div:nth-child(2) button {
+      font-size: 15px; }
+    .RemovePopUp div:nth-child(2) button:nth-child(1) {
+      height: 100%;
+      max-height: 45px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      justify-content: center;
+      background: #9b2226;
+      border: none;
+      outline: none;
+      font-family: "Patua One", serif;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      padding: 10px 15px;
+      color: white; }
+      .RemovePopUp div:nth-child(2) button:nth-child(1):focus {
+        outline: none; }
+      .RemovePopUp div:nth-child(2) button:nth-child(1):hover {
+        cursor: pointer;
+        background: #861d21;
+        -webkit-transition-duration: 0.30s;
+        /* Safari */
+        transition-duration: 0.30s; }
+      .RemovePopUp div:nth-child(2) button:nth-child(1):active {
+        background: #69171a; }
+    .RemovePopUp div:nth-child(2) button:nth-child(2) {
+      height: 100%;
+      max-height: 45px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      justify-content: center;
+      background: #273A40;
+      border: none;
+      outline: none;
+      font-family: "Patua One", serif;
+      border-radius: 6px;
+      transition-duration: 0.30s;
+      padding: 10px 15px;
+      color: white; }
+      .RemovePopUp div:nth-child(2) button:nth-child(2):focus {
+        outline: none; }
+      .RemovePopUp div:nth-child(2) button:nth-child(2):hover {
+        cursor: pointer;
+        background: #1d2c30;
+        -webkit-transition-duration: 0.30s;
+        /* Safari */
+        transition-duration: 0.30s; }
+      .RemovePopUp div:nth-child(2) button:nth-child(2):active {
+        background: #10181a; }
+
+/*# sourceMappingURL=Settings.module.css.map */

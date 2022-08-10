@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap");
+input, textarea, select {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+.HideEvent {
+  visibility: hidden; }
+
+.NothingBurger {
+  height: auto; }
+
+.PopUpOverlay {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  margin-left: -10px;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: zoom-out .25s; }
+@keyframes zoom-out {
+  0% {
+    transform: scale(0.7, 0.7); }
+  100% {
+    transform: scale(1, 1); } }
+.PopUpOverlayTwo {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  padding: 10px;
+  margin-left: -8px;
+  margin-top: 1px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: zoom-out .15s; }
+@keyframes zoom-out {
+  0% {
+    transform: scale(0.7, 0.7); }
+  100% {
+    transform: scale(1, 1); } }
+.ErrorDiv {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  background-color: #f0ead2;
+  border-radius: 2px; }
+  .ErrorDiv span {
+    font-size: 15px !important; }
+
+.DropdownButton {
+  display: flex;
+  flex-direction: column;
+  width: 140px; }
+  .DropdownButton button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: red;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    height: 38px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-family: "Patua One", serif;
+    width: 100%; }
+    .DropdownButton button:focus {
+      outline: none; }
+    .DropdownButton button:hover {
+      cursor: pointer;
+      background: #e60000;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .DropdownButton button:active {
+      background: #cc0000; }
+
+.DropListDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 5px;
+  width: 100%;
+  align-items: center !important; }
+
+.Skeleton {
+  background-color: #ddd;
+  margin: 10px 0;
+  border-radius: 4px; }
+
+@keyframes loading {
+  0% {
+    transform: translateX(-120%); }
+  50% {
+    transform: translateX(-60%); }
+  100% {
+    transform: translateX(120%); } }
+.SkeletonShimmerWrapper {
+  width: 100%;
+  height: 100%;
+  animation: loading .7s infinite; }
+
+.SkeletonShimmer {
+  width: 60%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.17); }
+
+.LoadingSpinner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; }
+  .LoadingSpinner svg {
+    margin-top: 150px !important; }
+
+.LoadingSpinnerTwo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .LoadingSpinnerTwo svg {
+    margin-top: 250px !important; }
+
+.loadSpinnerPage {
+  height: 100%;
+  position: absolute; }
+
+/*# sourceMappingURL=VariableTwo.module.css.map */
