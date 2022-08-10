@@ -2,8 +2,6 @@ import React from 'react';
 import HeaderStyle from '../../../Assets/scss/Main_News/Header.module.css';
 import '../../../Assets/scss/Main_News/Sidebar.module.css';
 import {GiHamburgerMenu} from "react-icons/gi";
-import WebsiteLogoOne from "../../../Assets/Images/website_logo_images/website_logo_1_2.png"
-import WebsiteLogoTwo from "../../../Assets/Images/website_logo_images/website_logo_2_1.png"
 import HeaderForm from "./Header_Form";
 import HeaderWeather from "./Header_Weather";
 import HeaderPromo from "./Header_Promo";

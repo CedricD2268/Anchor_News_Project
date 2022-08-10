@@ -1,7 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import StudioStyle from "../../Assets/scss/Main_News/Studio.module.css"
 import VariableStyle from '../../Assets/scss/VariableTwo.module.css'
-import Logo from '../../Assets/Images/website_logo_images/website_logo_3_4.png'
 import { RiDraftFill,  RiHome3Fill} from "react-icons/ri";
 import {BiSearchAlt2} from "react-icons/bi";
 import {CgClose} from "react-icons/cg";

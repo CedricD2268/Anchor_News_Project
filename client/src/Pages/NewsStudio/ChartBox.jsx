@@ -9,8 +9,6 @@ import {
     MdDeleteForever,
     MdInsertComment,
 } from "react-icons/all";
-import {AiFillAudio} from "react-icons/ai";
-import ViewIcon from "../../Components/Icon/ViewIcon";
 import {
   AreaChart,
   Area,

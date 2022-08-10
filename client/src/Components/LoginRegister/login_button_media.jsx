@@ -1,5 +1,4 @@
 import React from 'react';
-import google_login from "../../Assets/Icons/SocialMedia/google_2.png";
 import LoginRegisterStyle from '../../Assets/scss/Login_Register/login_register.module.css'
 import GoogleLogin from 'react-google-login';
 import { useDispatch} from 'react-redux';

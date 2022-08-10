@@ -1,7 +1,6 @@
 import React from 'react';
 import SettingStyle from '../../../Assets/scss/Main_News/Settings.module.css'
 import StarIcon from "../../../Components/Icon/StarIcon";
-import PremiumIcon from '../../../Assets/Icons/SocialMedia/best-seller.png'
 import {FaCheck} from "react-icons/all";
 import PlansIcon from "../../../Components/Icon/PlansIcon";
 

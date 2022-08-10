@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import SettingStyle from '../../../Assets/scss/Main_News/Settings.module.css';
-import SecurityIcon from '../../../Assets/Icons/SocialMedia/security-system.png'
 import * as Yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {useForm} from "react-hook-form";
