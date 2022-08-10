@@ -1,0 +1,826 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap");
+input, textarea, select {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+.SideMenu {
+  position: fixed;
+  z-index: 3;
+  left: auto;
+  display: flex;
+  flex-direction: row;
+  margin-left: -10px;
+  width: auto; }
+  @media screen and (max-width: 1697px) {
+    .SideMenu .Overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100000vh; } }
+
+.SearchButton {
+  display: none; }
+  @media screen and (max-width: 1000px) {
+    .SearchButton {
+      display: block; } }
+
+.SideMenuContent {
+  margin-left: -240px;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  border-right-style: solid; }
+  .SideMenuContent ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+  .SideMenuContent li button {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    height: 45px;
+    padding: 3px 2px 3px 11px;
+    align-items: center;
+    border: none;
+    border-radius: 2px;
+    transition-duration: 0.15s;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    font-family: "Patua One", serif;
+    cursor: pointer;
+    outline: none; }
+    .SideMenuContent li button:hover {
+      background: #3b585b !important;
+      -webkit-transition-duration: 0.15s;
+      /* Safari */
+      transition-duration: 0.15s; }
+    .SideMenuContent li button:active {
+      background: #496d71 !important; }
+  .SideMenuContent hr {
+    height: .5px;
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    width: 100%; }
+
+.Wrapper {
+  background-color: #002329;
+  padding: 5px 5px 5px 8px;
+  overflow-y: scroll;
+  height: calc(100vh - 43px);
+  scrollbar-color: #98AFB3 #002329;
+  scrollbar-width: thin; }
+  .Wrapper::-webkit-scrollbar {
+    width: 18px; }
+  .Wrapper::-webkit-scrollbar-track {
+    background-color: #002329; }
+  .Wrapper::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 5px solid transparent;
+    background-clip: content-box; }
+  .Wrapper::-webkit-scrollbar-thumb {
+    background-color: transparent; }
+  .Wrapper:hover::-webkit-scrollbar-thumb {
+    background-color: #98AFB3; }
+  .Wrapper svg {
+    pointer-events: none; }
+  .Wrapper a {
+    text-decoration: none; }
+  .Wrapper span {
+    pointer-events: none; }
+
+.SideMenuContentA {
+  padding: 0 5px 5px 12.7px;
+  border-bottom: 1px solid white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 42.5px;
+  display: flex;
+  flex-direction: row;
+  gap: 2.3px;
+  background-color: #101719;
+  align-items: center;
+  overflow: hidden; }
+
+.SideMenuContentAIcon button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 0;
+  transition-duration: 0.30s;
+  padding: 0; }
+  .SideMenuContentAIcon button:focus {
+    outline: none; }
+  .SideMenuContentAIcon button:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .SideMenuContentAIcon button:active {
+    background: rgba(0, 0, 0, 0); }
+.SideMenuContentAIcon img {
+  margin-bottom: -9px;
+  width: 30px; }
+
+.SideMenuContentAImg {
+  width: 100%; }
+  .SideMenuContentAImg button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    padding: 0;
+    margin: 0; }
+    .SideMenuContentAImg button:focus {
+      outline: none; }
+    .SideMenuContentAImg button:hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SideMenuContentAImg button:active {
+      background: rgba(0, 0, 0, 0); }
+  .SideMenuContentAImg img {
+    height: 100%;
+    margin-top: 5px;
+    width: 204px; }
+
+.SideMenuContentB span {
+  font-size: 13.5px;
+  margin-left: -10px; }
+
+.SpanTitle {
+  width: 100%;
+  height: 45px;
+  gap: 11px;
+  padding-left: 11px;
+  background-color: #e9d8a6;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  color: black;
+  border-radius: 2px;
+  margin-bottom: 5px; }
+
+.DropdownArrow {
+  margin-left: auto;
+  margin-right: 10px;
+  -webkit-transition-duration: 0.40s;
+  /* Safari */
+  transition-duration: 0.40s; }
+
+.CreateNew {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: left;
+  background: #e9c46a;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 2px;
+  transition-duration: 0.30s;
+  color: #002329;
+  margin-top: 5px;
+  gap: 9px;
+  padding: 10px; }
+  .CreateNew:focus {
+    outline: none; }
+  .CreateNew:hover {
+    cursor: pointer;
+    background: #e4b646;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .CreateNew:active {
+    background: #e1af35; }
+
+.SideMenuContentD li button {
+  font-size: 15px !important; }
+.SideMenuContentD img {
+  width: 37px;
+  border-radius: 50%; }
+
+.SideMenuContentE .SpanTitle {
+  font-size: 16px; }
+
+.ShowMore button {
+  color: #fefae0 !important; }
+.ShowMore svg {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transition-duration: 0.20s;
+  /* Safari */
+  transition-duration: 0.20s; }
+
+.SidebarLibraryList {
+  background-color: #273A40;
+  border-radius: 4px;
+  animation: zoom-out .15s; }
+@keyframes zoom-out {
+  0% {
+    transform: scale(0.7, 0.7); }
+  100% {
+    transform: scale(1, 1); } }
+.CreateLibrary {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  margin-left: -10px;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.PopUpCreate {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+  background-color: #cad2c5;
+  position: absolute; }
+  @media screen and (max-width: 1000px) {
+    .PopUpCreate {
+      max-width: 330px; } }
+  @media screen and (max-width: 350px) {
+    .PopUpCreate {
+      max-width: 270px; } }
+
+.PopUpCreateTitle {
+  margin-top: 15px;
+  font-size: 24px; }
+
+.PopUpCreateForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; }
+
+.PopUpCreateInput {
+  padding: 0 8px 0 8px;
+  width: 100%; }
+  .PopUpCreateInput input {
+    width: 100%;
+    border: 1px solid lightgrey;
+    outline: none;
+    padding-left: 9px;
+    border-radius: 3px;
+    transition-duration: 0.30s;
+    font-size: 15.5px;
+    font-family: "Patua One", serif;
+    height: 45px;
+    width: 100%;
+    font-size: 17px; }
+    .PopUpCreateInput input:focus {
+      border-color: #001219; }
+    .PopUpCreateInput input::-ms-reveal, .PopUpCreateInput input::-ms-clear {
+      display: none; }
+
+.PopUpCreateButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px; }
+  .PopUpCreateButtons button:nth-child(1) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #273A40;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 3px;
+    transition-duration: 0.30s;
+    height: 42px; }
+    .PopUpCreateButtons button:nth-child(1):focus {
+      outline: none; }
+    .PopUpCreateButtons button:nth-child(1):hover {
+      cursor: pointer;
+      background: #141d20;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .PopUpCreateButtons button:nth-child(1):active {
+      background: #0a0f10; }
+  .PopUpCreateButtons button:nth-child(2) {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #9b2226;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 3px;
+    transition-duration: 0.30s;
+    height: 42px; }
+    .PopUpCreateButtons button:nth-child(2):focus {
+      outline: none; }
+    .PopUpCreateButtons button:nth-child(2):hover {
+      cursor: pointer;
+      background: #71191c;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .PopUpCreateButtons button:nth-child(2):active {
+      background: #5c1417; }
+  .PopUpCreateButtons button {
+    font-size: 17.5px;
+    color: white; }
+
+.SidebarTwoSS {
+  width: 100%;
+  z-index: 1;
+  position: absolute; }
+  .SidebarTwoSS a {
+    text-decoration: none; }
+  .SidebarTwoSS span {
+    pointer-events: none; }
+  .SidebarTwoSS svg {
+    pointer-events: none; }
+
+.SidebarTwo {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 275px;
+  gap: 11px;
+  background-color: #273A40;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  overflow: hidden; }
+
+.SidebarTwoListButtonTwo {
+  display: none !important; }
+
+.SidebarTwoUserInfoId {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; }
+  .SidebarTwoUserInfoId a {
+    width: 100%; }
+  .SidebarTwoUserInfoId button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #e9c46a;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 2px;
+    transition-duration: 0.30s; }
+    .SidebarTwoUserInfoId button:focus {
+      outline: none; }
+    .SidebarTwoUserInfoId button:hover {
+      cursor: pointer;
+      background: #e2b23e;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SidebarTwoUserInfoId button:active {
+      background: #dfaa27; }
+
+.SidebarTwoListButton {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  .SidebarTwoListButton button {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    height: 45px;
+    padding: 3px 2px 3px 11px;
+    align-items: center;
+    border: none;
+    border-radius: 2px;
+    transition-duration: 0.15s;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    font-family: "Patua One", serif;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0;
+    border: 1px none white;
+    padding: 0 20px;
+    border-top-style: solid; }
+    .SidebarTwoListButton button:hover {
+      background: #3b585b !important;
+      -webkit-transition-duration: 0.15s;
+      /* Safari */
+      transition-duration: 0.15s; }
+    .SidebarTwoListButton button:active {
+      background: #496d71 !important; }
+
+.SidebarTwoListButtonSignIn button {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  background: #9b2226;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 0;
+  transition-duration: 0.30s;
+  font-size: 18px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.30s;
+  border: 1px none white;
+  border-top-style: solid; }
+  .SidebarTwoListButtonSignIn button:focus {
+    outline: none; }
+  .SidebarTwoListButtonSignIn button:hover {
+    cursor: pointer;
+    background: #71191c;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .SidebarTwoListButtonSignIn button:active {
+    background: #5c1417; }
+  .SidebarTwoListButtonSignIn button:hover {
+    background-color: #b0272b !important;
+    transition-duration: 0.30s; }
+
+.SidebarTwoUserInfo {
+  padding: 10px 12px 0 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px; }
+  .SidebarTwoUserInfo span {
+    display: block;
+    width: 185px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16.5px;
+    color: lightyellow; }
+    @media screen and (max-width: 790px) {
+      .SidebarTwoUserInfo span {
+        width: 230px; } }
+  .SidebarTwoUserInfo img {
+    width: 52px;
+    border-radius: 50%; }
+
+@media screen and (min-width: 790px) {
+  .SidebarTwoSS {
+    position: relative;
+    z-index: 2; }
+
+  .SidebarTwo {
+    right: 0;
+    position: absolute;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8); } }
+@media screen and (max-width: 790px) {
+  .SidebarTwoListButtonTwo {
+    display: flex !important; }
+
+  .SidebarTwoListButtonOne {
+    display: none !important; }
+
+  .SidebarTwoUserInfoId a {
+    display: none !important; }
+
+  .SidebarTwoClose {
+    display: flex !important; }
+
+  .SidebarTwoSS {
+    position: fixed;
+    z-index: 2;
+    margin-left: -8px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); }
+
+  .SidebarTwo {
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    gap: 13px; }
+
+  .SidebarTwoListButton button {
+    font-size: 17.8px;
+    height: 52px; }
+    .SidebarTwoListButton button svg {
+      height: 25px;
+      width: 25px; } }
+.SidebarTwoClose {
+  display: none;
+  position: relative;
+  margin-bottom: -35px; }
+  .SidebarTwoClose button {
+    margin-left: auto;
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s; }
+    .SidebarTwoClose button:focus {
+      outline: none; }
+    .SidebarTwoClose button:hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .SidebarTwoClose button:active {
+      background: rgba(0, 0, 0, 0); }
+
+.LinkActive button span {
+  color: red; }
+
+.GetLibrary {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #cad2c5;
+  border-radius: 4px;
+  padding: 12px 18px;
+  width: auto;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  min-height: 125px; }
+
+.GetLibraryTitleClose {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .GetLibraryTitleClose span {
+    font-family: "Patua One", serif;
+    font-size: 27px; }
+  .GetLibraryTitleClose button {
+    margin-left: auto;
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #cad2c5;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 50%;
+    transition-duration: 0.30s; }
+    .GetLibraryTitleClose button:focus {
+      outline: none; }
+    .GetLibraryTitleClose button:hover {
+      cursor: pointer;
+      background: #bdc7b7;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .GetLibraryTitleClose button:active {
+      background: #b0bca8; }
+    .GetLibraryTitleClose button svg {
+      pointer-events: none; }
+
+.GetLibraryCreateBox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: "Patua One", serif; }
+  .GetLibraryCreateBox label {
+    font-size: 16.5px; }
+
+.GetLibraryCreateInput {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center; }
+  .GetLibraryCreateInput input {
+    width: 100%;
+    border: 1px solid lightgrey;
+    outline: none;
+    padding-left: 9px;
+    border-radius: 4px;
+    transition-duration: 0.30s;
+    font-size: 15.5px;
+    font-family: "Patua One", serif;
+    height: 35px;
+    min-width: 240px;
+    font-family: "Lora", serif; }
+    .GetLibraryCreateInput input:focus {
+      border-color: "black"; }
+    .GetLibraryCreateInput input::-ms-reveal, .GetLibraryCreateInput input::-ms-clear {
+      display: none; }
+  .GetLibraryCreateInput button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: #002329;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 4px;
+    transition-duration: 0.30s;
+    height: 34.5px;
+    padding: 10px 18px;
+    font-size: 15px;
+    color: white; }
+    .GetLibraryCreateInput button:focus {
+      outline: none; }
+    .GetLibraryCreateInput button:hover {
+      cursor: pointer;
+      background: #001215;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .GetLibraryCreateInput button:active {
+      background: black; }
+
+.GetLibraryFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; }
+  .GetLibraryFooter label {
+    font-size: 16px; }
+
+.GetLibraryBoxOne {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 4px;
+  height: auto; }
+  .GetLibraryBoxOne button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: left;
+    background: #cad2c5;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    gap: 10px;
+    font-size: 15px;
+    padding: 7px 10px; }
+    .GetLibraryBoxOne button:focus {
+      outline: none; }
+    .GetLibraryBoxOne button:hover {
+      cursor: pointer;
+      background: #bdc7b7;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .GetLibraryBoxOne button:active {
+      background: #b0bca8; }
+
+.GetLibraryBoxTwo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 165px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: zoom-out .15s; }
+  .GetLibraryBoxTwo::-webkit-scrollbar {
+    width: 18px; }
+  .GetLibraryBoxTwo::-webkit-scrollbar:vertical {
+    width: 10px; }
+  .GetLibraryBoxTwo::-webkit-scrollbar:horizontal {
+    height: 10px; }
+  .GetLibraryBoxTwo::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #cad2c5; }
+  .GetLibraryBoxTwo::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: 2px;
+    background-clip: content-box;
+    background-color: #52796f; }
+@keyframes zoom-out {
+  0% {
+    transform: scale(0.5, 0.5); }
+  100% {
+    transform: scale(1, 1); } }
+  .GetLibraryBoxTwo button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: left;
+    background: #cad2c5;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 0;
+    transition-duration: 0.30s;
+    gap: 10px;
+    font-size: 15px;
+    padding: 7px 10px; }
+    .GetLibraryBoxTwo button:focus {
+      outline: none; }
+    .GetLibraryBoxTwo button:hover {
+      cursor: pointer;
+      background: #bdc7b7;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .GetLibraryBoxTwo button:active {
+      background: #b0bca8; }
+
+.ExploreButton {
+  height: 100%;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: left;
+  background: #0b525b;
+  border: none;
+  outline: none;
+  font-family: "Patua One", serif;
+  border-radius: 2px;
+  transition-duration: 0.30s;
+  color: white;
+  font-size: 16.5px;
+  width: 100%;
+  height: 43px;
+  gap: 10px;
+  padding: 7px; }
+  .ExploreButton:focus {
+    outline: none; }
+  .ExploreButton:hover {
+    cursor: pointer;
+    background: #083e44;
+    -webkit-transition-duration: 0.30s;
+    /* Safari */
+    transition-duration: 0.30s; }
+  .ExploreButton:active {
+    background: #06292e; }
+
+/*# sourceMappingURL=Sidebar.module.css.map */
