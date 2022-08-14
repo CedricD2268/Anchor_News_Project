@@ -309,8 +309,8 @@ const BoxContentTwo = ({
                             <div className={MainStyle.HeadlineThreeCardDescTwo}>
                                 {ArticleStats[0].length > 0 && (
                                     <React.Fragment>
-                                        <span>{ArticleStats[0]} Reads</span>
-                                        <span>{ArticleStats[1]} ago</span>
+                                        <span>{ArticleStats && ArticleStats[0]  ? parseInt(ArticleStats[0]) === 1 ? '1 Read' : `${ArticleStats[0]} Reads`: '0 Reads'}</span>
+                                        <span>{ArticleStats && ArticleStats[1] ? ArticleStats[1]: '0 days'} ago</span>
                                     </React.Fragment>
                                 )}
                             </div>

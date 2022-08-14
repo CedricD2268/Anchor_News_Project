@@ -701,7 +701,7 @@ const HeaderStudio = () => {
 
                             </div>
                             <div className={StudioStyle.HeaderTwoFollowers}>
-                                <span>{followCount} Followers</span>
+                                <span> {followCount ? parseInt(followCount) === 1 ? '1 Follower' : `${followCount} Followers`: '0 Followers'} </span>
                             </div>
                         </div>
                     </div>

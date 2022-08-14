@@ -738,7 +738,7 @@ const Article = () => {
                                         }
                                     </button>
                                     <div>
-                                        <span>{articleView && articleView.readcount ? articleView.readcount : 0} Reads</span> <BiBookReader size={28}/>
+                                        <span>{articleView && articleView.readcount ? parseInt(articleView.readcount) === 1 ? '1 Read' : `${articleView.readcount} Reads`: '0 Reads'} </span> <BiBookReader size={28}/>
                                     </div>
 
                                 </div>
