@@ -583,9 +583,11 @@ router.post("/view/article_type_topic", authorization, async (req, res) => {
                          console.log('Audio content written to file: output.mp3');
                          if (checkATopic.rows[0].typename !== 'Opinion') {
                              await pool.query("CALL publish_article_pcd($1,$2,false,$3);", [articlePId, req.body.articleId,req.do_url.split('?')[0]])
+                             console.log("Non Opinion article publish for review successfully!")
                              return res.json("Non Opinion article publish for review successfully!")
                          }
                          await pool.query("CALL publish_article_pcd($1,$2, true,$3);", [articlePId, req.body.articleId, req.do_url.split('?')[0]])
+                         console.log("Opinion article publish successfully!")
                          return res.json("Opinion article publish successfully!")
                      }
                  })

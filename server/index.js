@@ -26,6 +26,30 @@ app.use('/home', require('./routes/home'))
 app.use('/homeExtend', require('./routes/homeExtend'))
 app.use('/studio', require('./routes/studio'))
 
+// const allowlist = ['http://example1.com', 'http://example2.com']
+// const corsOptionsDelegate = function (req, callback) {
+//   let corsOptions;
+//   if (allowlist.indexOf(req.header('Origin')) !== -1) {
+//     corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+//   } else {
+//     corsOptions = { origin: false } // disable CORS for this request
+//   }
+//   callback(null, corsOptions) // callback expects two parameters: error and options
+// }
+//
+// app.use(cors(corsOptionsDelegate))
+//
+//
+//
+// if (process.env.NODE_ENV === 'production') {
+//   // Serve any static files
+//   app.use(express.static(path.join(__dirname, 'client/build')));
+// // Handle React routing, return all requests to React app
+//   app.get('*', function(req, res) {
+//     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+//   });
+// }
+
 app.listen(5000, () =>{
     console.log("server is running on port 5000!");
 })

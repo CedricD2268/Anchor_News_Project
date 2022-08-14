@@ -155,6 +155,15 @@ dist
 # Serverless Webpack directories
 .webpack/
 
+### certificates ###
+*.pem
+*.key
+*.crt
+*.cer
+*.der
+*.priv
+
+
 # Optional stylelint cache
 
 # SvelteKit build / generate output

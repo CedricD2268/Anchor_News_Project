@@ -2,7 +2,7 @@
   "name": "react_ex",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://192.168.29.140:3000/",
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^31.1.0",
     "@ckeditor/ckeditor5-react": "^3.0.3",

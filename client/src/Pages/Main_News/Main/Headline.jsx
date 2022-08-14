@@ -832,7 +832,7 @@ const Headline = ({HeadlineType}) => {
                                                     Long={false}
                                                     ArticleTitle={headLine[row].title}
                                                     ArticleImage={headLine[row].imagel}
-                                                    ArticleStats={['20', GetTimeMoments(headLine[row].publisheddate)]}
+                                                    ArticleStats={[headLine[row].readcount, GetTimeMoments(headLine[row].publisheddate)]}
                                                     ArticleHeader={headLine[row].typename}
                                                     SaveFunc={() => {
                                                         dispatch(GetOverlayRx({
@@ -949,7 +949,7 @@ const Headline = ({HeadlineType}) => {
                                         ArticleTitle={row.title}
                                         ArticleImage={row.imagew}
                                         ArticleHeader={row.typename}
-                                        ArticleStats={['20', GetTimeMoments(row.publisheddate)]}
+                                        ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                         ShareFunc={() => {
                                             dispatch(GetOverlayRx({
                                                 share: {
@@ -1014,7 +1014,7 @@ const Headline = ({HeadlineType}) => {
                                         ArticleTitle={row.title}
                                         ArticleImage={row.imagew}
                                         ArticleHeader={row.typename}
-                                        ArticleStats={['20', GetTimeMoments(row.publisheddate)]}
+                                        ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                         SecondButton={'Remove'}
                                         ShareFunc={() => {
                                             dispatch(GetOverlayRx({
@@ -1065,7 +1065,7 @@ const Headline = ({HeadlineType}) => {
                                                 ArticleTitle={row.title}
                                                 ArticleImage={row.imagew}
                                                 ArticleHeader={row.typename}
-                                                ArticleStats={['20', GetTimeMoments(row.publisheddate)]}
+                                                ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                                 SaveFunc={() => {
                                                     dispatch(GetOverlayRx({
                                                         sidebarCreate: {
@@ -1142,7 +1142,7 @@ const Headline = ({HeadlineType}) => {
                                                                 ArticleTitle={row.title}
                                                                 ArticleImage={row.imagew}
                                                                 ArticleHeader={row.typename}
-                                                                ArticleStats={['20', GetTimeMoments(row.publisheddate)]}
+                                                                ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                                                 SaveFunc={() => {
                                                                     dispatch(GetOverlayRx({
                                                                         sidebarCreate: {
@@ -1227,7 +1227,7 @@ const Headline = ({HeadlineType}) => {
                                         ArticleTitle={row.title}
                                         ArticleImage={row.imagew}
                                         ArticleHeader={row.typename}
-                                        ArticleStats={['20', GetTimeMoments(row.publisheddate)]}
+                                        ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                         SecondButton={'Remove'}
                                         ShareFunc={() => {
                                             dispatch(GetOverlayRx({
@@ -1290,7 +1290,7 @@ const Headline = ({HeadlineType}) => {
                                         ArticleTitle={row.title}
                                         ArticleImage={row.imagew}
                                         ArticleHeader={row.typename}
-                                        ArticleStats={['20', GetTimeMoments(row.publisheddate)]}
+                                        ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                         SecondButton={'Remove'}
                                         ShareFunc={() => {
                                             dispatch(GetOverlayRx({
@@ -1362,7 +1362,7 @@ const Headline = ({HeadlineType}) => {
                                                                 ArticleTitle={row.title}
                                                                 ArticleImage={row.imagew}
                                                                 ArticleHeader={row.typename}
-                                                                ArticleStats={['20', GetTimeMoments(row.publisheddate)]}
+                                                                ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                                                 SaveFunc={() => {
                                                                     dispatch(GetOverlayRx({
                                                                         sidebarCreate: {
