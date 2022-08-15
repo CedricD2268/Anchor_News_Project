@@ -79,7 +79,7 @@ const Sidebar = ({DisState, Close}) => {
     }
 
     const {left} = useSpring({
-        config: {mass:1, tension:150, friction:0, clamp: true},
+        config: {mass: 1, tension: 150, friction: 0, clamp: true},
         from: {left: "-240px"},
         left: DisState ? "0" : "-240px",
     });

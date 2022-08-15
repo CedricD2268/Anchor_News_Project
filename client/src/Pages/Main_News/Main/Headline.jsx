@@ -555,24 +555,29 @@ const Headline = ({HeadlineType}) => {
         if (explore_id)
             all = await AllFollowingList(true)
         let newAll = []
-        for (let element of all){
-            try {
-                const data = {name: 'GetFollowArticlesByDate', username: element.user_name}
-                const response = await fetch('http://localhost:5000/home/mainfunction/following', {
-                    method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    credentials: 'include',
-                    body: JSON.stringify(data)
-                });
-                let parseRes = await response.json()
-                parseRes = parseRes.slice(0, 4)
-                const followValue = await GetFollowBoolean({username: element.user_name, singleType: false})
-                element = update(element, {$merge: {articles: parseRes, followButton: followValue}})
-                newAll = update(newAll, {$push: [element]})
-            } catch (err) {
-                console.error(err.message);
+
+        if (all) {
+            for (let element of all) {
+                try {
+                    const data = {name: 'GetFollowArticlesByDate', username: element.user_name}
+                    const response = await fetch('http://localhost:5000/home/mainfunction/following', {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        credentials: 'include',
+                        body: JSON.stringify(data)
+                    });
+                    let parseRes = await response.json()
+                    parseRes = parseRes.slice(0, 4)
+                    const followValue = await GetFollowBoolean({username: element.user_name, singleType: false})
+                    element = update(element, {$merge: {articles: parseRes, followButton: followValue}})
+                    newAll = update(newAll, {$push: [element]})
+                } catch (err) {
+                    console.error(err.message);
+                }
             }
+
         }
+
 
         if (explore_id) {
             const check = await AllFollowingList()
