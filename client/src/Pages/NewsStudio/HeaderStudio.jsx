@@ -236,15 +236,17 @@ export const PageStudio = ({arr}) => {
 
     const GetRows =  async(Data, Object) => {
 
-        let data = {name: Data.default, search: studio_query ? studio_query: null}
+        const query = studio_query.slice(2)
+
+        let data = {name: Data.default, search: query ? query: null}
         if (Object && Object.type === 'All types' && Object.orderBy === 'Title') {
-            data = {name: Data.title, search: studio_query ? studio_query: null}
+            data = {name: Data.title, search: query ? query: null}
         }
         if (Object && Object.type !== 'All types' && Object.orderBy === 'Title') {
-            data = {name: Data.titleType, type: Object.type, search: studio_query ? studio_query: null}
+            data = {name: Data.titleType, type: Object.type, search: query ? query: null}
         }
         if (Object && Object.type !== 'All types' && Object.orderBy === 'Last modified') {
-            data = {name: Data.defaultType, type: Object.type, search: studio_query ? studio_query: null}
+            data = {name: Data.defaultType, type: Object.type, search: query ? query: null}
         }
         try {
             const res = await fetch('http://localhost:5000/studio/view/article_by_home', {
@@ -267,8 +269,6 @@ export const PageStudio = ({arr}) => {
             console.error(err.message)
         }
     }
-
-
 
     useEffect(  () => {
         const getType = async() =>{

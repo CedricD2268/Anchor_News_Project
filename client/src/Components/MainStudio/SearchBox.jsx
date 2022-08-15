@@ -54,11 +54,11 @@ const SearchBox = ({BorderColor,Border, BorderRadius, Icon, InputVisibility, Cle
     const onSubmit = async() => {
         if (home_query || SearchX){
             if (!inputSearch) {
-                navigate(`/njt/feed/homeT/search/${home_query}`)
+                navigate(`/njt/feed/homeT/search/q=`)
                 setFocused(false)
                 return false
             }
-            navigate(`/njt/feed/homeT/search/${inputSearch}`)
+            navigate(`/njt/feed/homeT/search/q=${inputSearch}`)
             setFocused(false)
             return false
         } else {
@@ -71,21 +71,21 @@ const SearchBox = ({BorderColor,Border, BorderRadius, Icon, InputVisibility, Cle
                     return false
                 }
             }
-            navigate(`search/${inputSearch}`)
+            navigate(`search/q=${inputSearch}`)
             setFocused(false)
         }
     }
 
     const onReload = () =>{
         if (home_query){
-            setSearch(home_query)
+            setSearch(home_query.slice(2))
             return false
         }
         let studio_query = null
         if (params){
             studio_query = Object.values(params)[0]
             const SearchCheck = studio_query.slice(0,6)
-            const search = studio_query.slice(7)
+            const search = studio_query.slice(9)
             if (SearchCheck === 'search') {
                 setSearch(search)
                 return false
@@ -138,7 +138,6 @@ const SearchBox = ({BorderColor,Border, BorderRadius, Icon, InputVisibility, Cle
         }
     }
 
-
     const InputSubmitStyle = () => {
         const style = {
             border: Border,
@@ -166,7 +165,6 @@ const SearchBox = ({BorderColor,Border, BorderRadius, Icon, InputVisibility, Cle
         }
         return style
     }
-
 
     const RowQuery = async (value) => {
         let data = {name: 'searchStudio', search: value}

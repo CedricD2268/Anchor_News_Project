@@ -162,7 +162,10 @@ const Sidebar = ({DisState, Close}) => {
                                 </button>
                             </li>
                             <li className={SideMenuStyle.SearchButton}>
-                                <button>
+                                <button onClick={(e)=>{
+                                    navigate('feed/homeT/search/q=')
+                                    ListClick(e)
+                                }}>
                                     <RiSearchEyeLine  size={21} color={'white'}/>Search
                                 </button>
                             </li>

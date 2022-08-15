@@ -330,6 +330,7 @@ const Headline = ({HeadlineType}) => {
         explore_id,
         routeId
     } = useParams()
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [topic, setTopic] = useState('All topics')
@@ -726,17 +727,18 @@ const Headline = ({HeadlineType}) => {
     }
 
     const SearchList = async (data) => {
-        if (!home_query)
+        if (!home_query || home_query === 'q=')
             return false
+        const query = home_query.slice(2)
         let NewData;
         if (data.topicName === 'All topics' && data.typeName === 'Date')
-            NewData = {name: 'publishedByDate', search: home_query}
+            NewData = {name: 'publishedByDate', search: query}
         if (data.topicName === 'All topics' && data.typeName === 'Title')
-            NewData = {name: 'publishedByTitle', search: home_query}
+            NewData = {name: 'publishedByTitle', search: query}
         if (data.topicName !== 'All topics' && data.typeName === 'Date')
-            NewData = update(data, {$merge:{name: 'publishedTopicByDate', search: home_query}})
+            NewData = update(data, {$merge:{name: 'publishedTopicByDate', search: query}})
         if (data.topicName !== 'All topics' && data.typeName === 'Title')
-            NewData = update(data, {$merge: {name: 'publishedTopicByTitle', search: home_query}})
+            NewData = update(data, {$merge: {name: 'publishedTopicByTitle', search: query}})
 
         try {
             const response = await fetch('http://localhost:5000/home/mainfunction/search', {
@@ -753,8 +755,6 @@ const Headline = ({HeadlineType}) => {
         }
         return false;
     }
-
-
 
 
     useEffect(() => {
