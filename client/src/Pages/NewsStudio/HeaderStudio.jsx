@@ -276,7 +276,10 @@ export const PageStudio = ({arr}) => {
     useEffect(  () => {
         const getType = async() =>{
             let types = ['All types']
-            types = update(types, {$push: await ArticleSub('typeNames')})
+            const typeNames = await ArticleSub('typeNames')
+            if (typeNames){
+                types = update(types, {$push:  typeNames})
+            }
             setTypeNames(types)
         }
         getType()

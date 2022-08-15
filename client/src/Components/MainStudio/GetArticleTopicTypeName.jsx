@@ -10,8 +10,10 @@ export const GetArticleTopicTypeName = async (name) => {
         let parseRes = await res.json()
         let mirror = []
 
-        for (const element of parseRes) {
-            mirror.push(Object.values(element)[0])
+        if (parseRes) {
+            for (const element of parseRes) {
+                mirror.push(Object.values(element)[0])
+            }
         }
         return mirror
     } catch (err) {
