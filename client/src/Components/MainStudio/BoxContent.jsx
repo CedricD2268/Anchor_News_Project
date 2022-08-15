@@ -235,7 +235,7 @@ const BoxContentTwo = ({
     const [color, setColor] = useState();
     const [dropPrimaryColor, setDropPrimaryColor] = useState('black');
     const [size, setSize] = useState();
-    const [avatarBoolean, setAvatarBoolean] = useState(false);
+    // const [avatarBoolean, setAvatarBoolean] = useState(false);
     const [load, setLoad] = useState(false)
 
     const sizeW = useWindowWidth();
@@ -251,7 +251,7 @@ const BoxContentTwo = ({
         if (ArticleHeader === 'Opinion') {
             setSize('15.8px')
         }
-        setAvatarBoolean(AvatarName !== false ? true : false)
+        // setAvatarBoolean(AvatarName !== false ? true : false)
         setTimeout(() => {
             setLoad(true)
         }, 850);
@@ -266,7 +266,7 @@ const BoxContentTwo = ({
                 <div className={MainStyle.HeadlineTwoHeader}>
                     <Head backgroundColor={backgroundColor} size={size} color={color}
                           className={MainStyle.HeadlineTwoCardType}>
-                        {avatarBoolean ? (
+                        {AvatarName ? (
                             <React.Fragment>
                                 <img alt='User Avatar' src={Avatar}/>
                                 <Span>{AvatarName}</Span>

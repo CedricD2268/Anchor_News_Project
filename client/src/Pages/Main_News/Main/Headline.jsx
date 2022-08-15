@@ -832,6 +832,8 @@ const Headline = ({HeadlineType}) => {
                                                     Long={false}
                                                     ArticleTitle={headLine[row].title}
                                                     ArticleImage={headLine[row].imagel}
+                                                    Avatar={row.avatar}
+                                                    AvatarName={headLine[row].typename === 'Opinion' ?  headLine[row].fullname ? headLine[row].fullname : headLine[row].username: ''}
                                                     ArticleStats={[headLine[row].readcount, GetTimeMoments(headLine[row].publisheddate)]}
                                                     ArticleHeader={headLine[row].typename}
                                                     SaveFunc={() => {
@@ -947,6 +949,8 @@ const Headline = ({HeadlineType}) => {
                                     <BoxContent
                                         Long={false}
                                         ArticleTitle={row.title}
+                                        Avatar={row.avatar}
+                                        AvatarName={row.typename === 'Opinion' ?  row.fullname ? row.fullname : row.username: ''}
                                         ArticleImage={row.imagew}
                                         ArticleHeader={row.typename}
                                         ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
@@ -1013,6 +1017,8 @@ const Headline = ({HeadlineType}) => {
                                         Long={false}
                                         ArticleTitle={row.title}
                                         ArticleImage={row.imagew}
+                                        Avatar={row.avatar}
+                                        AvatarName={row.typename === 'Opinion' ?  row.fullname ? row.fullname : row.username: ''}
                                         ArticleHeader={row.typename}
                                         ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                         SecondButton={'Remove'}
@@ -1064,6 +1070,8 @@ const Headline = ({HeadlineType}) => {
                                                 Long={false}
                                                 ArticleTitle={row.title}
                                                 ArticleImage={row.imagew}
+                                                Avatar={row.avatar}
+                                                AvatarName={row.typename === 'Opinion' ?  row.fullname ? row.fullname : row.username: ''}
                                                 ArticleHeader={row.typename}
                                                 ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                                 SaveFunc={() => {
@@ -1141,6 +1149,8 @@ const Headline = ({HeadlineType}) => {
                                                                 Long={false}
                                                                 ArticleTitle={row.title}
                                                                 ArticleImage={row.imagew}
+                                                                Avatar={row.avatar}
+                                                                AvatarName={row.typename === 'Opinion' ?  row.fullname ? row.fullname : row.username: ''}
                                                                 ArticleHeader={row.typename}
                                                                 ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                                                 SaveFunc={() => {
@@ -1226,6 +1236,8 @@ const Headline = ({HeadlineType}) => {
                                         Long={false}
                                         ArticleTitle={row.title}
                                         ArticleImage={row.imagew}
+                                        Avatar={row.avatar}
+                                        AvatarName={row.typename === 'Opinion' ?  row.fullname ? row.fullname : row.username: ''}
                                         ArticleHeader={row.typename}
                                         ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                         SecondButton={'Remove'}
@@ -1289,6 +1301,8 @@ const Headline = ({HeadlineType}) => {
                                         Long={false}
                                         ArticleTitle={row.title}
                                         ArticleImage={row.imagew}
+                                        Avatar={row.avatar}
+                                        AvatarName={row.typename === 'Opinion' ?  row.fullname ? row.fullname : row.username: ''}
                                         ArticleHeader={row.typename}
                                         ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                         SecondButton={'Remove'}
@@ -1361,6 +1375,8 @@ const Headline = ({HeadlineType}) => {
                                                                 Long={false}
                                                                 ArticleTitle={row.title}
                                                                 ArticleImage={row.imagew}
+                                                                Avatar={row.avatar}
+                                                                AvatarName={row.typename === 'Opinion' ?  row.fullname ? row.fullname : row.username: ''}
                                                                 ArticleHeader={row.typename}
                                                                 ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
                                                                 SaveFunc={() => {
@@ -1403,9 +1419,7 @@ const Headline = ({HeadlineType}) => {
                         }
                     </React.Fragment>
                 </div>
-
             }
-
         </React.Fragment>
     );
 };
