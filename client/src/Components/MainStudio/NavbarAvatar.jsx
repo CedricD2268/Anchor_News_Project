@@ -34,7 +34,6 @@ const NavbarAvatar = ({SubscribeButtonVisibility, AvatarNameVisibility, Color, C
 
 
 
-
     return (
         <div>
             <div className={HeaderStyle.LoginInfo}>
@@ -62,7 +61,7 @@ const NavbarAvatar = ({SubscribeButtonVisibility, AvatarNameVisibility, Color, C
                            className={HeaderStyle.DesktopX}>{profile.fullname ? profile.fullname : profile.username}</p>
                     )}
                     <button onClick={ClearDiv}>
-                        <img alt="User" src={profile.avatarlocation ? profile.avatarlocation: userface}/>
+                        <img alt="User" src={profile.avatarlocation ? profile.avatarlocation: userface} referrerPolicy={"no-referrer"}/>
                         <BsFillCaretDownFill size={11}/>
                     </button>
                 </Div>

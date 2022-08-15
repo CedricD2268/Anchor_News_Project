@@ -176,7 +176,7 @@ const HeadlineBox = ({name, type, content, avatar, Empty, EmptyName, EditFunc, R
         <div className={MainStyle.HeadlineTwoBox}>
             {type === 'Following' &&
                 <div className={MainStyle.FollowingInfo}>
-                    <img alt='user avatar' src={avatar}/>
+                    <img alt='user avatar' src={avatar} referrerPolicy={"no-referrer"}/>
                     <NameDiv>{name}</NameDiv>
                     <Div>
                         {FollowButton}
@@ -283,7 +283,7 @@ const HeadlineBox = ({name, type, content, avatar, Empty, EmptyName, EditFunc, R
 
             {type === 'AllFollowing' &&
                 <div className={MainStyle.FollowingInfo} style={{background: '#ccd5ae'}}>
-                    <img alt='user avatar' src={avatar}/>
+                    <img alt='user avatar' src={avatar} referrerPolicy={"no-referrer"}/>
                     <NameDiv style={{color: 'black', fontSize: '17px'}}>{name}</NameDiv>
                     <Div>
                         {FollowButton}

@@ -269,7 +269,7 @@ const BoxContentTwo = ({
                           className={MainStyle.HeadlineTwoCardType}>
                         {AvatarName ? (
                             <React.Fragment>
-                                <img alt='User Avatar' src={Avatar ? Avatar : avatar}/>
+                                <img alt='User Avatar' src={Avatar ? Avatar : avatar} referrerPolicy={"no-referrer"}/>
                                 <Span>{AvatarName}</Span>
                             </React.Fragment>
                         ) : (

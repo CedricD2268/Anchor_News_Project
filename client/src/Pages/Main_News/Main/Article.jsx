@@ -690,7 +690,7 @@ const Article = () => {
                                     navigate(`/njt/feed/follow/${articleView.username}/ ${articleView && articleView.fullname ? articleView.fullname: null}`)
                                 }
                             }} style={{cursor: 'pointer'}}>
-                                <img alt='publisher photo' src={articleView && articleView.avatar ? articleView.avatar : userface}/>
+                                <img alt='publisher photo' src={articleView && articleView.avatar ? articleView.avatar : userface} referrerPolicy={"no-referrer"}/>
                                 <span> {articleView && articleView.fullname ? articleView.fullname: articleView && articleView.username ? articleView.username: 'unknown' }</span>
                                 <BsCheckCircle/>
                             </div>
