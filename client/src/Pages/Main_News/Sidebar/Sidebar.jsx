@@ -16,7 +16,7 @@ import {GetArticleTopicTypeName as ArticleSub} from "../../../Components/MainStu
 import {animated, useSpring} from 'react-spring';
 import update from "react-addons-update";
 import FlipFlipSvg from "../../../Components/MainStudio/FlipFlipSvg";
-import {HiOutlineFolderOpen, MdOutlineExplore, TiArrowSortedDown,} from "react-icons/all";
+import {HiOutlineFolderOpen, MdOutlineExplore, RiSearchEyeLine, TiArrowSortedDown,} from "react-icons/all";
 import {useDispatch, useSelector} from "react-redux";
 import {GetOverlayRx} from "../../../Actions";
 import AllFollowingList from "../../../Components/MainStudio/AllFollowingList";
@@ -163,7 +163,7 @@ const Sidebar = ({DisState, Close}) => {
                             </li>
                             <li className={SideMenuStyle.SearchButton}>
                                 <button>
-                                    <AnchorIcon  size={21} color={'white'}/>Search
+                                    <RiSearchEyeLine  size={21} color={'white'}/>Search
                                 </button>
                             </li>
                             <li>

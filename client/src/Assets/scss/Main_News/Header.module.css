@@ -70,9 +70,13 @@ input, textarea, select {
 
 .HomeLogoImg {
   display: flex;
+  position: relative;
   width: 100%;
   margin-top: -5px;
   justify-content: center; }
+  @media screen and (min-width: 991px) {
+    .HomeLogoImg {
+      margin-right: -125px; } }
   .HomeLogoImg div {
     cursor: pointer;
     display: flex;
@@ -108,6 +112,7 @@ input, textarea, select {
   width: 100%; }
 
 .BackToTop {
+  position: relative;
   margin-left: auto;
   height: 60px; }
   .BackToTop button {

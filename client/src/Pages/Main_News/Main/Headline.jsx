@@ -1408,7 +1408,6 @@ const Headline = ({HeadlineType}) => {
                                                 }
                                             </React.Fragment>
 
-
                                         }
                                     />
                                 </React.Fragment>
