@@ -250,14 +250,14 @@ const Sidebar = ({DisState, Close}) => {
                                         <li>
                                             <button onClick={ (e)=>{
                                                 ListClick(e)
-                                                if (SettingUrlList.includes(name[0])){
-                                                    navigate(`home/saved/${name[0]}`)
+                                                if (SettingUrlList.includes(name)){
+                                                    navigate(`home/saved/${name}`)
                                                     return
                                                 }
-                                                navigate(`home/unsaved/${name[0]}`)
+                                                navigate(`home/unsaved/${name}`)
                                             }
                                             }>
-                                                {name[0]}
+                                                {name}
                                             </button>
                                         </li>
                                     </React.Fragment>

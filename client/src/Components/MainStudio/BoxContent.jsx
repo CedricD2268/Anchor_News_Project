@@ -3,6 +3,7 @@ import MainStyle from "../../Assets/scss/Main_News/Main.module.css";
 import styled from "styled-components";
 import GetHeadlineColor from "./GetHeadlineColor";
 import Pic from "../../Assets/Images/website_background_images/Image_1.jpg";
+import avatar from "../../Assets/Images/UserFaces/user2.png"
 import DropdownButton from "./DropdownButton";
 import {BsThreeDotsVertical} from "react-icons/bs";
 import {MdOutlineLibraryAdd} from "react-icons/md";
@@ -268,7 +269,7 @@ const BoxContentTwo = ({
                           className={MainStyle.HeadlineTwoCardType}>
                         {AvatarName ? (
                             <React.Fragment>
-                                <img alt='User Avatar' src={Avatar}/>
+                                <img alt='User Avatar' src={Avatar ? Avatar : avatar}/>
                                 <Span>{AvatarName}</Span>
                             </React.Fragment>
                         ) : (

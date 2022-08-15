@@ -236,7 +236,10 @@ export const PageStudio = ({arr}) => {
 
     const GetRows =  async(Data, Object) => {
 
-        const query = studio_query.slice(2)
+        let query
+        if (studio_query){
+             query = studio_query.slice(2)
+        }
 
         let data = {name: Data.default, search: query ? query: null}
         if (Object && Object.type === 'All types' && Object.orderBy === 'Title') {
