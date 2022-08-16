@@ -153,6 +153,7 @@ const Settings = () => {
                         <Route exact path={'subscription'} element={<Subscription/>}/>
                         <Route exact path={'customize'} element={<Customize/>}/>
                         <Route exact path={'password'} element={<Password/>}/>
+                        <Route path='*' element={<Navigate to={'/404'}/>}/>
                     </Routes>
                 </div>
             </div>

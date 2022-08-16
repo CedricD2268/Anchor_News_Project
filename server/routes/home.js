@@ -299,6 +299,12 @@ router.post("/update/password", authorization, async (req, res) => {
     }
 })
 
+router.get("/try/me", async (req, res) => {
+    return res.json({success: 'False well hello motherfucker'})
+
+
+})
+
 //
 router.get("/delete", authorization, async (req, res) => {
     try {

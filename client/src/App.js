@@ -38,7 +38,7 @@ const LoginRegisterRoutes = () => {
                 <Route  exact path={`register`} element={<LoginRegister pageName={"Register"} pageUrlName={<Register/>}/>}/>
                 <Route  path={`login/identify`} element={<LoginRegister pageName={"Forgot Password"} pageUrlName={<Identification/>}/>}/>
                 <Route  path={`login/reset/:email/:id/:token`} element={<LoginRegister pageName={"Reset Password"} pageUrlName={<Reset/>}/>}/>
-                {/*<Route path='*' element={<Navigate to={'/404'}/>}/>*/}
+                <Route path='*' element={<Navigate to={'/404'}/>}/>
              </Routes>
         </div>
     )
@@ -58,7 +58,7 @@ const FeedRoutes = () => {
                 <Route exact path={`homeT/history`} element={<Headline HeadlineType={'History'}/>}/>
                 <Route exact path={`homeT/liked`} element={<Headline HeadlineType={'Liked'}/>}/>
                 <Route exact path={`homeT/explore/:explore_id`} element={<Headline HeadlineType={'Explore'}/>}/>
-                {/*<Route path='*' element={<Navigate to={'/404'}/>}/>*/}
+                <Route path='*' element={<Navigate to={'/404'}/>}/>
             </Routes>
         </div>
     )
@@ -70,9 +70,8 @@ const HomeButtonRoutes = () => {
         <div className={styles.wrapper}>
             <Routes>
                 <Route exact path={'saved/:topic_name'} element={<Main type={'Home'}/>}/>
-                {/*<Route exact path={'query/:routeId'} element={<Main type={'Home'}/>}/>*/}
                 <Route exact path={'unsaved/:routeId'} element={<Main type={'Topic'}/>}/>
-                {/*<Route path='*' element={<Navigate to={'/404'}/>}/>*/}
+                <Route path='*' element={<Navigate to={'/404'}/>}/>
             </Routes>
         </div>
     );
@@ -85,7 +84,7 @@ const StudioEditorRoutes = () => {
                 <Route exact path={`home/*`} element={<HeaderStudio/>}/>
                 <Route exact path={`editor/:articleId`} element={<EditorStudio/>}/>
                 <Route exact path={`editor_page/:rowName/:rowId`} element={<EditorPageStudio/>}/>
-                {/*<Route path='*' element={<Navigate to={'/404'}/>}/>*/}
+                <Route path='*' element={<Navigate to={'/404'}/>}/>
             </Routes>
         </React.Fragment>
     )
@@ -135,7 +134,7 @@ const NJTRoutes = () => {
                     <Route path={`home/*`} element={spinner ?(<HomeButtonRoutes/>):(<SpinnerStudio/>) }/>
                     <Route path={`settings/*`} element={spinner? (<Settings/>): (<SpinnerStudio/>)}/>
                     <Route path={`feed/*`} element={spinner? (<FeedRoutes/>):(<SpinnerStudio/>) }/>
-                    {/*<Route path='*' element={spinner? <Navigate to={'/404'}/>:(<SpinnerStudio/>)}/>*/}
+                    <Route path='*' element={spinner? <Navigate to={'/404'}/>:(<SpinnerStudio/>)}/>
                 </Routes>
             </div>
             {empty && (
@@ -221,8 +220,8 @@ const App = () => {
                     (accountsPath.includes(location.pathname) || accountsPath.includes(location.pathname.slice(0,21)) ) ? (<Navigate to={`..${location.pathname}`}/>): (<Navigate to={'../accounts/login'}/>)  }/>
                 <Route path='studio/*' element={isAuth ? (<StudioEditorRoutes/>) :
                     (accountsPath.includes(location.pathname) || accountsPath.includes(location.pathname.slice(0,21)) ) ? (<Navigate to={`..${location.pathname}`}/>): (<Navigate to={'../accounts/login'}/>)}/>
-                {/*<Route path='/404' element={<PageNotFound/>}/>*/}
-                {/*<Route path='*' element={<Navigate to={'/404'}/>}/>*/}
+                <Route path='/404' element={<PageNotFound/>}/>
+                <Route path='*' element={<Navigate to={'/404'}/>}/>
             </Routes>
         </div>
     )
