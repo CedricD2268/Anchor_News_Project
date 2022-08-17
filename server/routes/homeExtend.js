@@ -2,6 +2,7 @@ const router = require("express").Router();
 const pool = require("../db");
 const authorization = require("../middleware/authorization");
 const crypto = require('crypto')
+require('dotenv').config();
 const { promisify } = require('util')
 const randomBytes = promisify(crypto.randomBytes)
 process.env.TZ = "UTC";

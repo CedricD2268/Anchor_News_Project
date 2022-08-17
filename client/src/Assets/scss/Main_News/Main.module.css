@@ -1072,7 +1072,7 @@ input, textarea, select {
     align-items: center;
     padding: 5px;
     justify-content: center;
-    background: #273A40;
+    background: #354f52;
     border: none;
     outline: none;
     font-family: "Patua One", serif;
@@ -1087,12 +1087,15 @@ input, textarea, select {
       outline: none; }
     .SupportSubmit button:hover {
       cursor: pointer;
-      background: #1d2c30;
+      background: #2b4043;
       -webkit-transition-duration: 0.30s;
       /* Safari */
       transition-duration: 0.30s; }
     .SupportSubmit button:active {
-      background: #141d20; }
+      background: #213133; }
+    .SupportSubmit button:disabled {
+      color: grey;
+      background: #354f52 !important; }
 
 .SupportMessageBox textarea {
   padding: 5px;

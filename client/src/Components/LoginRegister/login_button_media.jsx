@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginRegisterStyle from '../../Assets/scss/Login_Register/login_register.module.css'
-import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 import { useDispatch} from 'react-redux';
 import {LoginRx} from "../../Actions";
 import {MediaLoginErrorRx} from "../../Actions";

@@ -14,6 +14,7 @@ const resetAuthorization = require("../middleware/resetAuthorization");
 const jwt = require("jsonwebtoken");
 const aws = require("aws-sdk");
 const randomBytes = promisify(crypto.randomBytes)
+require('dotenv').config();
 process.env.TZ = "UTC";
 
 const region = process.env.DO_SPACE_REGION

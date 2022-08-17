@@ -16,10 +16,10 @@ const accessKeyId = process.env.DO_SPACE_KEY
 const secretAccessKey = process.env.DO_SECRET_KEY
 const sightengineApiUser = process.env.SIGHTENGINE_API_USER
 const sightengineApiSecret = process.env.SIGHTENGINE_API_SECRET
-
-
-
 require('dotenv').config();
+
+
+
 // process.env.TZ = "UTC";
 const pg = require('pg');
 const types = pg.types;

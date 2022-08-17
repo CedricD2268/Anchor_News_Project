@@ -76,12 +76,11 @@ const Customize = () => {
     const { errors } = formState;
 
     const onSubmit = async (data) => {
-        setLoad(update(load,{$merge: {a: true}}))
-
         if(!stateName){
             setStateError(true)
             return
         }
+        setLoad(update(load,{$merge: {a: true}}))
         dispatch(ViewProfileRx({cityname: data.name, state: allStateCode[stateName]}))
         setTimeout(() => {
             setLoad(update(load, {$merge: {a: false}}))
@@ -267,7 +266,7 @@ const Customize = () => {
 
                     <div className={[SettingStyle.CustomizeAp, SettingStyle.CustomizeApb].join(' ')}>
                         <ul>
-                            {allTopicNames.map(buttonName =>
+                            {(allTopicNames && allTopicNames.length > 0) && allTopicNames.map(buttonName =>
                                 <li key={buttonName}>
                                     <button onClick={FiveTopicsClick}>
                                         <span>{buttonName}</span>

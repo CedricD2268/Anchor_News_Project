@@ -16,6 +16,7 @@ const _ = require('underscore');
 const sightengine = require("sightengine");
 const textToSpeech = require("@google-cloud/text-to-speech");
 const fs = require("fs");
+require('dotenv').config();
 
 const region = process.env.DO_SPACE_REGION
 const bucketName = process.env.DO_SPACE_NAME
@@ -663,6 +664,10 @@ router.post("/view/row_article", authorization, async (req, res) => {
         res.status(500).send("Server Error")
     }
 })
+
+
+
+
 
 
 

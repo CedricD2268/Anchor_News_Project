@@ -24,6 +24,7 @@ app.use('/images', express.static('images'));
 app.use('/auth', require('./routes/jwtAuth'))
 app.use('/home', require('./routes/home'))
 app.use('/homeExtend', require('./routes/homeExtend'))
+app.use('/service', require('./routes/service'))
 app.use('/studio', require('./routes/studio'))
 
 // const allowlist = ['http://example1.com', 'http://example2.com']
@@ -43,11 +44,11 @@ app.use('/studio', require('./routes/studio'))
 //
 // if (process.env.NODE_ENV === 'production') {
 //   // Serve any static files
-  app.use(express.static(path.join(__dirname, '../client/build')));
-// Handle React routing, return all requests to React app
-  app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-  });
+//   app.use(express.static(path.join(__dirname, '../client/build')));
+// // Handle React routing, return all requests to React app
+//   app.get('/*', function(req, res) {
+//     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+//   });
 // }
 
 app.listen(5000, () =>{

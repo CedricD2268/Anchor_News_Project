@@ -81,13 +81,25 @@ const HeaderWeather = ({settings}) => {
     ];
 
 
-    const weatherBalloon = (cityName, stateName) => {
-        const key = process.env.REACT_APP_WEATHER_API_KEY;
+    const weatherBalloon = async (cityName, stateName) => {
+        const data = {cityName: cityName, stateName: stateName}
         setError(false)
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},US-${stateName}&appid=${key}`)
-            .then(result => result.json())
-            .then(async(result) => {
-                setWeather({
+        try{
+            const response = await fetch('http://localhost:5000/service/weather', {
+                method: "POST",
+                headers: { "Content-Type": "application/json"},
+                credentials: 'include',
+                body: JSON.stringify(data)
+            });
+            const result = await response.json()
+            if (result.error) {
+                dispatch(ViewProfileRx({weatherSubmit: false}))
+                setError(true)
+                return
+
+            }
+
+            setWeather({
                     description: result.weather[0].description,
                     iconId: result.weather[0].icon,
                     city: result.name,
@@ -102,26 +114,28 @@ const HeaderWeather = ({settings}) => {
 
                     },
                     country: result.sys.country,
-                    value: Math.floor(9 / 5 * (result.main.temp - 273) + 32)
+                value: result.main.temp
                 })
-                const data = {city: cityName, state: stateName}
-                const res = await fetch('http://localhost:5000/home/update/customization', {
+
+            const data2 = {city: cityName, state: stateName}
+            const res = await fetch('http://localhost:5000/home/update/customization', {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
                     credentials: 'include',
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(data2)
                 });
                 let parseRes = await res.json();
                 parseRes = update(parseRes, {$merge: {weatherSubmit: true}})
-                setTimeout(() => {
+            setTimeout(() => {
                     dispatch(ViewProfileRx(parseRes))
                 }, 2000)
-            })
-            .catch( (err)=> {
-                console.error(err.message)
-                dispatch(ViewProfileRx({weatherSubmit: false}))
-                setError(true)
-            });
+
+        } catch (err) {
+            console.error(err.message);
+            dispatch(ViewProfileRx({weatherSubmit: false}))
+            setError(true)
+        }
+
     }
 
     useEffect(() => {
@@ -149,7 +163,7 @@ const HeaderWeather = ({settings}) => {
                 <div className={HeaderStyle.WeatherInfo}>
                     <div style={{fontSize: 14, textTransform: "capitalize"}}>{weather && weather.description ? weather.description : ''}</div>
                     <div style={{fontSize: 14, display: "block", width: !settings ? '180px': '250px', overflow: "hidden", textOverflow: 'ellipsis' }}>
-                        {weather && weather.state ? weather.state() : ''}, {weather && weather.city ? weather.city : ''}
+                        {weather && weather.state ? `${weather.state()}, ` : ''} {weather && weather.city ? weather.city : ''}
                     </div>
                 </div>
             </div>
