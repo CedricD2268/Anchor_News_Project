@@ -41,7 +41,7 @@ html, body {
   max-width: 440px;
   background: rgba(250, 249, 249, 0.91);
   padding: 15px 30px 10px 30px;
-  border-radius: 6px; }
+  border-radius: 8px; }
   .loginRegisterBox button {
     cursor: pointer; }
   .loginRegisterBox a {

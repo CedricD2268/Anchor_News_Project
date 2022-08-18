@@ -32,7 +32,7 @@ const Header = ({buttonClick}) => {
                         {/*TOP MENU BUTTON*/}
                         <div className={HeaderStyle.menuButton}>
                             <button onClick={buttonClick}>
-                                <GiHamburgerMenu size="19px"/>
+                                <GiHamburgerMenu size="19px" color={'black'}/>
                             </button>
                         </div>
                         {/*TOP SEARCH INPUT FORM*/}

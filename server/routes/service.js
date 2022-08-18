@@ -23,7 +23,6 @@ process.env.TZ = "UTC";
 
 router.post("/weather", authorization, async (req, res) => {
     const {cityName, stateName} = req.body
-    console.log(req.body)
     let getCity
     try {
 
@@ -43,7 +42,6 @@ router.post("/weather", authorization, async (req, res) => {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${getCity.latitude}&lon=${getCity.longitude}&appid=${key}&units=imperial`)
 
         const parseRes = await response.json()
-
 
         return res.json(parseRes)
 

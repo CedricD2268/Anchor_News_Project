@@ -12,7 +12,5 @@ const pool = new Pool({
         rejectUnauthorized: false,
         ca: fs.readFileSync(path.join(__dirname, 'ca-certificate.crt'))
     }
-
-
 })
 module.exports = pool
