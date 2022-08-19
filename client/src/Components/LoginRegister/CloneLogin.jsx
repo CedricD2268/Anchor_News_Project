@@ -1,7 +1,7 @@
 
 const CloneLogin = async() =>{
     try {
-        const res = await fetch('http://localhost:5000/auth/clone_login', {
+        const res = await fetch('https://njanchor.com/auth/clone_login', {
             method: "GET",
             credentials: 'include',
         });
