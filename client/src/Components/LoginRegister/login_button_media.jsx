@@ -1,10 +1,12 @@
 import React from 'react';
 import LoginRegisterStyle from '../../Assets/scss/Login_Register/login_register.module.css'
-// import { GoogleLogin } from 'react-google-login';
+
 import { useDispatch} from 'react-redux';
 import {LoginRx} from "../../Actions";
 import {MediaLoginErrorRx} from "../../Actions";
 import {AiFillGoogleCircle, BsGoogle, GrGoogle} from "react-icons/all";
+import {GoogleOAuthProvider} from "@react-oauth/google";
+import { GoogleLogin } from '@react-oauth/google';
 
 
 const LoginButtonMedia = ({google_t}) => {
@@ -45,6 +47,17 @@ const LoginButtonMedia = ({google_t}) => {
         <React.Fragment>
             <div className={LoginRegisterStyle.loginRegisterButtons}>
                 <div className={LoginRegisterStyle.loginButton}>
+                    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+                        <GoogleLogin
+                            onSuccess={credentialResponse => {
+                                console.log(credentialResponse);
+                            }}
+                            onError={() => {
+                                console.log('Login Failed');
+                            }}
+
+                        />
+                    </GoogleOAuthProvider>
                     {/*<GoogleLogin clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}*/}
                     {/*             render={renderProps => (*/}
                     {/*                 <button type={'button'} onClick={renderProps.onClick} disabled={renderProps.disabled}>*/}
