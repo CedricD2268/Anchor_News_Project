@@ -4,7 +4,7 @@ const AllFollowingList = async(unfollow) => {
          data = {name: 'AllFollowingList'}
     }
     try {
-        const res = await fetch('http://localhost:5000/home/mainfunction/following', {
+        const res = await fetch('https://njanchor.com/home/mainfunction/following', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             credentials: 'include',

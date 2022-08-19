@@ -118,7 +118,7 @@ const HeaderWeather = ({settings}) => {
                 })
 
             const data2 = {city: cityName, state: stateName}
-            const res = await fetch('http://localhost:5000/home/update/customization', {
+            const res = await fetch('https://njanchor.com/home/update/customization', {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
                     credentials: 'include',

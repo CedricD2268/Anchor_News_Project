@@ -53,7 +53,7 @@ const Profile = () => {
     const onSubmitName = async (data) => {
         setLoad(update(load,{$merge: {a: true}}))
         try {
-            const res = await fetch('http://localhost:5000/home/update/profile', {
+            const res = await fetch('https://njanchor.com/home/update/profile', {
                 method: "POST",
                 credentials: 'include',
                 headers: { "Content-Type": "application/json"},
@@ -85,7 +85,7 @@ const Profile = () => {
     const handleCheckBoxChange = async(e) => {
         const data = {notification: e.target.checked};
         try {
-            const res = await fetch('http://localhost:5000/home/update/profile', {
+            const res = await fetch('https://njanchor.com/home/update/profile', {
                 method: "POST",
                 credentials: 'include',
                 headers: { "Content-Type": "application/json"},
@@ -101,7 +101,7 @@ const Profile = () => {
     const onSubmitUsername = async (data) => {
         setLoad(update(load,{$merge: {b: true}}))
         try {
-            const res = await fetch('http://localhost:5000/home/update/profile', {
+            const res = await fetch('https://njanchor.com/home/update/profile', {
                 method: "POST",
                 credentials: 'include',
                 headers: { "Content-Type": "application/json"},
@@ -132,7 +132,7 @@ const Profile = () => {
 
     const ViewProfile = async () => {
         try {
-            const res = await fetch('http://localhost:5000/home/view/profile', {
+            const res = await fetch('https://njanchor.com/home/view/profile', {
                 method: "GET",
                 credentials: 'include',
             });
@@ -147,7 +147,7 @@ const Profile = () => {
     const HandleAccountChange = async (googleData) => {
         const bodyData = {"token": googleData.tokenId}
         try {
-            const res= await fetch('http://localhost:5000/home/update/account_media', {
+            const res= await fetch('https://njanchor.com/home/update/account_media', {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 credentials: 'include',
@@ -169,7 +169,7 @@ const Profile = () => {
 
     const RemoveProfileImage = async () => {
         try {
-            const res = await fetch('http://localhost:5000/home/delete_profile_image', {
+            const res = await fetch('https://njanchor.com/home/delete_profile_image', {
                 method: "GET",
                 credentials: 'include',
             });

@@ -30,7 +30,7 @@ const IdentificationForm= () => {
 
     const  onSubmit = async(data) => {
         try {
-            const response = await fetch('http://localhost:5000/auth/identification', {
+            const response = await fetch('https://njanchor.com/auth/identification', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',

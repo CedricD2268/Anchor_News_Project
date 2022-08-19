@@ -41,7 +41,7 @@ const SidebarGetLibrary = () => {
             newData = update(data,{$merge: {name : 'UpdateCollection', collectionId: overlay.sidebarCreate.collectionId }})
         }
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/collection', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/collection', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -73,7 +73,7 @@ const SidebarGetLibrary = () => {
         const newData  = update(data, {$merge:{name: 'InsertCollectionList', articlePublishedId:  overlay.sidebarCreate.articleId}})
         try {
             if (overlay.sidebarCreate.title === 'Save in library') {
-                const res = await fetch('http://localhost:5000/home/mainfunction/collection_list', {
+                const res = await fetch('https://njanchor.com/home/mainfunction/collection_list', {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
                     credentials: 'include',

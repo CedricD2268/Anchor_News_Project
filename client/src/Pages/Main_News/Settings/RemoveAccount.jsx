@@ -14,7 +14,7 @@ const RemoveAccount = () => {
 
     const DeleteAccount = async () => {
         try {
-            const res = await fetch('http://localhost:5000/home/delete', {
+            const res = await fetch('https://njanchor.com/home/delete', {
                 method: "GET",
                 headers: { "Content-Type": "application/json"},
                 credentials: 'include',

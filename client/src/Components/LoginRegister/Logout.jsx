@@ -1,6 +1,6 @@
 const Logout = async () => {
     try {
-        const res = await fetch('http://localhost:5000/auth/logout', {
+        const res = await fetch('https://njanchor.com/auth/logout', {
             method: "GET",
             headers: {"Content-Type": "application/json"},
             credentials: 'include'

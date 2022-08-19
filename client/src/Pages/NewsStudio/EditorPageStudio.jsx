@@ -24,7 +24,7 @@ const EditorPageStudioSelect = ({State, ClearFunction, UpdateName, Reload}) => {
             data = {name: 'publishedTypeTopicByTitle', type:typeName, topic: rowName}
         }
         try {
-            const res = await fetch('http://localhost:5000/studio/view/article_by_home', {
+            const res = await fetch('https://njanchor.com/studio/view/article_by_home', {
                 method: "POST",
                 headers: { "Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -138,7 +138,7 @@ const EditorPageStudioSelect = ({State, ClearFunction, UpdateName, Reload}) => {
                                 let data = UpdateName
                                 data = update(data, {$merge: {topic: rowName}})
                                 try {
-                                    const res = await fetch('http://localhost:5000/studio/update/row_article', {
+                                    const res = await fetch('https://njanchor.com/studio/update/row_article', {
                                         method: "POST",
                                         headers: {"Content-Type": "application/json;charset=UTF-8"},
                                         credentials: 'include',
@@ -180,7 +180,7 @@ const EditorPageStudioBox = ({State, OpenFunction, UpdateName, Reload, Aspect}) 
         let data = UpdateName
         data = update(data, {$merge: {topic: rowName}})
         try {
-            const res = await fetch('http://localhost:5000/studio/update/row_article', {
+            const res = await fetch('https://njanchor.com/studio/update/row_article', {
                 method: "POST",
                 headers: {"Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -234,7 +234,7 @@ const EditorPageStudio = () => {
     const DisplayAll =  async() =>{
         const data = {name:'viewRowByTopic', topic: rowName}
         try {
-            const res = await fetch('http://localhost:5000/studio/view/row_article', {
+            const res = await fetch('https://njanchor.com/studio/view/row_article', {
                 method: "POST",
                 headers: {"Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -248,7 +248,7 @@ const EditorPageStudio = () => {
                 if (keys[key] !== 'adminid' && keys[key] !== 'rowid' && keys[key] !== 'topicname') {
                     const data = {name: 'viewArticleByPublishId', publishId: parseRes[keys[key]]}
                     try {
-                        const res = await fetch('http://localhost:5000/studio/view/article', {
+                        const res = await fetch('https://njanchor.com/studio/view/article', {
                             method: "POST",
                             headers: {"Content-Type": "application/json;charset=UTF-8"},
                             credentials: 'include',

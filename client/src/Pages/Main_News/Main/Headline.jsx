@@ -357,7 +357,7 @@ const Headline = ({HeadlineType}) => {
     const DeleteCollection = async () => {
         const data = { name: 'DeleteCollection' , collectionId: collection_id }
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/collection', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/collection', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -375,7 +375,7 @@ const Headline = ({HeadlineType}) => {
     const DeleteLikeList = async () => {
         const data = { name: 'DeleteAllLike'}
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/article/like', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/article/like', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -394,7 +394,7 @@ const Headline = ({HeadlineType}) => {
         newData = update(newData,{$merge: data})
 
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/article/like', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/article/like', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -412,7 +412,7 @@ const Headline = ({HeadlineType}) => {
         let newData = {name: 'DeleteHistory'}
         newData = update(newData,{$merge: data})
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/history', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/history', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -430,7 +430,7 @@ const Headline = ({HeadlineType}) => {
     const DeleteHistoryList = async () => {
         let data = {name: 'DeleteAllHistory'}
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/history', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/history', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -447,7 +447,7 @@ const Headline = ({HeadlineType}) => {
     const GetFollowAvatar = async () => {
         let data = {name:'GetFollowAvatar', username: follow_user_name}
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/following', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/following', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -468,7 +468,7 @@ const Headline = ({HeadlineType}) => {
         let data = {name: 'InsertFollowing'}
         data = update(data, {$merge: object})
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/following', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/following', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -502,7 +502,7 @@ const Headline = ({HeadlineType}) => {
         let data = {name:'GetFollowing'}
         data = update(data, {$merge: object})
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/following', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/following', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -535,7 +535,7 @@ const Headline = ({HeadlineType}) => {
             NewData = update(data, {$merge: {name: 'GetFollowArticlesTitleByName', username: follow_user_name}})
 
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/following', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/following', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -560,7 +560,7 @@ const Headline = ({HeadlineType}) => {
             for (let element of all) {
                 try {
                     const data = {name: 'GetFollowArticlesByDate', username: element.user_name}
-                    const response = await fetch('http://localhost:5000/home/mainfunction/following', {
+                    const response = await fetch('https://njanchor.com/home/mainfunction/following', {
                         method: "POST",
                         headers: {"Content-Type": "application/json"},
                         credentials: 'include',
@@ -594,7 +594,7 @@ const Headline = ({HeadlineType}) => {
     const DeleteCollectionList = async (data) => {
         const newData = update(data,{$merge:{ name: 'DeleteCollectionList' , collectionId: collection_id }})
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/collection_list', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/collection_list', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -614,7 +614,7 @@ const Headline = ({HeadlineType}) => {
         if (routeId)
              data = {topic: routeId }
         try {
-            const response = await fetch('http://localhost:5000/home/view/row_article', {
+            const response = await fetch('https://njanchor.com/home/view/row_article', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -627,7 +627,7 @@ const Headline = ({HeadlineType}) => {
             for (const key of keys) {
                 if (key !== 'adminid' && key !== 'rowid' && key !== 'topicname') {
                     const data = {name: 'viewArticleByPublishId', publishId: parseRes[key]}
-                    const res = await fetch('http://localhost:5000/studio/view/article', {
+                    const res = await fetch('https://njanchor.com/studio/view/article', {
                         method: "POST",
                         headers: {"Content-Type": "application/json;charset=UTF-8"},
                         credentials: 'include',
@@ -661,7 +661,7 @@ const Headline = ({HeadlineType}) => {
             NewData = update(data, {$merge: {name: 'AllCollectionListByTitleByName', collectionId: collection_id}})
 
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/collection_list', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/collection_list', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -689,7 +689,7 @@ const Headline = ({HeadlineType}) => {
             NewData = update(data, {$merge: {name: 'AllArticleLikeListByTitleByName'}})
 
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/article/like', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/article/like', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -716,7 +716,7 @@ const Headline = ({HeadlineType}) => {
             NewData = update(data, {$merge: {name: 'AllHistoryListByTitleByName'}})
 
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/history', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/history', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -746,7 +746,7 @@ const Headline = ({HeadlineType}) => {
             NewData = update(data, {$merge: {name: 'publishedTopicByTitle', search: query}})
 
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/search', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/search', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',

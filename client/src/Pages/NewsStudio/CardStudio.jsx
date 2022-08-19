@@ -25,7 +25,7 @@ const CardStudio = ({DeleteState,  View, Data}) => {
     const DeleteArticle = async (articleId) => {
         const data = {name: articleId}
         try {
-            const res = await fetch('http://localhost:5000/studio/delete/article_by_id', {
+            const res = await fetch('https://njanchor.com/studio/delete/article_by_id', {
                 method: "POST",
                 headers: { "Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',

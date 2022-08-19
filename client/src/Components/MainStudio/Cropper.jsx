@@ -97,7 +97,7 @@ const Cropper = ({objectName, objectReduxName, aspectRatio, onFileChange, Width,
                 data.append('articleId', articleId)
                 data.append('name', objectName)
                 try {
-                    const res = await fetch('http://localhost:5000/studio/upload/image', {
+                    const res = await fetch('https://njanchor.com/studio/upload/image', {
                         method: "POST",
                         credentials: 'include',
                         body: data

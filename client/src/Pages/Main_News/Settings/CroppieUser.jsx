@@ -44,7 +44,7 @@ const CroppieUser = () => {
                     const data = new FormData()
                     data.append('image', file)
                     try {
-                        const res = await fetch('http://localhost:5000/home/get/promise-image-url', {
+                        const res = await fetch('https://njanchor.com/home/get/promise-image-url', {
                             method: "POST",
                             credentials: 'include',
                             boundary: 'MyBoundary',

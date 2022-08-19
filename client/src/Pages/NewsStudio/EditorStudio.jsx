@@ -141,7 +141,7 @@ const EditorStudio = () => {
         data.append('articleId', articleId)
         data.append('name', name)
         try {
-            const res = await fetch('http://localhost:5000/studio/upload/image', {
+            const res = await fetch('https://njanchor.com/studio/upload/image', {
                 method: "POST",
                 credentials: 'include',
                 body: data
@@ -170,10 +170,10 @@ const EditorStudio = () => {
         }
         setSubmitDebounce(true)
         const data = {'articleId': articleId}
-        let url = 'http://localhost:5000/studio/publish/article'
+        let url = 'https://njanchor.com/studio/publish/article'
         try {
             if (editorBody.inreviewdate)
-                url = 'http://localhost:5000/studio/update_publish/article'
+                url = 'https://njanchor.com/studio/update_publish/article'
             const res = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
@@ -207,7 +207,7 @@ const EditorStudio = () => {
             'text': Object.values(text)[0]
         }
         try {
-            const res = await fetch('http://localhost:5000/studio/update/article_text', {
+            const res = await fetch('https://njanchor.com/studio/update/article_text', {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 credentials: 'include',
@@ -243,7 +243,7 @@ const EditorStudio = () => {
     const UpdateBody = async () => {
         const data = {'body': getBody.BodyOne, 'articleId': articleId}
         try {
-            const res = await fetch('http://localhost:5000/studio/update/body', {
+            const res = await fetch('https://njanchor.com/studio/update/body', {
                 method: "POST",
                 headers: { "Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -261,7 +261,7 @@ const EditorStudio = () => {
             'name': 'viewArticleById'
         }
         try {
-            const res = await fetch('http://localhost:5000/studio/view/article', {
+            const res = await fetch('https://njanchor.com/studio/view/article', {
                 method: "POST",
                 headers: { "Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',

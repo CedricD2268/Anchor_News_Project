@@ -31,7 +31,7 @@ const Support = () => {
     const sendEmail = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:5000/service/sent_email', {
+            const res = await fetch('https://njanchor.com/service/sent_email', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',

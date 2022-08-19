@@ -51,7 +51,7 @@ export const HomeStudio = () => {
         let dataSet = null
 
         try {
-            const res = await fetch('http://localhost:5000/studio/view/article_by_home', {
+            const res = await fetch('https://njanchor.com/studio/view/article_by_home', {
                 method: "POST",
                 headers: { "Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -252,7 +252,7 @@ export const PageStudio = ({arr}) => {
             data = {name: Data.defaultType, type: Object.type, search: query ? query: null}
         }
         try {
-            const res = await fetch('http://localhost:5000/studio/view/article_by_home', {
+            const res = await fetch('https://njanchor.com/studio/view/article_by_home', {
                 method: "POST",
                 headers: { "Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -420,10 +420,10 @@ const CreateArticle = ({State, ClearFunction, arr}) => {
 
     const CreateArticleType = async (action) => {
         let bodyData = {"type": action.type, "topic": action.topic}
-        let endpoint = 'http://localhost:5000/studio/create/article'
+        let endpoint = 'https://njanchor.com/studio/create/article'
         try {
             if (arr.name === 'PageStudio') {
-                endpoint = 'http://localhost:5000/studio/view/row_article'
+                endpoint = 'https://njanchor.com/studio/view/row_article'
                 bodyData = update(bodyData, {$merge: {name: 'viewRowByTopic'}})
             }
 
@@ -568,7 +568,7 @@ const HeaderStudio = () => {
 
     const CheckAdmin = async() =>{
         try {
-            const res = await fetch('http://localhost:5000/studio/check/admin', {
+            const res = await fetch('https://njanchor.com/studio/check/admin', {
                 method: "GET",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -583,7 +583,7 @@ const HeaderStudio = () => {
     const FollowCount = async() =>{
         const data = {name: 'GetFollowSelfCount'}
         try {
-            const res = await fetch('http://localhost:5000/home/mainfunction/following', {
+            const res = await fetch('https://njanchor.com/home/mainfunction/following', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',

@@ -76,10 +76,10 @@ const Comment = ({avatar, avatarName, commentBody, date, commentId, commentReply
      const [likeCount, setLikeCount] = useState(commentLikeCount)
 
     const PostCommentLike = async () => {
-        let url = 'http://localhost:5000/homeExtend/mainfunction/comment/likes'
+        let url = 'https://njanchor.com/homeExtend/mainfunction/comment/likes'
         let data = {name: 'InsertCommentLike', commentId: commentId}
         if (!commentId) {
-            url = 'http://localhost:5000/homeExtend/mainfunction/reply_comment/likes'
+            url = 'https://njanchor.com/homeExtend/mainfunction/reply_comment/likes'
             data = {name: 'InsertReplyCommentLike', commentReplyId: commentReplyId}
         }
 
@@ -190,7 +190,7 @@ const Article = () => {
     const GetArticle = async () => {
         try {
             const data = {name: 'viewArticleByPublishId', publishId: article_id}
-            const res = await fetch('http://localhost:5000/studio/view/article', {
+            const res = await fetch('https://njanchor.com/studio/view/article', {
                 method: "POST",
                 headers: {"Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -211,7 +211,7 @@ const Article = () => {
             data = {articlePublishedId: article_id, name: 'GetArticleLike'}
         }
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/article/like', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/article/like', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -231,7 +231,7 @@ const Article = () => {
     const HistoryArticle = async() => {
         let data = {articlePublishedId: article_id, name: 'InsertHistory'}
         try {
-            const response = await fetch('http://localhost:5000/home/mainfunction/history', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/history', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',
@@ -248,7 +248,7 @@ const Article = () => {
             return
         try {
             const data = {name: DataName, publishId: article_id}
-            const res = await fetch('http://localhost:5000/homeExtend/mainfunction/comments', {
+            const res = await fetch('https://njanchor.com/homeExtend/mainfunction/comments', {
                 method: "POST",
                 headers: {"Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -259,7 +259,7 @@ const Article = () => {
             let newPostedReplyComment = {}
             for (let element of ResOne) {
                 const data = {name: 'GetCommentLike', commentId: element.comment_id}
-                const result = await fetch('http://localhost:5000/homeExtend/mainfunction/comment/likes', {
+                const result = await fetch('https://njanchor.com/homeExtend/mainfunction/comment/likes', {
                     method: "POST",
                     headers: {"Content-Type": "application/json;charset=UTF-8"},
                     credentials: 'include',
@@ -267,7 +267,7 @@ const Article = () => {
                 })
                 const Result = await result.json()
                 const data2 = {name: 'ViewCommentLikeCount', commentId: element.comment_id}
-                const result2 = await fetch('http://localhost:5000/homeExtend/mainfunction/comment/likes', {
+                const result2 = await fetch('https://njanchor.com/homeExtend/mainfunction/comment/likes', {
                     method: "POST",
                     headers: {"Content-Type": "application/json;charset=UTF-8"},
                     credentials: 'include',
@@ -275,7 +275,7 @@ const Article = () => {
                 });
                 const Result2 = await result2.json()
                 const data3 = {name: 'AllReplyComments', commentId: element.comment_id}
-                const result3 = await fetch('http://localhost:5000/homeExtend/mainfunction/reply_comments', {
+                const result3 = await fetch('https://njanchor.com/homeExtend/mainfunction/reply_comments', {
                     method: "POST",
                     headers: {"Content-Type": "application/json;charset=UTF-8"},
                     credentials: 'include',
@@ -287,7 +287,7 @@ const Article = () => {
                 for (let element2 of Result3) {
 
                     const dataB = {name: 'GetReplyCommentLike', commentReplyId: element2.comment_reply_id}
-                    const resultB = await fetch('http://localhost:5000/homeExtend/mainfunction/reply_comment/likes', {
+                    const resultB = await fetch('https://njanchor.com/homeExtend/mainfunction/reply_comment/likes', {
                         method: "POST",
                         headers: {"Content-Type": "application/json;charset=UTF-8"},
                         credentials: 'include',
@@ -296,7 +296,7 @@ const Article = () => {
                     const ResultB = await resultB.json()
 
                     const data2B = {name: 'ViewReplyCommentLikeCount', commentReplyId: element2.comment_reply_id}
-                    const result2B = await fetch('http://localhost:5000/homeExtend/mainfunction/reply_comment/likes', {
+                    const result2B = await fetch('https://njanchor.com/homeExtend/mainfunction/reply_comment/likes', {
                         method: "POST",
                         headers: {"Content-Type": "application/json;charset=UTF-8"},
                         credentials: 'include',
@@ -338,7 +338,7 @@ const Article = () => {
     const PostComment = async () => {
         try {
             const data = {name: 'InsertComment', publishId: article_id, commentBody: commentBody}
-            const res = await fetch('http://localhost:5000/homeExtend/mainfunction/comments', {
+            const res = await fetch('https://njanchor.com/homeExtend/mainfunction/comments', {
                 method: "POST",
                 headers: {"Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -360,7 +360,7 @@ const Article = () => {
     const PostReplyComment = async (Data) => {
         try {
             const data = update(Data, {$merge:{name : 'InsertReplyComment'}})
-            const res = await fetch('http://localhost:5000/homeExtend/mainfunction/reply_comments', {
+            const res = await fetch('https://njanchor.com/homeExtend/mainfunction/reply_comments', {
                 method: "POST",
                 headers: {"Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -496,7 +496,7 @@ const Article = () => {
     const CountComments = async() => {
         try {
             const data = {name: 'AllCommentsCount', publishId: article_id}
-            const res = await fetch('http://localhost:5000/homeExtend/mainfunction/comments', {
+            const res = await fetch('https://njanchor.com/homeExtend/mainfunction/comments', {
                 method: "POST",
                 headers: {"Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',
@@ -512,7 +512,7 @@ const Article = () => {
     const getRead = async() => {
         try {
             const data = {name: 'AllCommentsCount', publishId: article_id}
-            const res = await fetch('http://localhost:5000/homeExtend/mainfunction/get_read', {
+            const res = await fetch('https://njanchor.com/homeExtend/mainfunction/get_read', {
                 method: "POST",
                 headers: {"Content-Type": "application/json;charset=UTF-8"},
                 credentials: 'include',

@@ -45,7 +45,7 @@ const Password = () => {
     const onSubmit = async (data) => {
         const newData = update(data, {$merge: {email: profile.email}})
         try {
-            const res= await fetch('http://localhost:5000/home/update/password', {
+            const res= await fetch('https://njanchor.com/home/update/password', {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 credentials: 'include',

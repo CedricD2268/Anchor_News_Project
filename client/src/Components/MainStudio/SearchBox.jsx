@@ -168,9 +168,9 @@ const SearchBox = ({BorderColor,Border, BorderRadius, Icon, InputVisibility, Cle
 
     const RowQuery = async (value) => {
         let data = {name: 'searchStudio', search: value}
-        let url = 'http://localhost:5000/studio/view/article_by_home'
+        let url = 'https://njanchor.com/studio/view/article_by_home'
         if (home_query || SearchX){
-            url = 'http://localhost:5000/home/mainfunction/search'
+            url = 'https://njanchor.com/home/mainfunction/search'
             data = {name: 'publishedByDate', search: value}
         }
         try {

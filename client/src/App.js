@@ -154,7 +154,7 @@ const App = () => {
 
     const Verify = async () => {
         try {
-            const res = await fetch('http://localhost:5000/auth/verify', {
+            const res = await fetch('https://njanchor.com/auth/verify', {
                 method: "GET",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include'
@@ -174,12 +174,12 @@ const App = () => {
 
     const ViewProfile = async () => {
         try {
-            const res = await fetch('http://localhost:5000/home/view/profile', {
+            const res = await fetch('https://njanchor.com/home/view/profile', {
                 method: "GET",
                 credentials: 'include'
             });
             const data = {name: 'AllCollection'}
-            const response = await fetch('http://localhost:5000/home/mainfunction/collection', {
+            const response = await fetch('https://njanchor.com/home/mainfunction/collection', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: 'include',

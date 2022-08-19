@@ -1,7 +1,7 @@
 export const GetArticleTopicTypeName = async (name) => {
     const data = {'name': name}
     try {
-        const res = await fetch('http://localhost:5000/studio/view/article_type_topic', {
+        const res = await fetch('https://njanchor.com/studio/view/article_type_topic', {
             method: "POST",
             headers: {"Content-Type": "application/json;charset=UTF-8"},
             credentials: 'include',
