@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import TextError from "../../../Components/LoginRegister/text_error";
 import {GetOverlayRx, ViewProfileRx} from "../../../Actions";
 import {useDispatch, useSelector} from "react-redux";
-import GoogleLogin from "react-google-login";
+// import GoogleLogin from "react-google-login";
 import {BiCheck, RiCloseCircleFill} from "react-icons/all";
 import {BsFillCheckCircleFill} from "react-icons/bs";
 import SavedIcon from "../../../Components/Icon/SavedIcon";
@@ -298,26 +298,26 @@ const Profile = () => {
                         Google</h2></div>
                     <div className={SettingStyle.MainPortfolioCTwo}>
                         <span> Connecting with Google will allows us to populate your account information.</span>
-                        <GoogleLogin clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                                     render={renderProps => (
-                                         <button
-                                             className={profile.medianame !== 'google' ?  SettingStyle.MainPortfolioCButtonOne  : SettingStyle.MainPortfolioCButtonThree}
-                                             // className={SettingStyle.MainPortfolioCButtonThree}
-                                             type='button'
-                                             disabled={profile.medianame !== 'google' ? false : true}
-                                             // disabled={true}
-                                             onClick={renderProps.onClick}
-                                             // disabled={renderProps.disabled}
-                                         >
-                                             {profile.medianame !== 'google' ? `Connect` : (<React.Fragment>Connected&nbsp; <BsFillCheckCircleFill size={19} color={'white'}/></React.Fragment>)}
+                        {/*<GoogleLogin clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}*/}
+                        {/*             render={renderProps => (*/}
+                        {/*                 <button*/}
+                        {/*                     className={profile.medianame !== 'google' ?  SettingStyle.MainPortfolioCButtonOne  : SettingStyle.MainPortfolioCButtonThree}*/}
+                        {/*                     // className={SettingStyle.MainPortfolioCButtonThree}*/}
+                        {/*                     type='button'*/}
+                        {/*                     disabled={profile.medianame !== 'google' ? false : true}*/}
+                        {/*                     // disabled={true}*/}
+                        {/*                     onClick={renderProps.onClick}*/}
+                        {/*                     // disabled={renderProps.disabled}*/}
+                        {/*                 >*/}
+                        {/*                     {profile.medianame !== 'google' ? `Connect` : (<React.Fragment>Connected&nbsp; <BsFillCheckCircleFill size={19} color={'white'}/></React.Fragment>)}*/}
 
-                                         </button>
-                                     )}
-                                     buttonText={"Log in with Google"}
-                                     onSuccess={HandleAccountChange}
-                                     onFailure={HandleFailure}
-                                     cookiePolicy={"single_host_origin"}>
-                        </GoogleLogin>
+                        {/*                 </button>*/}
+                        {/*             )}*/}
+                        {/*             buttonText={"Log in with Google"}*/}
+                        {/*             onSuccess={HandleAccountChange}*/}
+                        {/*             onFailure={HandleFailure}*/}
+                        {/*             cookiePolicy={"single_host_origin"}>*/}
+                        {/*</GoogleLogin>*/}
 
                     </div>
                     {error.errorGoogle &&<TextError name={error.errorGoogle}/>}
