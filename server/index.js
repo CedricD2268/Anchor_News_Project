@@ -11,7 +11,6 @@ pg.types.setTypeParser(1114, str => moment.utc(str).format());
 
 app.use(cors({
   origin: ['http://localhost:3000', "http://localhost:5000", "https://njanchor.com"],
-  methods: "GET, POST",
   credentials: true,
   optionsSuccessStatus: 200
 }));
