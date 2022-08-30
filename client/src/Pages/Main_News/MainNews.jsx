@@ -5,20 +5,17 @@ import Header from './Header/Header'
 import Sidebar from "./Sidebar/Sidebar";
 import CroppieUser from "./Settings/CroppieUser";
 import NavbarButtons from "../../Components/MainStudio/NavbarButtons";
+import {useWindowWidth} from "@react-hook/window-size";
 
 
 const MainNews = ({pageName}) => {
-    const [count, setCount] = useState(0);
     const [dState, setDState] = useState(true);
+    const w_size = useWindowWidth()
     const [xD, setXd] = useState(0);
     const [xY, setXy] = useState(0);
 
 
-    window.addEventListener('resize', function () {
-        setCount(window.innerWidth)
-    });
-
-    const SidebarSize = "1697px";
+    const SidebarSize = 1697;
 
 
 
@@ -30,40 +27,41 @@ const MainNews = ({pageName}) => {
     }
 
     function CloseClick2() {
-            setDState(dState === false)
+        if (dState){
+            setDState(false)
+        }
     }
 
 
     function SidebarClick(){
         setDState(dState === false);
-        if (window.matchMedia("(max-width:" +SidebarSize+")").matches && dState === false) {
+        if ( w_size < SidebarSize && dState === false) {
             setXd(1);
         }
-        if (window.matchMedia("(min-width:" +SidebarSize+")").matches && dState === true) {
+        if ( w_size > SidebarSize && dState === true) {
             setXd(0);
         }
     }
 
     function SidebarResize() {
-        if (window.matchMedia("(min-width:" +SidebarSize+")").matches && dState === false && xY === 1) {
+        if ( w_size > SidebarSize && dState === false && xY === 1) {
             setXy(0);
         }
-        if (window.matchMedia("(max-width: " +SidebarSize+")").matches && dState === true && xD === 0) {
+        if (w_size < SidebarSize && dState === true && xD === 0) {
             setDState(dState === false)
             setXy(1)
         }
-        if (window.matchMedia("(min-width: " +SidebarSize+")").matches && dState === true && xD === 1){
+        if (w_size > SidebarSize && dState === true && xD === 1){
             setXd(0);
         }
-        if (window.matchMedia("(min-width:" +SidebarSize+")").matches && dState === false && xY === 1) {
+        if (w_size > SidebarSize && dState === false && xY === 1) {
             setDState(dState === false)
         }
 
     }
     useEffect(() =>
         SidebarResize()
-
-    , [count]);
+    , [w_size]);
 
     useEffect(() => {
         PageClick()

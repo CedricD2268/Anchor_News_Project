@@ -186,7 +186,8 @@ input, textarea, select {
 .SearchInputButton {
   display: flex;
   flex-direction: row;
-  height: 35px; }
+  height: 35px;
+  gap: 0; }
   .SearchInputButton input {
     width: 100%;
     border: 1px solid lightgrey;
@@ -198,7 +199,9 @@ input, textarea, select {
     font-family: "Patua One", serif;
     border-right: none !important;
     width: 100%;
-    transition-duration: 0.0s; }
+    height: 100% !important;
+    transition-duration: 0.0s;
+    margin-right: -5px; }
     .SearchInputButton input:focus {
       border-color: none; }
     .SearchInputButton input::-ms-reveal, .SearchInputButton input::-ms-clear {

@@ -13,6 +13,7 @@ import styled from "styled-components";
 import UseWindowSize from "./UseWindowSize";
 import {TbArrowBigUpLines} from "react-icons/all";
 import {useSelector} from "react-redux";
+import {useWindowWidth} from "@react-hook/window-size";
 
 
 
@@ -96,6 +97,7 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
     const [windowWidth, setWindowWidth] = useState('860px')
     const size = UseWindowSize()
     const ButtonsRef = useRef()
+    const w_size = useWindowWidth()
     const profile = useSelector((state) => state.profileView);
     const navigate = useNavigate()
     const location = useLocation()
@@ -120,6 +122,7 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
         const forwardB = document.querySelectorAll(`.${MainStyle.HeaderButtonsForward}`);
         const backwardB = document.querySelectorAll(`.${MainStyle.HeaderButtonsBack}`);
         const scrollP = document.querySelectorAll(`.${MainStyle.HeaderButtonsTopics}`)
+        console.log(forwardB)
         forwardB.forEach(function (e) {
             e.onclick = function () {
                 scrollP.forEach(function (e) {
@@ -136,7 +139,7 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
         })
         let scrollN = 0;
         for (let i = 0; i < SettingUrlList.length; i++) {
-            if (window.matchMedia(`(max-width:  ${windowWidth}`).matches && SettingUrlList[i].replace(/\s/g, '%20') === location.pathname) {
+            if (w_size < parseInt(windowWidth.split('px')[0]) && SettingUrlList[i].replace(/\s/g, '%20') === location.pathname) {
                 scrollP.forEach(function (e) {
                     e.scrollLeft = scrollN
                 })
@@ -175,14 +178,14 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
         if (Fixed) {
             setButtonSize({height: '35px', maxWidth: '176px', fontSize: '15.2px', minWidth: '140px'})
             setWindowWidth('990px');
-            if (window.matchMedia("(max-width: 400px)").matches) {
+            if (w_size < 400) {
                 setContent(false)
             }
         }
         window.addEventListener("scroll", (event) => {
-            if (window.matchMedia("(max-width: 990px)").matches) {
+            if (w_size < 990) {
                 setMargin(window.pageYOffset >= 133 ? 0 : '-65px')
-            } else if (window.matchMedia("(min-width: 990px)").matches) {
+            } else  {
                 setMargin(window.pageYOffset >= 180 ? 0 : '-65px')
             }
         })
@@ -212,12 +215,12 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
 
     useEffect(() => {
         HeaderButtonsScroll()
-        if (Fixed  && size.width < 700) {
+        if (Fixed  && w_size < 700) {
             setContent(false)
         }else{
             setContent(UrlList().includes(location.pathname))
         }
-    }, [size.width, location.pathname]);
+    }, [w_size, location.pathname, profile]);
 
 
     return (
@@ -237,7 +240,7 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
                     )}
                     {content  ? (
                         <React.Fragment>
-                            {size.width > 440 &&
+                            {w_size > 440 &&
                                 <ButtonFB className={MainStyle.HeaderButtonsBack} windowWidth={windowWidth}>
                                     <button>
                                         <BackIcon size={30}/>
@@ -311,7 +314,7 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
 
                     {Fixed &&(
                         <div className={HeaderStyle.BackToTop}>
-                            {size.width > 990 ?
+                            {w_size > 990 ?
                                 <button onClick={goToTop}>Back to top<FaArrowAltCircleUp size={20}/></button>
                                 : <button onClick={goToTop} style={{borderRadius: '50%', padding: '7px'}}><TbArrowBigUpLines size={22} color={'white'}/></button> }
                         </div>

@@ -13,7 +13,7 @@ import {GetOverlayRx, LogoutRx} from '../../../Actions';
 import Logout from "../../../Components/LoginRegister/Logout";
 import userface from "../../../Assets/Images/UserFaces/user3.png";
 import AnchorLogoIcon from "../../../Components/Icon/AnchorLogoIcon";
-import UseWindowSize from "../../../Components/MainStudio/UseWindowSize";
+import {useWindowWidth} from "@react-hook/window-size";
 
 
 const SidebarTwo = ({OverlayRX, Radius, MarginTop, MarginRight, Home}) => {
@@ -21,7 +21,7 @@ const SidebarTwo = ({OverlayRX, Radius, MarginTop, MarginRight, Home}) => {
     const dispatch = useDispatch()
     const profile = useSelector((state) => state.profileView);
     const location = useLocation();
-    const size = UseWindowSize()
+    const w_size = useWindowWidth()
 
 
 
@@ -62,7 +62,7 @@ const SidebarTwo = ({OverlayRX, Radius, MarginTop, MarginRight, Home}) => {
 
     useEffect(() => {
         CloseClickXX()
-    }, [size.width, location.pathname]);
+    }, [w_size, location.pathname]);
 
     return (
 
@@ -193,12 +193,14 @@ const SidebarTwo = ({OverlayRX, Radius, MarginTop, MarginRight, Home}) => {
                             </li>
                             <li>
                                 {Home ?
+
+                                   w_size > 500 ?
                                     <button
                                         onClick={() => {
                                             window.location.href = "/studio/home/my-home"
                                         }}>
                                         <CreativeIcon/>Anchor Studio
-                                    </button>
+                                    </button>: ''
                                     :
                                     <button
                                         onClick={() => {

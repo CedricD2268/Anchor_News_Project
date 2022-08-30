@@ -36,19 +36,23 @@ const Settings = () => {
                 if (div.classList.contains(SettingStyle.ToggleSidebarButton)) {
                     let name = div.querySelector('span').innerHTML;
                     if (name === 'Profile' || name === 'Password') {
+                        profileDiv.style.display = 'block';
+                        passwordDiv.style.display = 'block';
                         billingDiv.style.display = 'none';
                         subscriptionDiv.style.display = 'none';
                         customizeDiv.style.display = 'none';
                         break;
                     }
                     if (name === 'Billing' || name === 'Subscription') {
+                        billingDiv.style.display = 'block';
+                        subscriptionDiv.style.display = 'block';
                         profileDiv.style.display = 'none';
                         passwordDiv.style.display = 'none';
                         customizeDiv.style.display = 'none';
                         break;
                     }
                     if (name === 'Customize') {
-
+                        customizeDiv.style.display = 'block';
                         profileDiv.style.display = 'none';
                         passwordDiv.style.display = 'none';
                         billingDiv.style.display = 'none';
@@ -103,7 +107,7 @@ const Settings = () => {
 
     useEffect(() =>
             SidebarResize()
-        , [size.width]);
+        , [size.width, location.pathname]);
 
 
     return (

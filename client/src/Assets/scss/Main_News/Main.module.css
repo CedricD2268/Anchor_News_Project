@@ -950,7 +950,8 @@ input, textarea, select {
       outline: none;
       font-family: "Patua One", serif;
       border-radius: 0px;
-      transition-duration: 0.30s; }
+      transition-duration: 0.30s;
+      color: black; }
       .ArticleMainFooterCC div button:focus {
         outline: none; }
       .ArticleMainFooterCC div button:hover {

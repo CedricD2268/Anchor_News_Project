@@ -146,6 +146,7 @@
   display: flex;
   flex-direction: row;
   height: 35px;
+  gap: 0;
   //-webkit-transition-duration: 0.30s; /* Safari */
   //transition-duration: 0.30s;
   input{
@@ -153,7 +154,9 @@
     border-right: none !important;
     //max-width: 180px;
     width: 100%;
+    height: 100% !important;
     transition-duration: 0.0s;
+    margin-right: -5px;
     //border-color: red !important;
   }
   .ClearButton{
@@ -166,7 +169,6 @@
     transition-duration: 0.0s;
     padding: 0;
     margin-right: -5px;
-     //border-color: red !important;
     span{
       display: flex;
       flex-direction: row;

@@ -27,6 +27,7 @@ import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
 import SidebarTwo from "./SidebarTwo";
 import SupportIcon from "../../../Components/Icon/SupportIcon";
+import {useWindowWidth} from "@react-hook/window-size";
 
 const Span = styled.span`
   display: block;
@@ -54,6 +55,7 @@ const Sidebar = ({DisState, Close}) => {
     const navigate = useNavigate()
     const [arrayTest, setArrayTest] = useState([1,2,3,4,5,6])
     const [array, setArray] = useState({a: [], b: [], c:[]})
+    const w_size = useWindowWidth()
     const followRender = useSelector((state) => state.overlay);
 
 
@@ -72,7 +74,8 @@ const Sidebar = ({DisState, Close}) => {
             button.style.backgroundColor = 'transparent'
         })
         e.target.style.background = '#354f52'
-        if (window.matchMedia("(max-width: 1697px ").matches) {
+
+        if (w_size < 1697){
             Close()
         }
 
@@ -311,11 +314,16 @@ const Sidebar = ({DisState, Close}) => {
                                     <SettingsIconTwo/>Settings
                                 </button>
                             </li>
-                            <li>
-                                <button onClick={()=>{window.location.href = "/studio/home/my-home"}}>
-                                    <CreativeIcon/>News Studio
-                                </button>
-                            </li>
+                            {w_size > 500 &&
+                                <li>
+                                    <button onClick={() => {
+                                        window.location.href = "/studio/home/my-home"
+                                    }}>
+                                        <CreativeIcon/>News Studio
+                                    </button>
+                                </li>
+                            }
+
                             <li>
                                 <button onClick={() => {
                                     dispatch(GetOverlayRx({
