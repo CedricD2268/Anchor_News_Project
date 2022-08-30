@@ -13,6 +13,7 @@ const path = require("path");
 const resetAuthorization = require("../middleware/resetAuthorization");
 const jwt = require("jsonwebtoken");
 const aws = require("aws-sdk");
+const generator = require('generate-password');
 const randomBytes = promisify(crypto.randomBytes)
 require('dotenv').config();
 process.env.TZ = "UTC";
@@ -215,10 +216,13 @@ router.get("/clone_login", async (req, res) => {
         const rawBytesAID = await randomBytes(5)
         let userName = rawBytesAID.toString('hex')
         userName = `User_${userName}`
+
         await pool.query("CALL create_user_account_pcd( $1, NULL, 'email', 'clone', NULL, false, $2, NULL, $3);", [fakeEmail, fullName, userName])
+
 
         const newUser = await pool.query("SELECT * FROM get_user_account_func($1);", [fakeEmail])
         const token = jwtGenerator(newUser.rows[0])
+
         res.cookie("token", token, {
             httpOnly: true,
             sameSite: 'strict',
@@ -289,8 +293,8 @@ router.post("/identification", async (req, res) => {
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: 'douillard1234@gmail.com',
-                    pass: 'uckclbfcnjshvniw'
+                    user: process.env.NODEMAILER_EMAIL,
+                    pass: process.env.NODEMAILER_PASSWORD
                 }
             });
 
@@ -307,7 +311,6 @@ router.post("/identification", async (req, res) => {
 
 
             transporter.use('compile', hbs(handlebarOptions));
-            // const token = jwtResetGenerator(user.rows[0]);
             const payload = {
                 user: user.rows[0]
             }
@@ -320,7 +323,7 @@ router.post("/identification", async (req, res) => {
                 subject: 'New Jersey Anchor password reset',
                 template: 'resetEmail',
                 context: {
-                    PASSWORD_RESET_LINK: `http://localhost:3000/accounts/login/reset/${user.rows[0].email}/${user.rows[0].user_name}/${token}`,
+                    PASSWORD_RESET_LINK: `https://njanchor.com/accounts/login/reset/${user.rows[0].email}/${user.rows[0].user_name}/${token}`,
                 }
             };
 

@@ -22,7 +22,7 @@ const Main = ({type, name}) => {
                 </span>
                     </div>
                     <div>
-                        {/*<Headline HeadlineType={'HeadlineCombine'}/>*/}
+                        <Headline HeadlineType={'HeadlineCombine'}/>
                     </div>
                 </React.Fragment>
             }

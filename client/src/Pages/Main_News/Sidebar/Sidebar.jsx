@@ -123,16 +123,6 @@ const Sidebar = ({DisState, Close}) => {
             }
     }, [profile.collection.length])
 
-    // useEffect(() => {
-    //     setSettingUrlList([
-    //         profile && profile.topicone ? profile.topicone : '',
-    //         profile && profile.topictwo ? profile.topictwo : '',
-    //         profile && profile.topicthree ? profile.topicthree : '',
-    //         profile && profile.topicfour ? profile.topicfour : '',
-    //         profile && profile.topicfive ? profile.topicfive : ''
-    //     ])
-    // }, [profile]);
-
 
     return (
         <div className={SideMenuStyle.SideMenu}>
@@ -279,7 +269,10 @@ const Sidebar = ({DisState, Close}) => {
                             <FollowIcon color={"black"}/>Followings
                         </span>
                         <ul>
-                           <button className={SideMenuStyle.ExploreButton} onClick={()=>{navigate(`feed/homeT/explore/all`)}}>
+                           <button className={SideMenuStyle.ExploreButton} onClick={(e)=>{
+                               ListClick(e)
+                               navigate(`feed/homeT/explore/all`)
+                           }}>
                                <MdOutlineExplore size={26}/>Explore
                            </button>
                             {(array && array.c) && ( array.c.map(name => {
@@ -311,7 +304,7 @@ const Sidebar = ({DisState, Close}) => {
                     </div>
                     <hr/>
                     <div className={SideMenuStyle.SideMenuContentE}>
-                        <span className={SideMenuStyle.SpanTitle}><SettingsIconOne color={'black'}/>More From Anchor</span>
+                        <span className={SideMenuStyle.SpanTitle}><SettingsIconOne color={'black'}/>More from Anchor</span>
                         <ul>
                             <li>
                                 <button onClick={()=>{navigate('settings/profile')}}>

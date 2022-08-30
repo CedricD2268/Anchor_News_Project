@@ -3,19 +3,19 @@ import MainStyle from '../../../Assets/scss/Main_News/Main.module.css';
 import GetHeadlineColor from "../../../Components/MainStudio/GetHeadlineColor";
 import FlipFlipSvg from "../../../Components/MainStudio/FlipFlipSvg";
 import {BsCheckCircle} from "react-icons/bs";
-import {MdKeyboardArrowDown, MdSort} from "react-icons/md";
+import {MdDeleteSweep, MdKeyboardArrowDown, MdSort} from "react-icons/md";
 import CommentIcon from "../../../Components/Icon/CommentIcon";
 import DropdownButton from "../../../Components/MainStudio/DropdownButton";
 import ShareIcon from "../../../Components/Icon/ShareIcon";
 import AddCollectionIcon from "../../../Components/Icon/AddCollectionIcon";
-import {GetOverlayRx} from "../../../Actions";
+import {GetOverlayRx, ViewProfileRx} from "../../../Actions";
 import styled from "styled-components";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import update from "react-addons-update";
 import LikedIcon from "../../../Components/Icon/LikedIcon";
 import LikeHeartIcon from "../../../Components/Icon/LikeHeartIcon";
-import {useNavigate, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {Interweave} from "interweave";
 import SkeletonElement from "../../../Components/Skeleton/SkeletonElement";
 import NewDateConvertUtc from "../../../Components/MainStudio/NewDateConvertUtc";
@@ -25,6 +25,11 @@ import EarIcon from "../../../Components/Icon/EarIcon";
 import {useDispatch, useSelector} from "react-redux";
 import GetTimeMoments from "../../../Components/MainStudio/GetTimeMoments";
 import {BiBookReader} from "react-icons/all";
+import {
+  useWindowSize,
+  useWindowWidth,
+  useWindowHeight,
+} from '@react-hook/window-size'
 
 
 const CommentDiv = styled.div`
@@ -67,13 +72,13 @@ const PostComment = ()=>{
 
 
 
-
-
-
-const Comment = ({avatar, avatarName, commentBody, date, commentId, commentReplyId, commentLike, commentLikeCount, replyButton}) => {
+const Comment = ({username, avatar, avatarName, commentBody, date, commentId, commentReplyId, commentLike, commentLikeCount, replyButton}) => {
 
     const [likeComment, setLikeComment] = useState(commentLike)
-     const [likeCount, setLikeCount] = useState(commentLikeCount)
+    const [likeCount, setLikeCount] = useState(commentLikeCount)
+    const profile = useSelector((state) => state.profileView);
+    const w_size = useWindowWidth()
+    const dispatch = useDispatch()
 
     const PostCommentLike = async () => {
         let url = 'https://njanchor.com/homeExtend/mainfunction/comment/likes'
@@ -104,31 +109,72 @@ const Comment = ({avatar, avatarName, commentBody, date, commentId, commentReply
     }
 
 
+    const DeleteComment = async () => {
+        let url = 'https://njanchor.com/homeExtend/mainfunction/comments'
+        let data = {commentId: commentId, name: 'DeleteComment'}
+        if (!commentId) {
+            url = 'https://njanchor.com/homeExtend/mainfunction/reply_comments'
+            data = {commentId: commentReplyId, name: 'DeleteReplyComment'}
+        }
+        try {
+            const res = await fetch(url, {
+                method: "POST",
+                headers: {"Content-Type": "application/json;charset=UTF-8"},
+                credentials: 'include',
+                body: JSON.stringify(data)
+            });
+            dispatch(ViewProfileRx(profile))
+            await res.json()
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+
+
     return (
-        <div className={MainStyle.ArticleMainFooterC}>
-            <div className={MainStyle.ArticleMainFooterCA}>
-                <img alt='user avatar' src={avatar}/>
-                <p>
-                    <span style={{fontSize: 16.5}}>{avatarName}</span>
-                    <span style={{fontSize: 14, color: '#adb5bd'}}>  {`. ${date} ago`}</span>
-                </p>
-            </div>
-            <div className={MainStyle.ArticleMainFooterCB}>
+        <div className={MainStyle.ArticleMainFooterCPrime}>
+            <div className={MainStyle.ArticleMainFooterC}>
+                <div className={MainStyle.ArticleMainFooterCA}>
+                    <img alt='user avatar' src={avatar}/>
+                    <p>
+                        <span style={{fontSize: 16.5}}>{avatarName ? avatarName : username}</span>
+                        <span style={{fontSize: 14, color: '#adb5bd'}}>  {`. ${date} ago`}</span>
+                    </p>
+                </div>
+                <div className={MainStyle.ArticleMainFooterCB}>
                 <span style={{fontSize: 17, color: '#6c757d'}}>
                     {commentBody}
                 </span>
-            </div>
-            <div className={MainStyle.ArticleMainFooterCC}>
-                <button className={MainStyle.ArticleMainFooterCC} onClick={()=>{replyButton()}}>Reply</button>
-                <div>
-                    <button onClick={PostCommentLike}>
-                        {likeComment ? <LikedIcon type={'like'}/> :  <LikedIcon/>}
+                </div>
+                <div className={MainStyle.ArticleMainFooterCC}>
+                    <button className={MainStyle.ArticleMainFooterCC} onClick={() => {
+                        replyButton()
+                    }}>Reply
                     </button>
-                    <span >{ likeCount > 0 && likeCount}</span>
+                    <div>
+                        <button onClick={PostCommentLike}>
+                            {likeComment ? <LikedIcon type={'like'}/> : <LikedIcon/>}
+                        </button>
+                        <span>{likeCount > 0 && likeCount}</span>
+                    </div>
                 </div>
             </div>
-        </div>
+            {profile && profile.username === username &&
+                <div className={MainStyle.ArticleMainFooterCTwo}>
+                    <button onClick={DeleteComment}><MdDeleteSweep size={23}/>
+                        {w_size < 1000 ?
+                            <React.Fragment>
+                                Remove
+                            </React.Fragment> :
+                            <React.Fragment>
+                                Remove comment
+                            </React.Fragment>
+                        }
+                    </button>
+                </div>
+            }
 
+        </div>
     )
 }
 
@@ -143,9 +189,9 @@ const Article = () => {
     const {article_id, article_topic} = useParams()
     const [commentBody, setCommentBody] = useState('')
     const [replyCommentBody, setReplyCommentBody] = useState({})
+    const profile = useSelector((state) => state.profileView);
     const [postedComment, setPostedComment] = useState([])
     const [postedReplyComment, setPostedReplyComment] = useState({})
-    const profile = useSelector((state) => state.profileView);
     const itemsRef = useRef([])
     const pageRef = useRef()
     const [windowCheck, setWindowCheck] = useState(false)
@@ -158,6 +204,7 @@ const Article = () => {
     const [likeArticle, setLikeArticle ] = useState(false)
     const [articleView, setArticleView] = useState();
     const [load, setLoad] = useState(false)
+    const location = useLocation()
     const [commentUrlName, setCommentUrlName] = useState('AllComments')
 
     const TextareaHeight = (e) => {
@@ -182,7 +229,8 @@ const Article = () => {
     const ShareArticle = () => {
         dispatch(GetOverlayRx({
             share: {
-                ov: true
+                ov: true,
+                url: `https://njanchor.com${location.pathname}`
             }
         }))
     }
@@ -537,18 +585,6 @@ const Article = () => {
         }
     }
 
-
-
-
-    useEffect(() => {
-        setTimeout(() => {
-            GetArticle()
-            LikeArticle('getLike')
-            HistoryArticle()
-        }, 850);
-        setLoad(false)
-    }, []);
-
     const CommentTimeout = (urlName) => {
         setTimeout(() => {
             GetComments(urlName)
@@ -558,7 +594,7 @@ const Article = () => {
     useEffect(() => {
         clearTimeout(CommentTimeout(commentUrlName))
         setCommentLoad(false)
-    }, [commentUrlName]);
+    }, [commentUrlName, profile]);
 
     useEffect(() => {
         CountComments()
@@ -578,12 +614,27 @@ const Article = () => {
     }, []);
 
     useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "auto",
+        });
+        const WaitGetting = () => {
+            setTimeout(() => {
+                GetArticle()
+                LikeArticle('getLike')
+                HistoryArticle()
+            }, 850);
+            setLoad(false)
+        }
         const WaitChecking = () => {
             setTimeout(() => {
                 setWaitCheck(true)
             }, 20000)
         }
+
+        clearTimeout(WaitGetting())
         clearTimeout(WaitChecking())
+        setLoad(false)
     }, []);
 
 
@@ -608,6 +659,9 @@ const Article = () => {
             getRead()
         }
     }, [audioCheck, waitCheck, windowCheck]);
+
+
+
 
 
 
@@ -645,10 +699,6 @@ const Article = () => {
                         <div className={MainStyle.ArticleHeadListen}>
                             <span><EarIcon size={25} color={'white'}/></span>
                             <PlayerDiv>
-                            {/*    <AudioPlayer  src={articleView.audio}*/}
-                            {/*                  showJumpControls={false}*/}
-                            {/*                  autoPlayAfterSrcChange={false}*/}
-                            {/*                 />*/}
                                 <ReactPlayer controls={true} height={50}  width={'100%'} url={articleView.audio}
                                              onDuration={OndurationTest}
                                              onProgress={(progress) => {
@@ -671,7 +721,7 @@ const Article = () => {
                         }
                     </div>
                     {load &&
-                        <span>Amazon packages move along a conveyor at an Amazon warehouse facility in Goodyear, Ariz</span>
+                        <span>{articleView && articleView.imageDescription ? articleView.imageDescription : ''}</span>
                     }
                 </div>
                 <div className={MainStyle.ArticleMainPublisher}>
@@ -820,6 +870,12 @@ const Article = () => {
                                         <SkeletonElement Margin={'10px 3px 3px 3px'} BorderRadius={'3px'} Width={'50%'}
                                                          MinWidth={'80%'}
                                                          Height={'21px'}/>
+                                        <SkeletonElement Margin={'20px 3px 3px 3px'} BorderRadius={'3px'} Width={'50%'}
+                                                         MinWidth={'60%'}
+                                                         Height={'21px'}/>
+                                        <SkeletonElement Margin={'10px 3px 30px 3px'} BorderRadius={'3px'} Width={'50%'}
+                                                         MinWidth={'80%'}
+                                                         Height={'21px'}/>
                                     </div> :
                                     <CommentDiv width={'100%'}>
                                         {postedComment && postedComment.map((element, index) => {
@@ -828,6 +884,7 @@ const Article = () => {
                                                         <Comment
                                                             avatar={element && element.avatarlocation ? element.avatarlocation : userface}
                                                             avatarName={element && element.fullname ? element.fullname : null}
+                                                            username={element && element.username ? element.username : null}
                                                             date={element && element.created_on ? GetTimeMoments(element.created_on) : null}
                                                             commentBody={element && element.comment_body ? element.comment_body : null}
                                                             commentId={element && element.comment_id ? element.comment_id : null}
@@ -901,6 +958,7 @@ const Article = () => {
                                                                                             avatarName={element2 && element2.fullname ? element2.fullname : null}
                                                                                             date={element2 && element2.created_on ? GetTimeMoments(element2.created_on) : null}
                                                                                             commentBody={element2 && element2.comment_body ? element2.comment_body : null}
+                                                                                            username={element2 && element2.username ? element2.username : null}
                                                                                             commentId={null}
                                                                                             commentReplyId={element2 && element2.comment_reply_id ? element2.comment_reply_id : null}
                                                                                             commentLike={(element2 && element2.like ? element2.like : false)}

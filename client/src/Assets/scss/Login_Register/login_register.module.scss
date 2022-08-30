@@ -47,7 +47,7 @@ html, body {
   max-width: 440px;
   background: rgba(250, 249, 249,0.91);
   padding: 15px 30px 10px 30px;
-  border-radius: 8px;
+  border-radius: 10px;
   button{
     cursor: pointer;
   }
@@ -88,7 +88,7 @@ html, body {
 }
 .loginButton {
   button {
-    @include ButtonMd($color_uni_two, 4px, 7, 14);
+    @include ButtonMd($color_uni_two, 6px, 7, 14);
     gap: 10px;
     color: white;
     padding: 11px;
@@ -160,7 +160,7 @@ html, body {
   input{
     height: 42px;
     width: 100%;
-    border-radius: 4px ;
+    border-radius: 6px ;
     font-size: 16px;
     font-family: $font_uni_one;
     background-color: white;
@@ -175,7 +175,7 @@ html, body {
     }
   }
   button {
-    @include ButtonMd($color_uni_three, 0 4px 4px 0, 5, 10);
+    @include ButtonMd($color_uni_three, 0 6px 6px 0, 5, 10);
     color: white;
     padding: 11px;
     font-size: 14px;
@@ -202,7 +202,7 @@ html, body {
   .loginRegisterText{
     input{
       width: 80%;
-      border-radius: 4px 0 0 4px ;
+      border-radius: 6px 0 0 6px ;
     }
   }
 }
@@ -227,7 +227,7 @@ html, body {
   display: flex;
   justify-content: center;
   button{
-    @include ButtonMd($color_uni_one, 4px, 5, 10);
+    @include ButtonMd($color_uni_one, 6px, 5, 10);
     color: white;
     padding: 11px;
     font-size: 16px;
@@ -263,5 +263,30 @@ html, body {
     color: $color_uni_seven;
   }
 }
+
+
+.cloneBox{
+  margin-top: -25px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: $color_uni_one;
+
+}
+
+.cloneBoxInfo{
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background: $color_uni_ten;
+  span{
+    font-size: 13px;
+  }
+}
+
+
+
 //BOX-FOOTER-CLOSE//
 ////LOGIN-REGISTER BOX-CLOSE////>>>>>

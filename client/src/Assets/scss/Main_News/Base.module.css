@@ -30,4 +30,48 @@ html, body {
   margin: 0 auto;
   position: relative; }
 
+.errorPage {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .errorPage img {
+    width: 700px; }
+  .errorPage div button {
+    height: 100%;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Patua One", serif;
+    border-radius: 2.5px;
+    transition-duration: 0.30s;
+    border: 1px solid #273A40;
+    padding: 15px 70px;
+    font-size: 16px;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8); }
+    .errorPage div button:focus {
+      outline: none; }
+    .errorPage div button:hover {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.30s;
+      /* Safari */
+      transition-duration: 0.30s; }
+    .errorPage div button:active {
+      background: rgba(0, 0, 0, 0); }
+    .errorPage div button:hover {
+      background: #273A40;
+      color: white; }
+
 /*# sourceMappingURL=Base.module.css.map */

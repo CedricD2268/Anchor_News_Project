@@ -6,7 +6,7 @@ const Overlay = (state = {
     sidebarFour: false,
     sidebarCreate: {ov: false, title: '', listState: false, buttonName: 'Create', collectionName: ''},
     sidebarFollowListRender: false,
-    share: {ov: false},
+    share: {ov: false, url: ''},
     support: {ov: false},
     removeAccount: {ov: false}
 }, action) => {

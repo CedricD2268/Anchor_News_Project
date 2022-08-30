@@ -11,6 +11,7 @@ import TextError from "../../Components/LoginRegister/text_error";
 import ShowHideButton from "../../Components/LoginRegister/show_hide_button";
 import update from "react-addons-update";
 import CloneLogin from "../../Components/LoginRegister/CloneLogin";
+import CloneLoginInfo from "../../Components/LoginRegister/CloneLoginInfo";
 
 const RegisterForm = () => {
 
@@ -131,6 +132,7 @@ const Register = () =>{
                     <div className={LoginRegisterStyle.RegisterLoginFooter}>
                         <p id="footer-text-one">Already have an account? <Link to='../login'> Sign in</Link></p>
                     </div>
+                <CloneLoginInfo/>
             </React.Fragment>
         )
 }

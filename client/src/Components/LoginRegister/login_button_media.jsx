@@ -1,75 +1,77 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import LoginRegisterStyle from '../../Assets/scss/Login_Register/login_register.module.css'
 
 import { useDispatch} from 'react-redux';
 import {LoginRx} from "../../Actions";
 import {MediaLoginErrorRx} from "../../Actions";
 import {AiFillGoogleCircle, BsGoogle, GrGoogle} from "react-icons/all";
-import {GoogleOAuthProvider} from "@react-oauth/google";
+import {GoogleOAuthProvider, hasGrantedAnyScopeGoogle, useGoogleLogin, useGoogleOneTapLogin} from "@react-oauth/google";
 import { GoogleLogin } from '@react-oauth/google';
+import styled from "styled-components";
+import {
+  useWindowSize,
+  useWindowWidth,
+  useWindowHeight,
+} from '@react-hook/window-size'
+
+
+const ButtonDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
 
 
 const LoginButtonMedia = ({google_t}) => {
     const dispatch = useDispatch()
-    const handleFailure = (result) => {
-        console.log(result);
-    };
-    // const handleLogin = (googleData) => {
-    //     console.log(googleData.tokenId);
-    // };
+    const w_width = useWindowWidth()
 
-    // const handleLogin = async (googleData) => {
-    //     const bodyData = {"token": googleData.tokenId}
-    //     try {
-    //         const response = await fetch('http://localhost:5000/auth/google/verify', {
-    //             method: "POST",
-    //             headers: {"Content-Type": "application/json"},
-    //             credentials: 'include',
-    //             body: JSON.stringify(bodyData)
-    //         });
-    //         const parseRes = await response.json();
-    //         console.log(parseRes)
-    //         if (parseRes.token) {
-    //             dispatch(LoginRx());
-    //         }else{
-    //             dispatch(MediaLoginErrorRx(parseRes));
-    //             console.log(parseRes)
-    //         }
-    //
-    //     } catch (err) {
-    //         console.error(err.message);
-    //     }
-    //     return false;
-    // }
+    const handleLogin = async (googleData) => {
+        const bodyData = {"token": googleData.credential}
+        try {
+            const response = await fetch('https://njanchor.com/auth/google/verify', {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                credentials: 'include',
+                body: JSON.stringify(bodyData)
+            });
+            const parseRes = await response.json();
+            console.log(parseRes)
+            if (parseRes.token) {
+                dispatch(LoginRx());
+            }else{
+                dispatch(MediaLoginErrorRx(parseRes));
+                console.log(parseRes)
+            }
+
+        } catch (err) {
+            console.error(err.message);
+        }
+        return false;
+    }
 
 
     return (
         <React.Fragment>
             <div className={LoginRegisterStyle.loginRegisterButtons}>
                 <div className={LoginRegisterStyle.loginButton}>
-                    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+
+                    <ButtonDiv>
                         <GoogleLogin
-                            onSuccess={credentialResponse => {
-                                console.log(credentialResponse);
+                            useOneTap
+                            // theme={"filled_blue"}
+                            type={'standard'}
+                            size={'large'}
+                            shape={'pill'}
+                            width={w_width < 400 ? '250px' : '300px'}
+                            onSuccess={async (credentialResponse) => {
+                                handleLogin(credentialResponse)
                             }}
                             onError={() => {
                                 console.log('Login Failed');
                             }}
-
                         />
-                    </GoogleOAuthProvider>
-                    {/*<GoogleLogin clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}*/}
-                    {/*             render={renderProps => (*/}
-                    {/*                 <button type={'button'} onClick={renderProps.onClick} disabled={renderProps.disabled}>*/}
-                    {/*                 <AiFillGoogleCircle size={27} />*/}
-                    {/*                     <span>{google_t}</span>*/}
-                    {/*                 </button>*/}
-                    {/*             )}*/}
-                    {/*             buttonText={"Log in with Google"}*/}
-                    {/*             onSuccess={handleLogin}*/}
-                    {/*             onFailure={handleFailure}*/}
-                    {/*             cookiePolicy={"single_host_origin"}>*/}
-                    {/*</GoogleLogin>*/}
+                    </ButtonDiv>
                 </div>
             </div>
 

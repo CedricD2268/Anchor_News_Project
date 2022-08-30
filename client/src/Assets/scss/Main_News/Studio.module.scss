@@ -754,6 +754,11 @@ $ImgBox_color: #d8e2dc;
     width: 100%;
     font-size: 19px;
     padding: 10px;
+    &:disabled{
+      cursor: auto;
+      color: darkgrey;
+      background: #4c5c68;
+    }
   }
 }
 

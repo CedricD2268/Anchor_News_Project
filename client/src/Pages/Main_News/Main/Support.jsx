@@ -6,6 +6,7 @@ import VariableStyle from "../../../Assets/scss/VariableTwo.module.css";
 import update from "react-addons-update";
 import {useDispatch, useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
+import * as emailjs from "@emailjs/browser";
 
 
 const Support = () => {
@@ -16,8 +17,6 @@ const Support = () => {
     const location = useLocation()
     const dispatch = useDispatch()
     const [toSend, setToSend] = useState({
-        name: profile.fullname,
-        email: profile.email,
         subject: '',
         message: '',
     });
@@ -30,18 +29,35 @@ const Support = () => {
 
     const sendEmail = async (e) => {
         e.preventDefault();
-        try {
-            const res = await fetch('https://njanchor.com/service/sent_email', {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                credentials: 'include',
-                body: JSON.stringify(toSend)
+        const data = update(toSend, {
+                    $merge: {
+                        name: profile.fullname,
+                        email: profile.email,
+                    }
+                })
+        emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, data, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+            .then((result) => {
+                console.log(result);
+            }, (error) => {
+                console.log(error);
             });
-            await res.json()
-        } catch (err) {
-            console.error(err.message)
-        }
+        e.target.reset()
+        dispatch(GetOverlayRx({
+            support: {
+                ov: false
+            }
+        }))
     };
+
+    useEffect(() => {
+        dispatch(GetOverlayRx({
+            support: {
+                ov: false
+            }
+        }))
+    }, [location.pathname]);
+
+
 
     useEffect(() => {
         dispatch(GetOverlayRx({

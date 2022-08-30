@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import LoginRegisterStyle from '../../Assets/scss/Login_Register/login_register.module.css'
 import * as Yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,14 +19,18 @@ const IdentificationForm= () => {
 
     });
 
+
+
     const formOptions = { resolver: yupResolver(validationSchema) };
 
     // get functions to build form with useForm() hook
-    const { register, handleSubmit, formState } = useForm(formOptions);
+    const { register, watch, handleSubmit, formState } = useForm(formOptions);
     const { errors } = formState;
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
     const [errorMessage, setErrorMessage] = useState()
+
+    const watchEmail = watch("email", '');
 
     const  onSubmit = async(data) => {
         try {
@@ -45,6 +49,11 @@ const IdentificationForm= () => {
         }
         return false;
     }
+
+    useEffect(() => {
+        setSuccess(false)
+    }, [watchEmail]);
+
 
     return (
         <div className={LoginRegisterStyle.loginRegisterForm}>

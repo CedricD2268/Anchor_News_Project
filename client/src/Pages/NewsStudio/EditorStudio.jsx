@@ -558,18 +558,24 @@ const EditorStudio = () => {
                     </div>
                 }
                 <div className={StudioStyle.ArticlePublishButton}>
-                    <button type='submit' onClick={onSubmit} disabled={submitDebounce}>
+                    <button type='submit' onClick={onSubmit} disabled={submitDebounce || editorBody.typename !== 'Opinion' }>
                         {submitDebounce ?
                             <LoadingSpinnerIcon size={27} color={'#dcdcdd'} />:
+                            // <React.Fragment>
+                            //     {editorBody.inreviewdate === null ?
+                            //         (<React.Fragment>{editorBody.typename === 'Opinion' ? (
+                            //                 <React.Fragment>Publish Article </React.Fragment>) :
+                            //             (<React.Fragment>Submit Article For Review </React.Fragment>)
+                            //         }
+                            //         </React.Fragment>) : (<React.Fragment>Publish Article</React.Fragment>)
+                            //     }
+                            //     <MdDoubleArrow size={23}/>
+                            // </React.Fragment>
                             <React.Fragment>
-                                {editorBody.inreviewdate === null ?
-                                    (<React.Fragment>{editorBody.typename === 'Opinion' ? (
-                                            <React.Fragment>Publish Article </React.Fragment>) :
-                                        (<React.Fragment>Submit Article For Review </React.Fragment>)
-                                    }
-                                    </React.Fragment>) : (<React.Fragment>Publish Article</React.Fragment>)
+                                {editorBody.typename === 'Opinion' ? (
+                                        <React.Fragment>Publish Article <MdDoubleArrow size={23}/></React.Fragment>) :
+                                    (<React.Fragment>Can't publish non-opinion article</React.Fragment>)
                                 }
-                                <MdDoubleArrow size={23}/>
                             </React.Fragment>
                         }
                     </button>

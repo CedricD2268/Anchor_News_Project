@@ -6,6 +6,8 @@ import {GetOverlayRx, ViewProfileRx} from "../../../Actions";
 import {useDispatch} from "react-redux";
 import VariableStyle from "../../../Assets/scss/VariableTwo.module.css";
 import {useLocation} from "react-router-dom";
+import LoadingIconThree from "../../../Components/Icon/LoadingIconThree";
+import LoadingSpinnerIcon from "../../../Components/Icon/LoadingSpinnerIcon";
 
 
 const CroppieUser = () => {
@@ -21,6 +23,9 @@ const CroppieUser = () => {
         zoom: 1.5,
         croppedImg: UserFace
     });
+
+    const [load, setLoad] = useState(false)
+
     const handleSlider = () => {
         let i = document.querySelector('.' + SettingStyle.ImageSlider + ' input')
         setPicture({
@@ -62,12 +67,15 @@ const CroppieUser = () => {
                         console.error(err.message);
                     }
                 })
+
             setPicture({
                 ...picture,
                 img: null,
                 cropperOpen: false,
                 croppedImg: croppedImg
             });
+
+
         }
     };
 
@@ -146,7 +154,7 @@ const CroppieUser = () => {
                             />
                         </div>
                         <div className={SettingStyle.ImageCropSave}>
-                            <button onClick={handleSave}>Save as profile picture</button>
+                            <button onClick={handleSave}><span>Save as profile picture</span></button>
                             <button onClick={handleCancel}>Cancel</button>
                         </div>
 

@@ -817,6 +817,10 @@ input, textarea, select {
       transition-duration: 0.30s; }
     .ArticlePublishButton button:active {
       background: #2c353c; }
+    .ArticlePublishButton button:disabled {
+      cursor: auto;
+      color: darkgrey;
+      background: #4c5c68; }
 
 .EditorSubmitOverlay {
   display: flex;

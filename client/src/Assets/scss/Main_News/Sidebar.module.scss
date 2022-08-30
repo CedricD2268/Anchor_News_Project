@@ -175,9 +175,10 @@
   img {
     width: 37px;
     border-radius: 50%;
+    box-shadow: $shadow_two;
   }
 }
-
+SidebarTwoUserInfo
 .SideMenuContentE{
   .SpanTitle{
     font-size: 16px;
@@ -319,7 +320,6 @@
   //height: 310px;
   height: auto;
   width: 275px;
-
   gap: 11px;
   background-color: $color_uni_one;
   color: white;
@@ -445,9 +445,9 @@
     background-color: rgba(0, 0, 0, 0.6);
   }
   .SidebarTwo {
-    margin-top: -100px;
+    //margin-top: -600px;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 310px;
@@ -494,6 +494,7 @@
 //--------------------------------------------------------------------------------//--------------------------------------------------------------------------------
 
 .GetLibrary{
+  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 17px;
@@ -502,6 +503,9 @@
   padding: 12px 18px;
   width: auto;
   height: auto;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: $shadow_four;
   min-height: 135px;
 }

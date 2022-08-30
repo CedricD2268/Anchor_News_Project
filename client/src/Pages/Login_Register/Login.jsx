@@ -10,6 +10,7 @@ import {useForm} from "react-hook-form";
 import {LoginRx} from "../../Actions";
 import TextError from "../../Components/LoginRegister/text_error";
 import ShowHideButton from "../../Components/LoginRegister/show_hide_button";
+import CloneLoginInfo from "../../Components/LoginRegister/CloneLoginInfo";
 
 
 const LoginForm= () => {
@@ -114,6 +115,7 @@ const Login = () => {
                     <div className={LoginRegisterStyle.RegisterLoginFooter}>
                         <p>Don't have an account? <Link to='../register'> Sign up</Link></p>
                     </div>
+                <CloneLoginInfo/>
             </React.Fragment>
     );
 };

@@ -654,6 +654,25 @@ router.post("/mainfunction/search", authorization, async (req, res) => {
 })
 
 
+router.post("/mainfunction/opinion", authorization, async (req, res) => {
+    let {topic} = req.body
+    try {
+        let execute_view = {
+            name: "Select *  FROM get_article_view  WHERE topicname = $1 AND typename = 'Opinion' AND publisheddate IS NOT NULL ORDER BY modifieddate DESC ;",
+            object: [topic]
+        }
+        const result = await pool.query(execute_view.name, execute_view.object)
+        return res.json(result.rows)
+    } catch (err) {
+        console.error(err.message)
+        res.status(500).send("Server Error")
+    }
+})
+
+
+
+
+
 router.post("/view/row_article", authorization, async (req, res) => {
     let { topic} = req.body
     try {

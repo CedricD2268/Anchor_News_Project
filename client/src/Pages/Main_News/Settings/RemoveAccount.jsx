@@ -3,6 +3,7 @@ import SettingStyle from '../../../Assets/scss/Main_News/Settings.module.css';
 import RemoveUser from "../../../Components/Icon/RemoveUser";
 import {GetOverlayRx, LogoutRx} from "../../../Actions";
 import {useDispatch, useSelector} from "react-redux";
+import Logout from "../../../Components/LoginRegister/Logout";
 import VariableStyle from "../../../Assets/scss/VariableTwo.module.css";
 import {useLocation} from "react-router-dom";
 
@@ -21,6 +22,7 @@ const RemoveAccount = () => {
             });
             const parseRes = await res.json()
             if (parseRes === true) {
+                await Logout()
                 dispatch(LogoutRx())
             }
         } catch (err) {

@@ -50,6 +50,13 @@ router.post("/mainfunction/comments", authorization, async (req, res) => {
             }
         }
 
+        if (name === 'DeleteComment') {
+            execute_view = {
+                name: "Select *  FROM query_comment_list_func(NULL , NULL , $1, NULL, $2);",
+                object: [commentId,  'Delete']
+            }
+        }
+
         if (name === 'AllCommentsCount') {
             const commentCount = await pool.query("Select count(*)  FROM get_comment_list_view WHERE article_published_id = $1;", [publishId])
             const replyCount = await pool.query("Select count(*)  FROM view_all_comment_count WHERE article_published_id = $1;", [publishId])
@@ -59,8 +66,11 @@ router.post("/mainfunction/comments", authorization, async (req, res) => {
 
 
         const result = await pool.query(execute_view.name, execute_view.object)
-        return res.json(result.rows)
+        if (name === 'DeleteComment'){
+            return res.json('Comment Deleted!')
+        }
 
+        return res.json(result.rows)
     } catch (err) {
         console.error(err.message)
         res.status(500).send("Server Error")
@@ -128,7 +138,18 @@ router.post("/mainfunction/reply_comments", authorization, async (req, res) => {
             }
         }
 
+        if (name === 'DeleteReplyComment') {
+            execute_view = {
+                name: "Select *  FROM query_comment_reply_list_func(NULL , $1, NULL , NULL, $2);",
+                object: [commentId,  'Delete']
+            }
+        }
+
         const result = await pool.query(execute_view.name, execute_view.object)
+        if (name === 'DeleteReplyComment'){
+            console.log("Reply Comment deleted")
+            return res.json('Reply Comment Deleted!')
+        }
         return res.json(result.rows)
     } catch (err) {
         console.error(err.message)

@@ -29,6 +29,7 @@ import Share from "./Pages/Main_News/Main/Share";
 import Support from "./Pages/Main_News/Main/Support";
 import Logout from "./Components/LoginRegister/Logout";
 import update from "react-addons-update";
+import {GoogleOAuthProvider} from "@react-oauth/google";
 
 const LoginRegisterRoutes = () => {
     return (
@@ -213,6 +214,7 @@ const App = () => {
 
     return (
         <div className="App">
+            <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
             <Routes>
                 <Route exact path="" element={<Navigate to={`accounts/login`}/>}/>
                 <Route path='accounts/*' element={ !isAuth ? (<LoginRegisterRoutes/>) : (<Navigate to={`../njt/home/saved/${(profile && profile.defaulttopic) ? profile.defaulttopic.toLowerCase().replace(/\s/g, ''): 'home'}`}/>)}/>
@@ -223,6 +225,7 @@ const App = () => {
                 <Route path='/404' element={<PageNotFound/>}/>
                 <Route path='*' element={<Navigate to={'/404'}/>}/>
             </Routes>
+            </GoogleOAuthProvider>
         </div>
     )
 

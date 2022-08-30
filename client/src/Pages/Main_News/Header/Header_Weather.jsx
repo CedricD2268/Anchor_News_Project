@@ -85,7 +85,7 @@ const HeaderWeather = ({settings}) => {
         const data = {cityName: cityName, stateName: stateName}
         setError(false)
         try{
-            const response = await fetch('http://localhost:5000/service/weather', {
+            const response = await fetch('https://njanchor.com/service/weather', {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 credentials: 'include',

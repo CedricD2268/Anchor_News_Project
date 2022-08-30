@@ -19,6 +19,7 @@ import userface from "../../../Assets/Images/UserFaces/user3.png"
 import LoadingSpinnerTwoIcon from "../../../Components/Icon/LoadingSpinnerTwoIcon";
 import LoadingSpinnerIcon from "../../../Components/Icon/LoadingSpinnerIcon";
 import update from "react-addons-update";
+import {GoogleLogin} from "@react-oauth/google";
 
 
 const Profile = () => {
@@ -145,7 +146,7 @@ const Profile = () => {
     }
 
     const HandleAccountChange = async (googleData) => {
-        const bodyData = {"token": googleData.tokenId}
+        const bodyData = {"token": googleData.credential}
         try {
             const res= await fetch('https://njanchor.com/home/update/account_media', {
                 method: "POST",
@@ -297,27 +298,35 @@ const Profile = () => {
                     <div className={SettingStyle.HeaderFlex}><GoogleIcon size={28}/><h2>Login with
                         Google</h2></div>
                     <div className={SettingStyle.MainPortfolioCTwo}>
-                        <span> Connecting with Google will allows us to populate your account information.</span>
-                        {/*<GoogleLogin clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}*/}
-                        {/*             render={renderProps => (*/}
-                        {/*                 <button*/}
-                        {/*                     className={profile.medianame !== 'google' ?  SettingStyle.MainPortfolioCButtonOne  : SettingStyle.MainPortfolioCButtonThree}*/}
-                        {/*                     // className={SettingStyle.MainPortfolioCButtonThree}*/}
-                        {/*                     type='button'*/}
-                        {/*                     disabled={profile.medianame !== 'google' ? false : true}*/}
-                        {/*                     // disabled={true}*/}
-                        {/*                     onClick={renderProps.onClick}*/}
-                        {/*                     // disabled={renderProps.disabled}*/}
-                        {/*                 >*/}
-                        {/*                     {profile.medianame !== 'google' ? `Connect` : (<React.Fragment>Connected&nbsp; <BsFillCheckCircleFill size={19} color={'white'}/></React.Fragment>)}*/}
+                        <span> Connecting your account with Google will make it easier to sign in with us.</span>
+                        {profile.medianame === 'google' ?
+                            <button
+                                className={SettingStyle.MainPortfolioCButtonOne}
+                                type='button'
+                                disabled={false}
+                            >
+                                Connected&nbsp; <BsFillCheckCircleFill size={19}
+                                                                       color={'white'}/>
 
-                        {/*                 </button>*/}
-                        {/*             )}*/}
-                        {/*             buttonText={"Log in with Google"}*/}
-                        {/*             onSuccess={HandleAccountChange}*/}
-                        {/*             onFailure={HandleFailure}*/}
-                        {/*             cookiePolicy={"single_host_origin"}>*/}
-                        {/*</GoogleLogin>*/}
+                            </button> :
+                            <div className={SettingStyle.loginButtonC}>
+                                <GoogleLogin
+                                    useOneTap
+                                    theme={"filled_black"}
+                                    type={'standard'}
+                                    size={'large'}
+                                    shape={'pill'}
+                                    width={'200px'}
+                                    onSuccess={async (credentialResponse) => {
+                                        HandleAccountChange(credentialResponse)
+                                    }}
+                                    onError={() => {
+                                        console.log('Login Failed');
+                                    }}
+                                />
+                            </div>
+
+                        }
 
                     </div>
                     {error.errorGoogle &&<TextError name={error.errorGoogle}/>}
@@ -326,7 +335,7 @@ const Profile = () => {
                 <div className={SettingStyle.MainPortfolioC}>
                     <div className={SettingStyle.HeaderFlex}><DeleteUserIcon size={28}/><h2>Delete Account</h2></div>
                     <div className={SettingStyle.MainPortfolioCThree}>
-                        <span> Deleting your account will purge all data related to us (Not Google account info if connected).
+                        <span> Deleting your account will remove all data (e.g., articles, comments, likes, libraries and avatars) related to us .
                             </span>
                         <button type='button' onClick={()=>{
                             dispatch(GetOverlayRx({removeAccount: {ov: true}}))

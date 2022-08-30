@@ -41,7 +41,7 @@ html, body {
   max-width: 440px;
   background: rgba(250, 249, 249, 0.91);
   padding: 15px 30px 10px 30px;
-  border-radius: 8px; }
+  border-radius: 10px; }
   .loginRegisterBox button {
     cursor: pointer; }
   .loginRegisterBox a {
@@ -74,7 +74,7 @@ html, body {
   border: none;
   outline: none;
   font-family: "Patua One", serif;
-  border-radius: 4px;
+  border-radius: 6px;
   transition-duration: 0.30s;
   gap: 10px;
   color: white;
@@ -138,7 +138,7 @@ html, body {
   .loginRegisterText input {
     height: 42px;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 16px;
     font-family: "Patua One", serif;
     background-color: white;
@@ -160,7 +160,7 @@ html, body {
     border: none;
     outline: none;
     font-family: "Patua One", serif;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 6px 6px 0;
     transition-duration: 0.30s;
     color: white;
     padding: 11px;
@@ -192,7 +192,7 @@ html, body {
 
 .passwordText .loginRegisterText input {
   width: 80%;
-  border-radius: 4px 0 0 4px; }
+  border-radius: 6px 0 0 6px; }
 
 .forgotPassword {
   margin-top: -5px; }
@@ -218,7 +218,7 @@ html, body {
     border: none;
     outline: none;
     font-family: "Patua One", serif;
-    border-radius: 4px;
+    border-radius: 6px;
     transition-duration: 0.30s;
     color: white;
     padding: 11px;
@@ -254,5 +254,22 @@ html, body {
   .RegisterLoginFooter #footer-text-two {
     font-size: 12.3px;
     color: #adb5bd; }
+
+.cloneBox {
+  margin-top: -25px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #273A40; }
+
+.cloneBoxInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background: #faedcd; }
+  .cloneBoxInfo span {
+    font-size: 13px; }
 
 /*# sourceMappingURL=login_register.module.css.map */

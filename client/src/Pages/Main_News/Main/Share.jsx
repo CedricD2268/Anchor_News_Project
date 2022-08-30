@@ -47,7 +47,6 @@ const Share = ()=>{
     const [copied, setCopied] = useState(false)
 
     const copiedText = <span style={{fontSize: '17px', transition: 'all 0.5s ease 0s' }}> COPIED!</span>
-    const url = 'You are a god.'
 
     useEffect(() => {
         setTimeout(() => {
@@ -58,7 +57,8 @@ const Share = ()=>{
     useEffect(() => {
         dispatch(GetOverlayRx({
             share: {
-                ov: false
+                ov: false,
+                url: ''
             }
         }))
     }, [location.pathname]);
@@ -78,32 +78,33 @@ const Share = ()=>{
                             <button onClick={() => {
                                 dispatch(GetOverlayRx({
                                     share: {
-                                        ov: false
+                                        ov: false,
+                                        url: ''
                                     }
                                 }))
                             }}><GrClose size={20}/></button>
                         </div>
                         <div className={MainStyle.ShareButtons}>
-                            <WhatsappShareButton url={url}>
+                            <WhatsappShareButton url={overlay.share.url}>
                                 <BsWhatsapp size={42}/>
                             </WhatsappShareButton>
-                            <FacebookShareButton url={url}>
+                            <FacebookShareButton url={overlay.share.url}>
                                 <BsFacebook size={40}/>
                             </FacebookShareButton>
-                            <TwitterShareButton url={url}>
+                            <TwitterShareButton url={overlay.share.url}>
                                 <AiFillTwitterCircle size={47}/>
                             </TwitterShareButton>
-                            <RedditShareButton url={url}>
+                            <RedditShareButton url={overlay.share.url}>
                                 <BsReddit size={43}/>
                             </RedditShareButton>
-                            <LinkedinShareButton url={url}>
+                            <LinkedinShareButton url={overlay.share.url}>
                                 <TiSocialLinkedinCircular size={56}/>
                             </LinkedinShareButton>
 
                         </div>
                         <div className={MainStyle.ShareCopy}>
-                            <span>https://www.youtube.com/watch?v=2BnTYEafRQc&ab_channel=FullstackTechies</span>
-                            <CopyToClipboard text={'https://www.youtube.com/watch?v=2BnTYEafRQc&ab_channel=FullstackTechies'} onCopy={()=>{
+                            <span>{overlay.share.url}</span>
+                            <CopyToClipboard text={overlay.share.url} onCopy={()=>{
                             setCopied(true)
                             }}>
                             <Tooltip title={copied ? copiedText: ''}>

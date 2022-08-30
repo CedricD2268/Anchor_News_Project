@@ -52,27 +52,7 @@ router.post("/weather", authorization, async (req, res) => {
 })
 
 
-router.post("/send_email", authorization, async (req, res) => {
-    const {sendData} = req.body
-    try {
-      const sendEmail = (e) => {
-          e.preventDefault();
 
-          emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, sendData, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
-              .then((result) => {
-                  console.log(result.text);
-              }, (error) => {
-                  console.log(error.text);
-              });
-      };
-
-        return res.json('Email sent successfully!')
-
-    } catch (err) {
-        console.error(err.message)
-        res.status(500).json("Server Error");
-    }
-})
 
 
 module.exports = router;

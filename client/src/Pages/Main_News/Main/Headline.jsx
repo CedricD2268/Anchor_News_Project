@@ -342,6 +342,7 @@ const Headline = ({HeadlineType}) => {
     const [collectionLine, setCollectionLine] = useState()
     const [likeLine, setLikeLine] = useState()
     const [historyLine, setHistoryLine] = useState()
+    const [opinionLine, setOpinionLine] = useState()
     const [searchList, setSearchList] = useState()
     const [followAvatar, setFollowAvatar] = useState()
     const [followLine, setFollowLine] = useState()
@@ -584,7 +585,7 @@ const Headline = ({HeadlineType}) => {
             for (const element of check) {
                 newAll = newAll.filter(x => element.user_name !== x.user_name)
             }
-            // newAll = newAll.filter(x => x.articles.length >= 1)
+            newAll = newAll.filter(x => x.articles.length >= 1)
         }
 
         setAllFollowing(newAll)
@@ -646,6 +647,30 @@ const Headline = ({HeadlineType}) => {
         }
         return false;
     }
+
+    const OpinionList = async () => {
+        if (!topic_name && !routeId)
+            return false
+        let data = {topic: topic_name }
+        if (routeId)
+             data = {topic: routeId }
+        try {
+            const response = await fetch('https://njanchor.com/home/mainfunction/opinion', {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                credentials: 'include',
+                body: JSON.stringify(data)
+            });
+            const parseRes = await response.json()
+            if (parseRes && parseRes.length > 0)
+                setOpinionLine(parseRes.slice(0, 4))
+
+        } catch (err) {
+            console.error(err.message);
+        }
+        return false;
+    }
+
 
     const LibraryCollectionList = async (data) => {
         if (!collection_id)
@@ -762,6 +787,11 @@ const Headline = ({HeadlineType}) => {
     }
 
 
+
+
+
+
+
     useEffect(() => {
         HoneHtwo()
         const data  = {topicName: 'All topics', typeName: 'Date'}
@@ -772,8 +802,13 @@ const Headline = ({HeadlineType}) => {
         HistoryList(data)
         GetFollowArticlesList(data)
         GetFollowAvatar()
+        OpinionList()
         GetFollowBoolean(followUser)
         GetAllFollowings()
+        window.scrollTo({
+            top: 0,
+            behavior: 'auto',
+        });
     }, [location.pathname]);
 
 
@@ -808,7 +843,8 @@ const Headline = ({HeadlineType}) => {
                                                     ShareFunc={() => {
                                                         dispatch(GetOverlayRx({
                                                             share: {
-                                                                ov: true
+                                                                ov: true,
+                                                                url : `https://njanchor.com/njt/feed/article/${headLine[row].topicname}/${headLine[row].publishid}`
                                                             }
                                                         }))
                                                     }}
@@ -836,7 +872,7 @@ const Headline = ({HeadlineType}) => {
                                                 <BoxContent
                                                     Long={false}
                                                     ArticleTitle={headLine[row].title}
-                                                    ArticleImage={headLine[row].imagel}
+                                                    ArticleImage={headLine[row].imagew}
                                                     Avatar={row.avatar}
                                                     AvatarName={headLine[row].typename === 'Opinion' ?  headLine[row].fullname ? headLine[row].fullname : headLine[row].username: ''}
                                                     ArticleStats={[headLine[row].readcount, GetTimeMoments(headLine[row].publisheddate)]}
@@ -856,7 +892,9 @@ const Headline = ({HeadlineType}) => {
                                                     ShareFunc={() => {
                                                         dispatch(GetOverlayRx({
                                                             share: {
-                                                                ov: true
+                                                                ov: true,
+                                                                url : `https://njanchor.com/njt/feed/article/${headLine[row].topicname}/${headLine[row].publishid}`
+
                                                             }
                                                         }))
                                                     }}
@@ -871,41 +909,50 @@ const Headline = ({HeadlineType}) => {
                             }
                         })
                         }/>
-                    <HeadlineBox name={'Opinions'} type={'HeadlineThree'} content={
-                        <React.Fragment>
-                            <BoxContent
-                                Long={false}
-                                ArticleTitle={'US Embassy in Afghanistan tells staff to destroy sensitive materials'}
-                                Avatar={HeadPicThree}
-                                AvatarName={'Fabrice Douillard'}
-                                ArticleStats={['620k', '2 months']}
-                                ArticleHeader={'Opinion'}
-                            />
-                            <BoxContent
-                                Long={false}
-                                ArticleTitle={'US Embassy in Afghanistan tells staff to destroy sensitive materials'}
-                                Avatar={HeadPicThree}
-                                ArticleStats={['620k', '2 months']}
-                                ArticleHeader={'Fact Check'}
-                            />
-                            <BoxContent
-                                Long={false}
-                                ArticleTitle={'US Embassy in Afghanistan tells staff to destroy sensitive materials'}
-                                Avatar={HeadPicThree}
-                                AvatarName={'Fabrice Douillard'}
-                                ArticleStats={['620k', '2 months']}
-                                ArticleHeader={'Opinion'}
-                            />
-                            <BoxContent
-                                Long={false}
-                                ArticleTitle={'US Embassy in Afghanistan tells staff to destroy sensitive materials'}
-                                Avatar={HeadPicThree}
-                                AvatarName={'Fabrice Douillard'}
-                                ArticleStats={['620k', '2 months']}
-                                ArticleHeader={'Opinion'}
-                            />
-                        </React.Fragment>
-                    }/>
+                    <HeadlineBox name={'Opinions'} type={'HeadlineThree'}
+                                 content={
+                                     <React.Fragment>
+                                         {(opinionLine && opinionLine.length > 0) && opinionLine.map(row => {
+                                             return (
+                                                 <React.Fragment key={row.publishid}>
+                                                     <BoxContent
+                                                         Long={false}
+                                                         ArticleTitle={row.title}
+                                                         Avatar={row.avatar}
+                                                         AvatarName={row.typename === 'Opinion' ? row.fullname ? row.fullname : row.username : ''}
+                                                         ArticleImage={row.imagew}
+                                                         ArticleHeader={row.typename}
+                                                         ArticleStats={[row.readcount, GetTimeMoments(row.publisheddate)]}
+                                                         ShareFunc={() => {
+                                                             dispatch(GetOverlayRx({
+                                                                 share: {
+                                                                     ov: true,
+                                                                     url : `https://njanchor.com/njt/feed/article/${row.topicname}/${row.publishid}`
+                                                                 }
+                                                             }))
+                                                         }}
+                                                         SaveFunc={() => {
+                                                             dispatch(GetOverlayRx({
+                                                                 sidebarCreate: {
+                                                                     ov: true,
+                                                                     title: 'Save in library',
+                                                                     listState: true,
+                                                                     buttonName: 'Create',
+                                                                     collectionName: '',
+                                                                     articleId: row.publishid
+                                                                 }
+                                                             }))
+                                                         }}
+                                                         ContentClick={() => {
+                                                             navigate(`/njt/feed/article/${row.topicname}/${row.publishid}`)
+                                                         }}
+                                                     />
+                                                 </React.Fragment>
+                                             )
+                                         })
+                                         }
+                                     </React.Fragment>
+                                 }/>
                 </React.Fragment>
             }
             {HeadlineType === 'Following' &&
@@ -924,7 +971,7 @@ const Headline = ({HeadlineType}) => {
                     }
                     }
                     Empty={(!(followLine && followLine.length > 0))}
-                    EmptyName={'User have no articles. '}
+                    EmptyName={'User has no articles. '}
                     FollowFunc={()=>{FollowUser()}}
                     FollowButton={
                         <React.Fragment>
@@ -962,7 +1009,8 @@ const Headline = ({HeadlineType}) => {
                                         ShareFunc={() => {
                                             dispatch(GetOverlayRx({
                                                 share: {
-                                                    ov: true
+                                                    ov: true,
+                                                    url : `https://njanchor.com/njt/feed/article/${row.topicname}/${row.publishid}`
                                                 }
                                             }))
                                         }}
@@ -1030,7 +1078,8 @@ const Headline = ({HeadlineType}) => {
                                         ShareFunc={() => {
                                             dispatch(GetOverlayRx({
                                                 share: {
-                                                    ov: true
+                                                    ov: true,
+                                                    url : `https://njanchor.com/njt/feed/article/${row.topicname}/${row.publishid}`
                                                 }
                                             }))
                                         }}
@@ -1094,7 +1143,8 @@ const Headline = ({HeadlineType}) => {
                                                 ShareFunc={() => {
                                                     dispatch(GetOverlayRx({
                                                         share: {
-                                                            ov: true
+                                                            ov: true,
+                                                            url : `https://njanchor.com/njt/feed/article/${row.topicname}/${row.publishid}`
                                                         }
                                                     }))
                                                 }}
@@ -1173,7 +1223,8 @@ const Headline = ({HeadlineType}) => {
                                                                 ShareFunc={() => {
                                                                     dispatch(GetOverlayRx({
                                                                         share: {
-                                                                            ov: true
+                                                                            ov: true,
+                                                                            url : `https://njanchor.com/njt/feed/article/${row.topicname}/${row.publishid}`
                                                                         }
                                                                     }))
                                                                 }}
@@ -1249,7 +1300,8 @@ const Headline = ({HeadlineType}) => {
                                         ShareFunc={() => {
                                             dispatch(GetOverlayRx({
                                                 share: {
-                                                    ov: true
+                                                    ov: true,
+                                                    url : `https://njanchor.com/njt/feed/article/${row.topicname}/${row.publishid}`
                                                 }
                                             }))
                                         }}
@@ -1314,7 +1366,8 @@ const Headline = ({HeadlineType}) => {
                                         ShareFunc={() => {
                                             dispatch(GetOverlayRx({
                                                 share: {
-                                                    ov: true
+                                                    ov: true,
+                                                    url : `https://njanchor.com/njt/feed/article/${row.topicname}/${row.publishid}`
                                                 }
                                             }))
                                         }}
@@ -1399,7 +1452,8 @@ const Headline = ({HeadlineType}) => {
                                                                 ShareFunc={() => {
                                                                     dispatch(GetOverlayRx({
                                                                         share: {
-                                                                            ov: true
+                                                                            ov: true,
+                                                                            url : `https://njanchor.com/njt/feed/article/${row.topicname}/${row.publishid}`
                                                                         }
                                                                     }))
                                                                 }}

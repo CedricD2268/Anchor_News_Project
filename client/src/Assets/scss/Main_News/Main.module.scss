@@ -165,6 +165,7 @@
   padding: 18px 10px;
   color: white;
   span {
+    overflow-wrap: break-word;
     font-size: 19px;
   }
 }
@@ -202,10 +203,11 @@
   flex-direction: row;
   align-items: center;
   gap: 5px;
-  background: linear-gradient(to right, $color_uni_two 0%, #f1faee 100%);
+  background: linear-gradient(to right, $color_uni_one 0%, $color_uni_four 100%);
   color: #f1faee;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 10px;
+  box-shadow: $shadow_two;
   span{
     font-size: 22px;
   }
@@ -241,8 +243,9 @@
   width: 100%;
   padding: 20px ;
   border-radius: 8px;
-  background-color: $color_uni_two;
+  background: linear-gradient(to right, $color_uni_two 0%, $color_uni_three 100%);
   margin: 0 auto;
+  box-shadow: $shadow_two;
 }
 
 .HeadlineTwoCard {
@@ -262,6 +265,7 @@
     .HeadlineTwoCardDesc {
       span {
         color: #B7CCD3;
+
         //text-decoration: underline;
       }
     }
@@ -317,6 +321,7 @@
 
 .HeadlineTwoCardDesc {
   width: 100%;
+  overflow-wrap: break-word;
   height: auto;
   color: white;
 }
@@ -340,8 +345,10 @@
   width: 100%;
   padding: 20px;
   border-radius: 8px;
-  background-color: $color_uni_two;
+  background: linear-gradient(to right, $color_uni_two 0%, $color_uni_three 100%);
   margin: 0 auto;
+
+  box-shadow: $shadow_two;
 }
 
 .HeadlineThreeCardDescTwo {
@@ -370,6 +377,7 @@
   padding: 8px;
   border-radius: 4px;
   color: white;
+  box-shadow: $shadow_two;
 
   span {
     font-size: 24.5px;
@@ -388,7 +396,8 @@
   width: 100%;
   padding: 20px 20px;
   border-radius: 8px;
-  background-color: $color_uni_two;
+  box-shadow: $shadow_two;
+  background: linear-gradient(to right, $color_uni_two 0%, $color_uni_three 100%);
   margin: 0 auto;
   .HeadlineTwoCard {
     min-width: 240px;
@@ -446,6 +455,7 @@
   align-items: center;
   padding: 8px;
   border-radius: 8px;
+  box-shadow: $shadow_two;
   img {
     width: 45px;
     border-radius: 50%;
@@ -587,12 +597,11 @@
 }
 
 .ArticleHeadTitle {
-  //margin-top: -10px;
-
+  width: 95%;
   span {
     font-family: $font_uni_six;
-
-    font-size: 31px;
+    font-size: 30px;
+    overflow-wrap: break-word;
   }
 }
 
@@ -606,6 +615,7 @@
     @include ButtonMd($color_uni_eleven, 50%, 7, 10);
     align-items: center;
     padding: 8px;
+    box-shadow: $shadow_two;
   }
 }
 
@@ -783,6 +793,7 @@
     overflow: auto;
     resize: none;
     border-radius: 4px;
+    box-shadow: $shadow_one;
     background-color: rgba(38, 70, 83, 0.7);
     font-family: $font_uni_one;
     font-size: 17px;
@@ -808,6 +819,7 @@
     font-size: 15.7px;
     max-width: 150px;
     padding: 10px 15px;
+    box-shadow: $shadow_one;
     &:disabled{
       color: gray;
       cursor: auto;
@@ -825,11 +837,35 @@
   }
 }
 
+
+.ArticleMainFooterCPrime{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+
+}
+
 .ArticleMainFooterC {
+  width: 70%;
   display: flex;
   flex-direction: column;
   gap: 3px;
   font-family: $font_uni_one;
+}
+
+.ArticleMainFooterCTwo {
+  margin-left: auto;
+  button{
+    @include ButtonMd($color_uni_two, 2.5px, 5, 10);
+    gap: 5px;
+    padding: 7px 12px;
+    color: white;
+    box-shadow: $shadow_one;
+    white-space: nowrap;
+
+  }
 }
 
 .ArticleMainFooterCA {
@@ -848,6 +884,9 @@
 .ArticleMainFooterCB {
   margin-top: -17px;
   padding-left: 42px;
+  span{
+    overflow-wrap: break-word;
+  }
 }
 
 .ArticleMainFooterCC {
@@ -942,7 +981,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 .SupportBox{
-
+  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -950,16 +989,19 @@
   background: $color_uni_five;
   width: 320px;
   border-radius: 8px;
-  box-shadow: $shadow_four;
+  box-shadow: $shadow_two;
+    top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   div{
     display: flex;
     flex-direction: column;
     gap: 2px;
     input{
-      @include InputMd($color_uni_one, 4px);
+      @include InputMd($color_uni_one, 6px);
       width: 100%;
       height: 38px;
-      box-shadow: $shadow_two;
+      box-shadow: $shadow_one;
     }
   }
 }
@@ -996,14 +1038,14 @@
 
 .SupportMessageBox{
   textarea {
-    padding: 5px;
+    padding: 10px;
     resize: none;
     font-size: 15px;
     width: 100% !important;
     height: 170px !important;
-    border-radius: 4px;
+    border-radius: 8px;
     font-family: $font_uni_one;
-    box-shadow: $shadow_two;
+    box-shadow: $shadow_one;
   }
 }
 

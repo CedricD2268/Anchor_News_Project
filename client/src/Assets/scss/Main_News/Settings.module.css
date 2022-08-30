@@ -196,6 +196,8 @@ input, textarea, select {
 .MainPortfolioA {
   gap: 15px;
   align-items: center; }
+  .MainPortfolioA img {
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8); }
   @media screen and (max-width: 1000px) {
     .MainPortfolioA img {
       border-radius: 50%;
@@ -579,6 +581,13 @@ input, textarea, select {
 
 .MainPortfolioCTwo {
   padding: 0; }
+  .MainPortfolioCTwo .loginButtonC {
+    width: 100%;
+    display: flex;
+    justify-content: right; }
+    @media screen and (max-width: 530px) {
+      .MainPortfolioCTwo .loginButtonC {
+        justify-content: left; } }
 
 .MainPortfolioCThree button {
   height: 100%;
@@ -654,7 +663,11 @@ input, textarea, select {
     touch-action: pan-y; }
 
 .Croppier {
+  position: absolute;
   width: 100%;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 290px;
   height: 400px;
   border-radius: 8px;
@@ -762,6 +775,15 @@ input, textarea, select {
       transition-duration: 0.30s; }
     .ImageCropSave button:nth-child(1):active {
       background: #213133; }
+    .ImageCropSave button:nth-child(1) span {
+      display: flex;
+      justify-content: center !important;
+      align-items: center !important;
+      flex-direction: row !important;
+      gap: 5px;
+      transition-duration: 0.30s;
+      -webkit-transition-duration: 0.30s;
+      /* Safari */ }
   .ImageCropSave button:nth-child(2) {
     height: 100%;
     max-height: 45px;

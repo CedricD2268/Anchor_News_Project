@@ -30,7 +30,7 @@ const GetHeadlineColor = ({target, option}) => {
             {
                 headlineTitle: 'Buzz',
                 color: 'white',
-                background: '#84a59d'
+                background: '#e76f51'
             },
             {
                 headlineTitle: 'Analysis',
@@ -61,8 +61,8 @@ const GetHeadlineColor = ({target, option}) => {
             },
             {
                 headlineTitle: 'Buzz',
-                color: '#002329',
-                background: '#84a59d'
+                color: 'white',
+                background: '#e76f51'
             },
             {
                 headlineTitle: 'Analysis',
@@ -94,7 +94,7 @@ const GetHeadlineColor = ({target, option}) => {
             },
             {
                 headlineTitle: 'Buzz',
-                color: '#84a59d'
+                color: '#e76f51'
             },
             {
                 headlineTitle: 'Analysis',

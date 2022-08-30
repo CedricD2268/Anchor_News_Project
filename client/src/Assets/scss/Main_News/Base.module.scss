@@ -27,6 +27,48 @@ html, body {
 
 }
 
+
+////////////////////////////////////////////////
+////404 PAGE NOT FOUND/////////////////////////
+
+.errorPage{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  img{
+    width: 700px;
+  }
+  div{
+    button{
+      @include ButtonMd(transparent, 2.5px, 0,0);
+      border: 1px solid $color_uni_one;
+      padding: 15px 70px;
+      font-size: 16px;
+      box-shadow: $shadow_two;
+
+      &:hover{
+        background: $color_uni_one;
+        color: white;
+
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
 ////BASE-CLOSE////
 //////
 /////

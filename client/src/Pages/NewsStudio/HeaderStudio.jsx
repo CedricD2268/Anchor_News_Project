@@ -45,6 +45,7 @@ export const HomeStudio = () => {
     const [rows, setRows] = useState(rowsRef.current)
     // const [deleteActive, setDeleteActive] = useState('x')
     const [spinner, setSpinner] = useState(true)
+    const chart = useSelector((state) => state.chartQuery)
 
     const GetRows = async (type, set) => {
         const data = type
@@ -113,6 +114,16 @@ export const HomeStudio = () => {
         }, 1000);
 
     }, [])
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            GetRows({'name': 'publishedByModifiedDate'}, 'published')
+            setSpinner(false)
+        }, 1000);
+
+    }, [chart.delete])
+
     return (
         <React.Fragment>
             {spinner ? (
@@ -534,7 +545,7 @@ const CreateArticle = ({State, ClearFunction, arr}) => {
                         </div>
                         {limit &&
                             <div className={StudioStyle.CreateFail}>
-                                Sorry, Users are only allowed to create 7 articles for now.
+                                Sorry, Users are only allowed to create 8 articles for now.
                             </div>
                         }
                     </div>
