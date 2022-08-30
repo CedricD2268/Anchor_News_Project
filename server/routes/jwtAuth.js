@@ -174,7 +174,7 @@ router.post("/google/verify", googleAuth, async (req, res) => {
             const rawBytesAID = await randomBytes(5)
             let userName = rawBytesAID.toString('hex')
             userName = `User_${userName}`
-            await pool.query("CALL create_user_account_pcd( $1, NULL, 'google', 'admin', $2, true, $3, $4, $5);", [g_user.email, bcryptId, g_user.fullName, g_user.photoUrl, userName])
+            await pool.query("CALL create_user_account_pcd( $1, NULL, 'google', 'user', $2, true, $3, $4, $5);", [g_user.email, bcryptId, g_user.fullName, g_user.photoUrl, userName])
 
             const newUser = await pool.query("SELECT * FROM get_user_account_func($1);", [g_user.email])
 
