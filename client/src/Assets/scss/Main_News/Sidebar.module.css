@@ -513,7 +513,8 @@ SidebarTwoUserInfo
         width: 230px; } }
   .SidebarTwoUserInfo img {
     width: 52px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8); }
 
 @media screen and (min-width: 790px) {
   .SidebarTwoSS {
@@ -600,7 +601,7 @@ SidebarTwoUserInfo
   flex-direction: column;
   gap: 17px;
   background: #cad2c5;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 12px 18px;
   width: auto;
   height: auto;
@@ -608,7 +609,8 @@ SidebarTwoUserInfo
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  min-height: 135px; }
+  min-height: 135px;
+  color: #273A40; }
 
 .GetLibraryTitleClose {
   display: flex;
@@ -662,13 +664,14 @@ SidebarTwoUserInfo
     border: 1px solid lightgrey;
     outline: none;
     padding-left: 9px;
-    border-radius: 4px;
+    border-radius: 6px;
     transition-duration: 0.30s;
     font-size: 15.5px;
     font-family: "Patua One", serif;
-    height: 35px;
+    height: 37px;
     min-width: 240px;
-    font-family: "Lora", serif; }
+    border: 2px solid #273A40 !important;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8); }
     .GetLibraryCreateInput input:focus {
       border-color: "black"; }
     .GetLibraryCreateInput input::-ms-reveal, .GetLibraryCreateInput input::-ms-clear {
@@ -684,12 +687,13 @@ SidebarTwoUserInfo
     border: none;
     outline: none;
     font-family: "Patua One", serif;
-    border-radius: 4px;
+    border-radius: 6px;
     transition-duration: 0.30s;
-    height: 34.5px;
+    height: 37px;
     padding: 10px 18px;
     font-size: 15px;
-    color: white; }
+    color: white;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8); }
     .GetLibraryCreateInput button:focus {
       outline: none; }
     .GetLibraryCreateInput button:hover {
@@ -706,15 +710,15 @@ SidebarTwoUserInfo
   flex-direction: column;
   gap: 6px; }
   .GetLibraryFooter label {
-    font-size: 16px; }
+    font-size: 17px; }
 
-.GetLibraryBoxOne {
+.GetLibraryBoxOne, .GetLibraryBoxTwo {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 4px;
+  border: 2px solid #002329;
+  border-radius: 6px;
   height: auto; }
-  .GetLibraryBoxOne button {
+  .GetLibraryBoxOne button, .GetLibraryBoxTwo button {
     height: 100%;
     max-height: 45px;
     display: flex;
@@ -727,30 +731,28 @@ SidebarTwoUserInfo
     font-family: "Patua One", serif;
     border-radius: 0;
     transition-duration: 0.30s;
+    color: #273A40;
     gap: 10px;
-    font-size: 15px;
+    font-size: 16px;
     padding: 7px 10px; }
-    .GetLibraryBoxOne button:focus {
+    .GetLibraryBoxOne button:focus, .GetLibraryBoxTwo button:focus {
       outline: none; }
-    .GetLibraryBoxOne button:hover {
+    .GetLibraryBoxOne button:hover, .GetLibraryBoxTwo button:hover {
       cursor: pointer;
       background: #bdc7b7;
       -webkit-transition-duration: 0.30s;
       /* Safari */
       transition-duration: 0.30s; }
-    .GetLibraryBoxOne button:active {
+    .GetLibraryBoxOne button:active, .GetLibraryBoxTwo button:active {
       background: #b0bca8; }
 
 .GetLibraryBoxTwo {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  border-radius: 4px;
-  height: 165px;
+  height: 165px !important;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
   animation: zoom-out .15s; }
   .GetLibraryBoxTwo::-webkit-scrollbar {
     width: 18px; }
@@ -759,11 +761,11 @@ SidebarTwoUserInfo
   .GetLibraryBoxTwo::-webkit-scrollbar:horizontal {
     height: 10px; }
   .GetLibraryBoxTwo::-webkit-scrollbar-track {
-    border-radius: 4px;
+    border-radius: 6px;
     background-color: #cad2c5; }
   .GetLibraryBoxTwo::-webkit-scrollbar-thumb {
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 6px;
     background-clip: content-box;
     background-color: #52796f; }
 @keyframes zoom-out {
@@ -771,33 +773,6 @@ SidebarTwoUserInfo
     transform: scale(0.5, 0.5); }
   100% {
     transform: scale(1, 1); } }
-  .GetLibraryBoxTwo button {
-    height: 100%;
-    max-height: 45px;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    justify-content: left;
-    background: #cad2c5;
-    border: none;
-    outline: none;
-    font-family: "Patua One", serif;
-    border-radius: 0;
-    transition-duration: 0.30s;
-    gap: 10px;
-    font-size: 15px;
-    padding: 7px 10px; }
-    .GetLibraryBoxTwo button:focus {
-      outline: none; }
-    .GetLibraryBoxTwo button:hover {
-      cursor: pointer;
-      background: #bdc7b7;
-      -webkit-transition-duration: 0.30s;
-      /* Safari */
-      transition-duration: 0.30s; }
-    .GetLibraryBoxTwo button:active {
-      background: #b0bca8; }
-
 .ExploreButton {
   height: 100%;
   max-height: 45px;

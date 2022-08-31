@@ -332,7 +332,8 @@ input, textarea, select {
 .HeaderB {
   flex: 1;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  cursor: pointer; }
   @media screen and (max-width: 1000px) {
     .HeaderB svg:nth-child(1) {
       display: none; } }

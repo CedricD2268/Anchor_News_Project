@@ -15,11 +15,14 @@ import {
   useWindowWidth,
   useWindowHeight,
 } from '@react-hook/window-size'
+import {useNavigate} from "react-router-dom";
 
 
 const Header = ({buttonClick}) => {
 
     const size = useWindowWidth();
+    const navigate = useNavigate()
+    const profile = useSelector((state) => state.profileView);
     const overlay = useSelector((state) => state.overlay)
 
     return (
@@ -46,7 +49,7 @@ const Header = ({buttonClick}) => {
                 </div>
 
                 {/*MIDDLE HEADER*/}
-                <div className={HeaderStyle.HeaderB}>
+                <div className={HeaderStyle.HeaderB} onClick={()=>navigate(`/njt/home/saved/${profile.defaulttopic}`)}>
                     <LogoOneIcon width={330} height={120}/>
                     <LogoTwoIcon width={(size < 580 && size > 450) ? 300: size < 451 ? 260: 380 }
                                  height={(size < 580 && size > 450) ? 70: size < 451 ? 60: 90}/>

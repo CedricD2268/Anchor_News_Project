@@ -36,7 +36,6 @@ const Div = styled.div.attrs(props =>({
   display: flex;
   flex-direction: row;
   gap: 5px;
-  padding-right: 10px;
 `;
 
 
@@ -912,7 +911,8 @@ const Headline = ({HeadlineType}) => {
                     <HeadlineBox name={'Opinions'} type={'HeadlineThree'}
                                  content={
                                      <React.Fragment>
-                                         {(opinionLine && opinionLine.length > 0) && opinionLine.map(row => {
+                                         {Array.isArray(opinionLine) ?
+                                             opinionLine.map(row => {
                                              return (
                                                  <React.Fragment key={row.publishid}>
                                                      <BoxContent
@@ -949,7 +949,7 @@ const Headline = ({HeadlineType}) => {
                                                      />
                                                  </React.Fragment>
                                              )
-                                         })
+                                         }): null
                                          }
                                      </React.Fragment>
                                  }/>
@@ -995,7 +995,7 @@ const Headline = ({HeadlineType}) => {
                     }
                     content={
                     <React.Fragment>
-                        {(followLine && followLine.length > 0) && followLine.map(row => {
+                        {Array.isArray(followLine) ? followLine.map(row => {
                             return (
                                 <React.Fragment key={row.publishid}>
                                     <BoxContent
@@ -1032,7 +1032,7 @@ const Headline = ({HeadlineType}) => {
                                     />
                                 </React.Fragment>
                             )
-                            })
+                            }): null
                         }
                     </React.Fragment>
                 }/>
@@ -1060,10 +1060,11 @@ const Headline = ({HeadlineType}) => {
                              }
                              }
                              Empty={(!(collectionLine && collectionLine.length > 0)) }
-                             EmptyName={'Currently have no article saved. '}
+                             EmptyName={'Currently have no articles saved. '}
                              content={
                     <React.Fragment>
-                        {(collectionLine && collectionLine.length > 0) && collectionLine.map(row => {
+                        {Array.isArray(collectionLine) ?
+                            collectionLine.map(row => {
                             return (
                                 <React.Fragment key={row.publishid}>
                                     <BoxContent
@@ -1095,7 +1096,7 @@ const Headline = ({HeadlineType}) => {
                                     />
                                 </React.Fragment>
                             )
-                            })
+                            }): null
                         }
                     </React.Fragment>
                 }/>
@@ -1117,7 +1118,7 @@ const Headline = ({HeadlineType}) => {
                              EmptyName={'Currently no article match search. '}
                              content={
                     <React.Fragment>
-                        {(searchList && searchList.length > 0) && searchList.map(row => {
+                        {Array.isArray(searchList) ? searchList.map(row => {
                                     return (
                                         <React.Fragment key={row.publishid}>
                                             <BoxContent
@@ -1154,7 +1155,7 @@ const Headline = ({HeadlineType}) => {
                                             />
                                         </React.Fragment>
                                     )
-                            })
+                            }): null
                         }
                     </React.Fragment>
                 }/>
@@ -1166,7 +1167,7 @@ const Headline = ({HeadlineType}) => {
                        <FollowIcon size={26}/> <span>Following</span>
                     </div>
                     <React.Fragment>
-                        {(allFollowing && allFollowing.length > 0) ? allFollowing.map(element=>{
+                        {Array.isArray(allFollowing) && allFollowing.length > 0 ? allFollowing.map(element=>{
                             return(
                                 <React.Fragment key={element.user_name}>
                                     <HeadlineBox
@@ -1197,7 +1198,7 @@ const Headline = ({HeadlineType}) => {
                                         }
                                         content={
                                             <React.Fragment>
-                                                {(element && element.articles && element.articles.length > 0) && element.articles.map(row => {
+                                                {element && Array.isArray(element.articles) ? element.articles.map(row => {
                                                     return (
                                                         <React.Fragment key={row.publishid}>
                                                             <BoxContent
@@ -1234,7 +1235,7 @@ const Headline = ({HeadlineType}) => {
                                                             />
                                                         </React.Fragment>
                                                     )
-                                                })
+                                                }): null
                                                 }
                                             </React.Fragment>
 
@@ -1285,7 +1286,7 @@ const Headline = ({HeadlineType}) => {
 
                              content={
                     <React.Fragment>
-                        {(historyLine && historyLine.length > 0) && historyLine.map(row => {
+                        {Array.isArray(historyLine) ? historyLine.map(row => {
                             return (
                                 <React.Fragment key={row.publishid}>
                                     <BoxContent
@@ -1317,7 +1318,7 @@ const Headline = ({HeadlineType}) => {
                                     />
                                 </React.Fragment>
                             )
-                        })
+                        }): null
                         }
                     </React.Fragment>
                 }/>
@@ -1347,11 +1348,11 @@ const Headline = ({HeadlineType}) => {
                     }
                     }
                     Empty={(!(likeLine && likeLine.length > 0))}
-                    EmptyName={'Currently have no liked article. '}
+                    EmptyName={'Currently have no liked articles. '}
 
                     content={
                     <React.Fragment>
-                        {(likeLine && likeLine.length > 0) && likeLine.map(row => {
+                        {Array.isArray(likeLine) ? likeLine.map(row => {
                             return (
                                 <React.Fragment key={row.publishid}>
                                     <BoxContent
@@ -1383,7 +1384,7 @@ const Headline = ({HeadlineType}) => {
                                     />
                                 </React.Fragment>
                             )
-                        })
+                        }): null
                         }
                     </React.Fragment>
                 }/>
@@ -1395,7 +1396,7 @@ const Headline = ({HeadlineType}) => {
                        <ExploreIcon size={36}/><span>Explore</span>
                     </div>
                     <React.Fragment>
-                        {(allFollowing && allFollowing.length > 0) && allFollowing.map(element=>{
+                        {Array.isArray(allFollowing) ? allFollowing.map(element=>{
                             return(
                                 <React.Fragment key={element.user_name}>
                                     <HeadlineBox
@@ -1426,7 +1427,8 @@ const Headline = ({HeadlineType}) => {
                                         }
                                         content={
                                             <React.Fragment>
-                                                {(element && element.articles && element.articles.length > 0) && element.articles.map(row => {
+                                                {element && Array.isArray(element.articles)
+                                                    ? element.articles.map(row => {
                                                     return (
                                                         <React.Fragment key={row.publishid}>
                                                             <BoxContent
@@ -1463,17 +1465,15 @@ const Headline = ({HeadlineType}) => {
                                                             />
                                                         </React.Fragment>
                                                     )
-                                                })
+                                                }): null
                                                 }
                                             </React.Fragment>
 
                                         }
                                     />
                                 </React.Fragment>
-
-
                             )
-                        })
+                        }): null
                         }
                     </React.Fragment>
                 </div>

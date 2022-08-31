@@ -163,13 +163,13 @@ const SidebarTwo = ({OverlayRX, Radius, MarginTop, MarginRight, Home}) => {
 
                             <li>
                                 {Home ?
-                                    <Link to='settings/subscription'>
+                                    <Link to='settings/billing'>
                                         <button><BillingIcon color={'white'}/>Billing</button>
                                     </Link> :
                                     <a>
                                         <button
                                             onClick={() => {
-                                                window.location.href = "/njt/settings/subscription"
+                                                window.location.href = "/njt/settings/billing"
                                             }}>
                                             <BillingIcon color={'white'}/>Billing
                                         </button>

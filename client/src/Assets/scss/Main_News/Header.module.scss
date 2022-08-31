@@ -235,6 +235,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 
   @media screen and (max-width: $RenderResizeOne) {
     svg:nth-child(1) {

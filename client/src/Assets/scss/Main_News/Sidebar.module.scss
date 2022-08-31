@@ -404,6 +404,7 @@ SidebarTwoUserInfo
   img{
     width: 52px;
     border-radius: 50%;
+    box-shadow: $shadow_two;
   }
 }
 
@@ -499,7 +500,7 @@ SidebarTwoUserInfo
   flex-direction: column;
   gap: 17px;
   background: $color_uni_five;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 12px 18px;
   width: auto;
   height: auto;
@@ -508,6 +509,7 @@ SidebarTwoUserInfo
   transform: translate(-50%, -50%);
   box-shadow: $shadow_four;
   min-height: 135px;
+  color: $color_uni_one;
 }
 
 .GetLibraryTitleClose {
@@ -547,17 +549,19 @@ SidebarTwoUserInfo
   align-items: center;
 
   input{
-    @include InputMd('black', 4px);
-    height: 35px;
+    @include InputMd('black', 6px);
+    height: 37px;
     min-width: 240px;
-    font-family: $font_uni_six;
+    border: 2px solid $color_uni_one !important;
+    box-shadow: $shadow_two;
   }
   button{
-    @include ButtonMd($color_uni_eleven, 4px, 4, 10);
-    height: 34.5px;
+    @include ButtonMd($color_uni_eleven, 6px, 4, 10);
+    height: 37px;
     padding: 10px 18px;
     font-size: 15px;
     color: white;
+    box-shadow: $shadow_two;
   }
 }
 
@@ -566,36 +570,37 @@ SidebarTwoUserInfo
   flex-direction: column;
   gap: 6px;
   label{
-    font-size: 16px;
+    font-size: 17px;
   }
 
 }
 
-.GetLibraryBoxOne{
+
+.GetLibraryBoxOne, .GetLibraryBoxTwo{
   display: flex;
   flex-direction: column;
-  border: 1px solid black ;
-  border-radius: 4px;
+  border: 2px solid $color_uni_eleven ;
+  border-radius: 6px;
   height: auto;
   button{
     @include ButtonMd($color_uni_five, 0, 5,10, left);
+    color: $color_uni_one;
     gap: 10px;
-    font-size: 15px;
+    font-size: 16px;
     padding: 7px 10px;
   }
 }
 
 
+
+
 .GetLibraryBoxTwo {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  border-radius: 4px;
-  height: 165px;
+  height: 165px !important;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  box-shadow: $shadow_two;
 
   &::-webkit-scrollbar {
     width: 18px;
@@ -610,13 +615,13 @@ SidebarTwoUserInfo
   }
 
   &::-webkit-scrollbar-track {
-    border-radius: 4px;
+    border-radius: 6px;
     background-color:  $color_uni_five
   }
 
   &::-webkit-scrollbar-thumb {
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 6px;
     background-clip: content-box;
     background-color: $color_uni_three;
   }
@@ -631,13 +636,6 @@ SidebarTwoUserInfo
     }
 
 
-  }
-
-  button {
-    @include ButtonMd($color_uni_five, 0, 5, 10, left);
-    gap: 10px;
-    font-size: 15px;
-    padding: 7px 10px;
   }
 }
 

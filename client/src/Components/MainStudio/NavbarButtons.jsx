@@ -122,7 +122,6 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
         const forwardB = document.querySelectorAll(`.${MainStyle.HeaderButtonsForward}`);
         const backwardB = document.querySelectorAll(`.${MainStyle.HeaderButtonsBack}`);
         const scrollP = document.querySelectorAll(`.${MainStyle.HeaderButtonsTopics}`)
-        console.log(forwardB)
         forwardB.forEach(function (e) {
             e.onclick = function () {
                 scrollP.forEach(function (e) {
@@ -220,7 +219,7 @@ const NavbarButtons = ({Fixed, buttonClick}) => {
         }else{
             setContent(UrlList().includes(location.pathname))
         }
-    }, [w_size, location.pathname, profile]);
+    }, [w_size, location.pathname, profile, content]);
 
 
     return (

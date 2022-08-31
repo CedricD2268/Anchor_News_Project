@@ -929,8 +929,9 @@
   padding: 15px;
   min-width: 300px;
   max-width: 400px;
+  color: $color_uni_one;
   background: $color_uni_five;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: $shadow_four;
 }
 
@@ -987,9 +988,10 @@
   flex-direction: column;
   gap: 12px;
   padding: 14px;
+  color: $color_uni_one;
   background: $color_uni_five;
   width: 320px;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: $shadow_two;
     top: 35%;
   left: 50%;
@@ -1002,6 +1004,7 @@
       @include InputMd($color_uni_one, 6px);
       width: 100%;
       height: 38px;
+      border: 2px solid $color_uni_one !important;
       box-shadow: $shadow_one;
     }
   }
@@ -1047,6 +1050,7 @@
     border-radius: 8px;
     font-family: $font_uni_one;
     box-shadow: $shadow_one;
+    border: 2px solid $color_uni_one !important;
   }
 }
 

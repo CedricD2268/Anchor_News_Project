@@ -68,6 +68,17 @@ const SidebarGetLibrary = () => {
         return false;
     }
 
+    const boxListClass = ()=>{
+        if (Array.isArray(array) && array.length > 5){
+            return SideMenuStyle.GetLibraryBoxTwo
+        }
+        if (Array.isArray(array)&& array.length > 0 ) {
+            return SideMenuStyle.GetLibraryBoxOne
+        }else{
+            return ''
+        }
+    }
+
 
     const onClickCollectionList = async (data) => {
         const newData  = update(data, {$merge:{name: 'InsertCollectionList', articlePublishedId:  overlay.sidebarCreate.articleId}})
@@ -147,15 +158,14 @@ const SidebarGetLibrary = () => {
                                         'Currently have no library list'
                                     }
                                 </label>
-                                <div
-                                    className={array && array.length > 6 ? SideMenuStyle.GetLibraryBoxTwo : SideMenuStyle.GetLibraryBoxOne}>
-                                    {array && array.map((element) => {
+                                <div className={boxListClass()}>
+                                    {Array.isArray(array) ? array.map((element) => {
                                         return (
                                             <button onClick={()=>{
                                                 onClickCollectionList({collectionId: element.collection_id})
-                                            }}><HiOutlineFolderOpen size={20} />{element.collection_name}</button>
+                                            }}><HiOutlineFolderOpen size={22} />{element.collection_name}</button>
                                         )
-                                    })
+                                    }): null
                                     }
                                 </div>
                             </div>
