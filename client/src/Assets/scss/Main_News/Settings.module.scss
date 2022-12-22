@@ -888,6 +888,7 @@ $Croppier_color: #d8e2dc;
     @include ButtonMd($color_uni_twelve, 6px, 5, 10);
     font-size: 17.5px;
     padding: 10px 20px;
+    color: black;
   }
 }
 
@@ -1041,6 +1042,7 @@ $Croppier_color: #d8e2dc;
 .CustomizeWeatherBoxSaveButton{
   button{
     @include ButtonMd(white, 6px, 5, 10);
+    color: black;
     height: 37px;
     gap: 5px;
     padding: 10px 25px;

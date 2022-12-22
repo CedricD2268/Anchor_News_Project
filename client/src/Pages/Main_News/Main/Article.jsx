@@ -147,7 +147,7 @@ const Comment = ({username, avatar, avatarName, commentBody, date, commentId, co
                 </span>
                 </div>
                 <div className={MainStyle.ArticleMainFooterCC}>
-                    <button className={MainStyle.ArticleMainFooterCC} onClick={() => {
+                    <button onClick={() => {
                         replyButton()
                     }}>Reply
                     </button>

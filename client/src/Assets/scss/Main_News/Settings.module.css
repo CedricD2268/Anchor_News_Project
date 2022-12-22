@@ -1024,7 +1024,8 @@ input, textarea, select {
     border-radius: 6px;
     transition-duration: 0.30s;
     font-size: 17.5px;
-    padding: 10px 20px; }
+    padding: 10px 20px;
+    color: black; }
     .SubscriptionAp button:focus {
       outline: none; }
     .SubscriptionAp button:hover {
@@ -1231,6 +1232,7 @@ input, textarea, select {
   font-family: "Patua One", serif;
   border-radius: 6px;
   transition-duration: 0.30s;
+  color: black;
   height: 37px;
   gap: 5px;
   padding: 10px 25px; }

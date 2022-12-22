@@ -307,7 +307,7 @@ const Sidebar = ({DisState, Close}) => {
                     </div>
                     <hr/>
                     <div className={SideMenuStyle.SideMenuContentE}>
-                        <span className={SideMenuStyle.SpanTitle}><SettingsIconOne color={'black'}/>More from Anchor</span>
+                        <span className={SideMenuStyle.SpanTitle}><SettingsIconOne color={'black'}/>More from TNJA</span>
                         <ul>
                             <li>
                                 <button onClick={()=>{navigate('settings/profile')}}>

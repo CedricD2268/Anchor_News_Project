@@ -238,7 +238,7 @@ const Customize = () => {
                         </div>
                     </div>
                     <div className={SettingStyle.CustomizeWeatherBoxSaveButton}>
-                        <button type={'submit'}>Save Weather{load.a ?
+                        <button type={'submit'}>Save weather{load.a ?
                             <LoadingSpinnerIcon size={23}/> :
                             submit.a ?
                                 <FaCheckCircle size={21} color={'#0d5e32'}/> :

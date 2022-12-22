@@ -922,7 +922,8 @@ input, textarea, select {
     font-family: "Patua One", serif;
     border-radius: 4px;
     transition-duration: 0.30s;
-    font-size: 16px; }
+    font-size: 16px;
+    color: black; }
     .ArticleMainFooterCC button:focus {
       outline: none; }
     .ArticleMainFooterCC button:hover {
@@ -1186,7 +1187,8 @@ input, textarea, select {
   transition-duration: 0.30s;
   padding: 8px;
   font-size: 15px;
-  margin-left: 20px; }
+  margin-left: 20px;
+  color: black; }
   .CommentViewRepliesButton button:focus {
     outline: none; }
   .CommentViewRepliesButton button:hover {
